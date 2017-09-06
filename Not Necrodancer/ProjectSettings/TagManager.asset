@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - WaveTrigger
+  - Collectable
+  - DescentTrigger
+  - Blade
   layers:
   - Default
   - TransparentFX

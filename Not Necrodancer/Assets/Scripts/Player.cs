@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public float speed;
+    public bool canMove;
+    public int score;
 
     private Vector3 newPosition;
 
@@ -15,16 +17,31 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        if (transform.position == newPosition)
+        if (canMove)
         {
-            if (Input.GetButtonDown("Right"))
-                newPosition = transform.position + new Vector3(2, 0, 0);
-            if (Input.GetButtonDown("Left"))
-                newPosition = transform.position + new Vector3(-2, 0, 0);
-            if (Input.GetButtonDown("Up"))
-                newPosition = transform.position + new Vector3(0, 0, 2);
-            if (Input.GetButtonDown("Down"))
-                newPosition = transform.position + new Vector3(0, 0, -2);
+            if (transform.position == newPosition)
+            {
+                if (Input.GetButtonDown("Right"))
+                {
+                    newPosition = transform.position + new Vector3(2, 0, 0);
+                    canMove = false;
+                }
+                if (Input.GetButtonDown("Left"))
+                {
+                    newPosition = transform.position + new Vector3(-2, 0, 0);
+                    canMove = false;
+                }
+                if (Input.GetButtonDown("Up"))
+                {
+                    newPosition = transform.position + new Vector3(0, 0, 2);
+                    canMove = false;
+                }
+                if (Input.GetButtonDown("Down"))
+                {
+                    newPosition = transform.position + new Vector3(0, 0, -2);
+                    canMove = false;
+                }
+            }
         }
         transform.position = Vector3.MoveTowards(transform.position, newPosition, Time.deltaTime * speed);
 
@@ -36,5 +53,14 @@ public class Player : MonoBehaviour {
 
         transform.position = Vector3.MoveTowards(transform.position, newPosition, Time.deltaTime * speed);
         */
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Collectable")
+        {
+            score++;
+            Destroy(other.gameObject);
+        }
     }
 }
