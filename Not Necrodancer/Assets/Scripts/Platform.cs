@@ -87,7 +87,7 @@ public class Platform : MonoBehaviour {
             
             if (transform.position.y < startY)
             {
-                transform.position = new Vector3(transform.position.x, startY, transform.position.z);
+                transform.position = new Vector3(transform.position.x, 0, transform.position.z);
                 wave = false;
             }
         }
@@ -109,7 +109,7 @@ public class Platform : MonoBehaviour {
     {
         wave = true;
         waveTime = 0;
-        startY = transform.position.y;
+        startY = 0;
     }
 
     void Descent()

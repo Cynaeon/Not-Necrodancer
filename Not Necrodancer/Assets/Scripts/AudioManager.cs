@@ -6,6 +6,10 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
     public AudioSource song;
+    public AudioSource[] songLayer1;
+    public AudioSource[] songLayer2;
+    public AudioSource[] songLayer3;
+    public AudioSource[] songLayer4;
     public GameObject player;
     public CameraManager cameraManager;
     public GameObject waveTrigger;
@@ -18,11 +22,19 @@ public class AudioManager : MonoBehaviour {
     private Vector3 sphereStartScale;
     private Color sphereStartColor;
     private Color spherePositiveColor;
-    private float secondsToBeat = 0.6f;
+    private float secondsToBeat = 0.4839f;
     private float current;
     private int beatNumber;
 
 	void Start () {
+        foreach (AudioSource track in songLayer1)
+            track.mute = false;
+        foreach (AudioSource track in songLayer2)
+            track.mute = true;
+        foreach (AudioSource track in songLayer3)
+            track.mute = true;
+        foreach (AudioSource track in songLayer4)
+            track.mute = true;
         sphereStartScale = tempoSphere.localScale;
         sphereStartColor = tempoSphere.GetComponent<Renderer>().material.color;
         spherePositiveColor = Color.green;
@@ -45,7 +57,7 @@ public class AudioManager : MonoBehaviour {
             tempoSphere.localScale -= new Vector3(value, value, value);
         }
 
-        float beatTime = (song.time / secondsToBeat) - tempoOffset;
+        float beatTime = (songLayer1[0].time / secondsToBeat) - tempoOffset;
 
         if (beatTime > beatNumber)
         {
