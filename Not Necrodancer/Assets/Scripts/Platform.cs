@@ -9,7 +9,10 @@ public class Platform : MonoBehaviour {
     public float spinSpeed;
     public float spinSpeedFalloff;
     public float spinDuration;
-    public Material[] materials;
+    public Color idleColor;
+    public Color activeColor1;
+    public Color activeColor2;
+    public Color dangerColor;
     public int variant;
 
     enum State
@@ -23,6 +26,8 @@ public class Platform : MonoBehaviour {
 
     private bool elevated;
     private bool descending;
+    private bool danger;
+    private Color currentColor;
     private Vector3 elevatedPos;
     private Vector3 endPos;
     private float descentTime;
@@ -30,7 +35,7 @@ public class Platform : MonoBehaviour {
     private float spinFalloffMultiplier = 1;
     private Renderer _rend;
     private bool wave;
-    private bool spinning;
+    [HideInInspector] public bool spinning;
     private float startY;
     private float waveTime;
 
@@ -39,11 +44,13 @@ public class Platform : MonoBehaviour {
         _rend = GetComponent<Renderer>();
         if (variant == 1)
         {
-            _rend.material = materials[0];
+            currentColor = activeColor1;
+            _rend.material.color = activeColor1;
         }
         else
         {
-            _rend.material = materials[1];
+            currentColor = activeColor2;
+            _rend.material.color = activeColor2;
         }
         elevatedPos = transform.position;
         endPos = new Vector3(transform.position.x, 0, transform.position.z);
@@ -55,6 +62,13 @@ public class Platform : MonoBehaviour {
 	
 	void Update () {
 
+        if (danger)
+        {
+            _rend.material.color = dangerColor;
+        }
+
+        dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * 6, 1));
+        
         if (spinning)
         {
             transform.Rotate(Vector3.right * currentSpinSpeed * Time.deltaTime);
@@ -64,12 +78,10 @@ public class Platform : MonoBehaviour {
                 currentSpinSpeed -= spinSpeedFalloff * Time.deltaTime * spinFalloffMultiplier;
                 spinFalloffMultiplier += 0.4f;    
             }
-
             else
             {
-                if ((transform.eulerAngles.x > -1 && transform.eulerAngles.x < 1))
+                if ((transform.eulerAngles.x > -2 && transform.eulerAngles.x < 2))
                 {
-                    print("öö");
                     transform.eulerAngles = Vector3.zero;
                     spinning = false;
                     currentSpinSpeed = spinSpeed;
@@ -127,14 +139,16 @@ public class Platform : MonoBehaviour {
 
     public void SwitchColor()
     {
-        if (_rend.sharedMaterial == materials[0])
+        if (currentColor == activeColor1)
         {
-            _rend.material = materials[1];
+            currentColor = activeColor2;
         }
         else
         {
-            _rend.material = materials[0];
+            currentColor = activeColor1;
         }
+        if (!danger)
+            _rend.material.color = currentColor;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -148,5 +162,15 @@ public class Platform : MonoBehaviour {
         }
         if (other.tag == "Blade")
             Spin();
+        if (other.tag == "DangerTrigger")
+            danger = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "DangerTrigger")
+        {
+            danger = false;
+        }
     }
 }

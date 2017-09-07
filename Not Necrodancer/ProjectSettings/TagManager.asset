@@ -8,6 +8,8 @@ TagManager:
   - Collectable
   - DescentTrigger
   - Blade
+  - DangerTrigger
+  - Platform
   layers:
   - Default
   - TransparentFX
