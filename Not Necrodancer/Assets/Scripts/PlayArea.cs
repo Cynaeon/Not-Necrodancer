@@ -15,6 +15,7 @@ public class PlayArea : MonoBehaviour {
     public int areaX;
     public int areaY;
 
+    public float enemyIntervalMultiplier = 1;
     private float currentCollectableInterval;
     private float currentEnemyInterval;
 
@@ -25,7 +26,7 @@ public class PlayArea : MonoBehaviour {
 	
 	void Update () {
         currentCollectableInterval -= Time.deltaTime;
-        currentEnemyInterval -= Time.deltaTime;
+        currentEnemyInterval -= Time.deltaTime * enemyIntervalMultiplier;
 
         if (currentCollectableInterval < 0)
         {
@@ -42,18 +43,29 @@ public class PlayArea : MonoBehaviour {
 
     private void SpawnEnemy()
     {
-        int rnd = UnityEngine.Random.Range(0, enemies.Length);
-        int x = (UnityEngine.Random.Range(-areaX / 2, (areaX / 2) + 1)) * 2;
-        int z = (UnityEngine.Random.Range(-areaY / 2, (areaY / 2) + 1)) * 2;
-        if (enemies[rnd].name == "Bomb")
+        int numberOfEnemies = 1;
+        int rnd = UnityEngine.Random.Range(0, 11);
+        if (rnd >= 9)
         {
-            x += 1;
-            z += 1;
+            numberOfEnemies = 2;
         }
-        Vector3 pos = new Vector3(x, enemySpawnHeight, z);
-        int rotY = UnityEngine.Random.Range(1, 4) * 90;
-        Vector3 rot = new Vector3(0, rotY, 0);
-        Instantiate(enemies[rnd], pos, Quaternion.Euler(rot));
+
+        while (numberOfEnemies > 0)
+        {
+            int enemyNumber = UnityEngine.Random.Range(0, enemies.Length);
+            int x = (UnityEngine.Random.Range(-areaX / 2, (areaX / 2) + 1)) * 2;
+            int z = (UnityEngine.Random.Range(-areaY / 2, (areaY / 2) + 1)) * 2;
+            if (enemies[enemyNumber].name == "Bomb")
+            {
+                x += 1;
+                z += 1;
+            }
+            Vector3 pos = new Vector3(x, enemySpawnHeight, z);
+            int rotY = UnityEngine.Random.Range(1, 4) * 90;
+            Vector3 rot = new Vector3(0, rotY, 0);
+            Instantiate(enemies[enemyNumber], pos, Quaternion.Euler(rot));
+            numberOfEnemies--;
+        }
     }
 
     public void SpawnLevelUp()

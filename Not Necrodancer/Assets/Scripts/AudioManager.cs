@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour {
 
     private Player playerScript;
     private PlayArea playAreaScript;
-    private int level = 1;
+    [HideInInspector] public int level = 1;
     private GameObject levelUpSphere;
     private Vector3 sphereStartScale;
     private Color sphereStartColor;
@@ -55,9 +55,6 @@ public class AudioManager : MonoBehaviour {
 	}
 	
 	void Update () {
-
-        if (Input.GetKeyDown(KeyCode.Q))
-            DescentPlatforms();
 
         if (Input.GetKeyDown(KeyCode.T))
             IncreaseLevel();
@@ -119,6 +116,7 @@ public class AudioManager : MonoBehaviour {
         soundEffects.PlayOneShot(sound_LevelUp);
         WaveBlast();
         DescentPlatforms();
+        playAreaScript.enemyIntervalMultiplier += 0.5f;
 
         // LE HARD CODE FACE xD
         if (level == 3)
@@ -152,27 +150,31 @@ public class AudioManager : MonoBehaviour {
 
     public void DecreaseLevel()
     {
-        if (level == 2)
+        if (level > 1)
         {
-            foreach (AudioSource track in songLayer2)
-                track.mute = true;
+            playAreaScript.enemyIntervalMultiplier -= 0.5f;
+            if (level == 2)
+            {
+                foreach (AudioSource track in songLayer2)
+                    track.mute = true;
+            }
+            else if (level == 3)
+            {
+                foreach (AudioSource track in songLayer3)
+                    track.mute = true;
+            }
+            else if (level == 4)
+            {
+                foreach (AudioSource track in songLayer4)
+                    track.mute = true;
+            }
+            else if (level == 5)
+            {
+                foreach (AudioSource track in songLayer5)
+                    track.mute = true;
+            }
+            level--;
         }
-        else if (level == 3)
-        {
-            foreach (AudioSource track in songLayer3)
-                track.mute = true;
-        }
-        else if (level == 4)
-        {
-            foreach (AudioSource track in songLayer4)
-                track.mute = true;
-        }
-        else if (level == 5)
-        {
-            foreach (AudioSource track in songLayer5)
-                track.mute = true;
-        }
-        level--;
     }
 
     private void WaveBlast()
@@ -191,8 +193,11 @@ public class AudioManager : MonoBehaviour {
     {
         GameObject.Find("PlayArea").GetComponent<PlayArea>().SwitchColors();
         GameObject go = GameObject.Find("LevelUp(Clone)");
+        GameObject go2 = GameObject.Find("BackgroundRays");
         if (go)
             go.GetComponent<BounceToBeat>().OnBeat();
+        if (go2)
+            go2.GetComponent<BounceToBeat>().OnBeat();
         cameraManager.BeatFlash();
         tempoSphere.localScale *= 1.5f;
     }

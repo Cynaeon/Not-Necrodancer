@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkSpeed: 10
+  beatIntensity: 1.5
 --- !u!135 &135397609204895976
 SphereCollider:
   m_ObjectHideFlags: 1

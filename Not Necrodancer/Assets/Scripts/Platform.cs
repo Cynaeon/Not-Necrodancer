@@ -17,6 +17,7 @@ public class Platform : MonoBehaviour {
     public int level;
     public int variant;
     public GameObject deathSphere;
+    public GameObject platformBase;
 
     enum State
     {
@@ -133,6 +134,7 @@ public class Platform : MonoBehaviour {
                 danger = false;
                 descentTime = descentTime + Time.deltaTime / 2;
                 transform.position = Vector3.Lerp(elevatedPos, endPos, descentTime);
+                platformBase.SetActive(false);
                 _rend.material.color = Color.Lerp(idleColor, descendedColor, descentTime);
 
                 if (transform.position.y <= endPos.y)

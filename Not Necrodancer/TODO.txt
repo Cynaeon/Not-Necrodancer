@@ -1,10 +1,12 @@
 ====TODO====
 PRIORITY:
 Sounds effects (levelup, death...)
+Platforms don't flash danger if an enemy triggers them right after another
 Improve enemy spawning
 Speed up enemy spawns on level up
 New song pls
 Shadow on player (or something of sort)
+Song ending
 
 FANCY STUFF:
 Disco floor only on when playing well
@@ -24,3 +26,4 @@ Reduce score on player death
 Reduce play area on level up
 Platform don't spin sometimes??
 Death on descended platforms
+Some visual indicator of the current level

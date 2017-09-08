@@ -83,10 +83,9 @@ public class Player : MonoBehaviour {
                 }
                 else
                     print("fault");
-
             }
-            
-        }
+        }     
+
         if (!dead)
             transform.position = Vector3.MoveTowards(transform.position, newPosition, Time.deltaTime * speed);
 

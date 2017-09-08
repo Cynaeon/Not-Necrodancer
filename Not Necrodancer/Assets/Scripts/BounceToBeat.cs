@@ -5,6 +5,7 @@ using UnityEngine;
 public class BounceToBeat : MonoBehaviour {
 
     public float shrinkSpeed;
+    public float beatIntensity;
 
     private Vector3 startScale;
 
@@ -22,6 +23,6 @@ public class BounceToBeat : MonoBehaviour {
 
     public void OnBeat()
     {
-        transform.localScale *= 1.5f;
+        transform.localScale *= beatIntensity;
     }
 }
