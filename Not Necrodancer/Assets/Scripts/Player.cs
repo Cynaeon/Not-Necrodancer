@@ -13,8 +13,8 @@ public class Player : MonoBehaviour {
     public bool canMove;
     public int score;
 
-    private Collider _coll;
     private Renderer _rend;
+    private CameraManager cameraManager;
     private Color startColor;
     private Color currentColor;
     private bool dead;
@@ -24,10 +24,10 @@ public class Player : MonoBehaviour {
     private Vector3 newPosition;
 
 	void Start () {
-        _coll = GetComponent<Collider>();
         _rend = GetComponent<Renderer>();
         startColor = _rend.material.color;
         newPosition = transform.position;
+        cameraManager = Camera.main.GetComponent<CameraManager>();
 	}
 
     void Update()
@@ -98,21 +98,11 @@ public class Player : MonoBehaviour {
             timeInvulnerable += Time.deltaTime;
             if (timeInvulnerable > invulTime)
             {
-                _coll.enabled = true;
                 invulnerable = false;
                 _rend.material.color = startColor;
                 timeInvulnerable = 0;
             }
         }
-
-        /*
-        if (Input.GetButtonDown("Right"))
-            newPosition = newPosition + new Vector3(2, transform.position.y, transform.position.z);
-        else if (Input.GetButtonDown("Left"))
-            newPosition = newPosition + new Vector3(-2, transform.position.y, transform.position.z);
-
-        transform.position = Vector3.MoveTowards(transform.position, newPosition, Time.deltaTime * speed);
-        */
     }
 
     private void Respawn()
@@ -124,11 +114,19 @@ public class Player : MonoBehaviour {
 
     private void Die()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        _coll.enabled = false;
-        transform.position = new Vector3(0, 100, 0);
-        newPosition = new Vector3(0, 1, 0);
-        dead = true;
+        if (!invulnerable)
+        {
+            score -= 5;
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            cameraManager.ScreenShake();
+            cameraManager.DeathFlash();
+            transform.position = new Vector3(0, -100, 0);
+            newPosition = new Vector3(0, 1, 0);
+            GameObject go = GameObject.Find("LevelUp(Clone)");
+            if (go)
+                Destroy(go);
+            dead = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -143,7 +141,13 @@ public class Player : MonoBehaviour {
             if (other.GetComponent<Platform>().spinning)
                 Die();
         }
-        if (other.tag == "Blade" || other.tag == "Bomb")
+        if (other.tag == "Blade" || other.tag == "Death")
             Die();
+        if (other.tag == "LevelUp")
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().IncreaseLevel();
+            score = 0;
+            Destroy(other.gameObject);
+        }
     }
 }

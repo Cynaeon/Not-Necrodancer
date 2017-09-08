@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayArea : MonoBehaviour {
 
     public GameObject collectable;
+    public GameObject levelUp;
     public GameObject[] enemies;
     public float collectableSpawnInterval;
     public float enemySpawnInterval;
@@ -53,6 +54,14 @@ public class PlayArea : MonoBehaviour {
         int rotY = UnityEngine.Random.Range(1, 4) * 90;
         Vector3 rot = new Vector3(0, rotY, 0);
         Instantiate(enemies[rnd], pos, Quaternion.Euler(rot));
+    }
+
+    public void SpawnLevelUp()
+    {
+        int x = (UnityEngine.Random.Range(-areaX / 2, (areaX / 2) + 1)) * 2;
+        int z = (UnityEngine.Random.Range(-areaY / 2, (areaY / 2) + 1)) * 2;
+        Vector3 pos = new Vector3(x, collectableSpawnHeight, z);
+        Instantiate(levelUp, pos, Quaternion.identity);
     }
 
     void SpawnCollectable()

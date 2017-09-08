@@ -10,6 +10,8 @@ TagManager:
   - Blade
   - DangerTrigger
   - Platform
+  - LevelUp
+  - Death
   layers:
   - Default
   - TransparentFX

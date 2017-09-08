@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour {
 
     public float speed;
     public float endY;
+    public float lifeTime;
 
 	void Start () {
 		
@@ -16,5 +17,9 @@ public class Collectable : MonoBehaviour {
             transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
         else
             transform.position = new Vector3(transform.position.x, endY, transform.position.z);
+
+        lifeTime -= Time.deltaTime;
+        if (lifeTime < 0)
+            Destroy(gameObject);
 	}
 }

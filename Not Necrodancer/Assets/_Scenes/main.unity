@@ -108,11 +108,118 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &30428560 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1852493898217862, guid: aa80d9bf73d4d914788fb6f2e123b89c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593074358}
+--- !u!4 &30428561 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1593074358}
+--- !u!65 &30428562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30428560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &51418789 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5,
     type: 2}
   m_PrefabInternal: {fileID: 1886313063}
+--- !u!1001 &66466276
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1910904123}
+    m_Modifications:
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_RootOrder
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852493898217862, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_Name
+      value: Death (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135352680603772540, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &66466277 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c,
+    type: 2}
+  m_PrefabInternal: {fileID: 66466276}
+--- !u!1 &66466278 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1852493898217862, guid: aa80d9bf73d4d914788fb6f2e123b89c,
+    type: 2}
+  m_PrefabInternal: {fileID: 66466276}
+--- !u!65 &66466279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 66466278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &76320579
 Prefab:
   m_ObjectHideFlags: 0
@@ -159,7 +266,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (2)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -202,13 +309,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -258,7 +406,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -301,13 +449,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -357,7 +546,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2 (2)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -400,13 +589,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -466,7 +696,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -509,13 +739,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -674,7 +945,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -717,13 +988,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -783,7 +1095,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -826,13 +1138,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -1001,7 +1354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (6)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1044,13 +1397,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -1100,7 +1494,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1139,13 +1533,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -1158,6 +1593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401803490}
   - component: {fileID: 401803489}
+  - component: {fileID: 401803491}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1191,6 +1627,8 @@ MonoBehaviour:
   songLayer5:
   - {fileID: 646460030}
   - {fileID: 1562687159}
+  soundEffects: {fileID: 0}
+  sound_LevelUp: {fileID: 8300000, guid: 27eb4a6155d957a428cd88fa5a0d5245, type: 3}
   player: {fileID: 1237369124}
   cameraManager: {fileID: 809822609}
   waveTrigger: {fileID: 1352955598123014, guid: 9c5285008ce74e1478a51473554e0708,
@@ -1225,6 +1663,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &401803491
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401803488}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &417617724
 Prefab:
   m_ObjectHideFlags: 0
@@ -1271,7 +1789,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1314,13 +1832,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -1375,7 +1934,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1418,13 +1977,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -1479,7 +2079,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1522,13 +2122,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -1583,7 +2224,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1626,13 +2267,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -1692,7 +2374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1735,13 +2417,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -1910,7 +2633,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1953,13 +2676,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -2009,7 +2773,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (7)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -2052,13 +2816,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -2108,7 +2913,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -2151,13 +2956,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -2221,7 +3067,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.17647058, g: 0.17647058, b: 0.17647058, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2274,8 +3120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatFlashSpeed: 1
   levelFlashSpeed: 0.2
-  beatFlashColor: {r: 0, g: 0, b: 0, a: 0}
+  beatFlashColor: {r: 0.07352942, g: 0.07352942, b: 0.07352942, a: 0}
   levelFlashColor: {r: 1, g: 0.8878296, b: 0.41911763, a: 0}
+  deathColor: {r: 0.8235294, g: 0, b: 0, a: 0}
   shakeSpeed: 15
   shakeSpan: 3
 --- !u!4 &831623520 stripped
@@ -2329,7 +3176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -2372,13 +3219,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -2428,7 +3316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -2471,13 +3359,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -2619,7 +3548,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (3)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -2662,13 +3591,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -2718,7 +3688,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -2761,13 +3731,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -2827,7 +3838,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -2870,13 +3881,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -2926,7 +3978,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (4)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -2969,13 +4021,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -3134,7 +4227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (10)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -3177,13 +4270,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -3233,7 +4367,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -3276,13 +4410,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -3337,7 +4512,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (8)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -3380,13 +4555,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -3436,7 +4652,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -3479,13 +4695,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -3499,6 +4756,87 @@ Transform:
   m_PrefabParentObject: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5,
     type: 2}
   m_PrefabInternal: {fileID: 1375154487}
+--- !u!1001 &1176773003
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1910904123}
+    m_Modifications:
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_RootOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852493898217862, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_Name
+      value: Death (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135352680603772540, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1176773004 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1176773003}
+--- !u!1 &1176773005 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1852493898217862, guid: aa80d9bf73d4d914788fb6f2e123b89c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1176773003}
+--- !u!65 &1176773006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176773005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1184052619
 Prefab:
   m_ObjectHideFlags: 0
@@ -3545,7 +4883,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -3588,13 +4926,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -3756,7 +5135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2 (3)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -3799,13 +5178,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -3984,7 +5404,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -4027,13 +5447,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -4083,7 +5544,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (5)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -4126,13 +5587,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -4141,6 +5643,91 @@ Transform:
   m_PrefabParentObject: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5,
     type: 2}
   m_PrefabInternal: {fileID: 2016255553}
+--- !u!1001 &1508604141
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1910904123}
+    m_Modifications:
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_RootOrder
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852493898217862, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_Name
+      value: Death (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135352680603772540, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1508604142 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1508604141}
+--- !u!1 &1508604143 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1852493898217862, guid: aa80d9bf73d4d914788fb6f2e123b89c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1508604141}
+--- !u!65 &1508604144
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508604143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1517792230
 Prefab:
   m_ObjectHideFlags: 0
@@ -4187,7 +5774,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -4230,13 +5817,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -4419,6 +6047,61 @@ Transform:
   m_PrefabParentObject: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5,
     type: 2}
   m_PrefabInternal: {fileID: 700467955}
+--- !u!1001 &1593074358
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1910904123}
+    m_Modifications:
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_RootOrder
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657595295454188, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 135352680603772540, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: aa80d9bf73d4d914788fb6f2e123b89c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1621575436 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5,
@@ -4470,7 +6153,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -4513,13 +6196,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -4584,7 +6308,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -4627,13 +6351,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -4688,7 +6453,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -4731,13 +6496,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -4901,7 +6707,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -4944,13 +6750,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -5000,7 +6847,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -5043,13 +6890,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -5099,7 +6987,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -5142,13 +7030,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -5208,7 +7137,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2
+      value: Platform lv5
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -5251,13 +7180,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -5307,7 +7277,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -5350,13 +7320,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -5435,6 +7446,10 @@ Transform:
   - {fileID: 632532273}
   - {fileID: 1168491601}
   - {fileID: 486347039}
+  - {fileID: 30428561}
+  - {fileID: 1176773004}
+  - {fileID: 66466277}
+  - {fileID: 1508604142}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5451,6 +7466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectable: {fileID: 1610556392531054, guid: 28d310bf2bf24a94ab7f4e6113e55a00,
     type: 2}
+  levelUp: {fileID: 1527833459195468, guid: 24afa308a314d584487a8510bac9f228, type: 2}
   enemies:
   - {fileID: 1711297882589288, guid: 5601495e0027eff41b193bde1bd8f6f4, type: 2}
   - {fileID: 1905764655186164, guid: 5880c76b7e417a24083400541dcc05f0, type: 2}
@@ -5506,7 +7522,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2 (1)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -5549,13 +7565,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -5724,7 +7781,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 2 (4)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -5767,13 +7824,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -5828,7 +7926,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -5871,13 +7969,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -6036,8 +8175,54 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: spinDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -6097,7 +8282,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -6140,13 +8325,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -6196,7 +8422,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (9)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -6239,13 +8465,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -6300,7 +8567,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -6343,13 +8610,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -6399,7 +8707,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -6442,13 +8750,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -6508,7 +8857,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -6551,13 +8900,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0
@@ -6607,7 +8997,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422514460178, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_Name
-      value: Platform 1 (1)
+      value: Platform lv3
       objectReference: {fileID: 0}
     - target: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
       propertyPath: m_LocalScale.y
@@ -6650,13 +9040,54 @@ Prefab:
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinDuration
-      value: 720
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
         type: 2}
       propertyPath: spinSpeedFalloff
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23641987302503100, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be001fad870b7ae4798db1d7e1330122, type: 2}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: idleColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: activeColor2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: dangerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114860545499767828, guid: 061ba36501b548a43a60c27ed8d2eec5,
+        type: 2}
+      propertyPath: deathSphere
+      value: 
+      objectReference: {fileID: 1565715184671994, guid: b90b5fec397a6714cb845e4a5b277344,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 061ba36501b548a43a60c27ed8d2eec5, type: 2}
   m_IsPrefabParent: 0

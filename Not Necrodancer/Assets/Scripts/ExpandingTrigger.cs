@@ -6,6 +6,7 @@ public class ExpandingTrigger : MonoBehaviour {
 
     public float speed;
     public float duration;
+    public int level;
 
 	void Update () {
         transform.localScale += new Vector3(speed, speed, speed);

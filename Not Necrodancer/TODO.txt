@@ -1,0 +1,26 @@
+====TODO====
+PRIORITY:
+Sounds effects (levelup, death...)
+Improve enemy spawning
+Speed up enemy spawns on level up
+New song pls
+Shadow on player (or something of sort)
+
+FANCY STUFF:
+Disco floor only on when playing well
+Song starts with a small delay
+Level gauge
+
+KINDLY CONSIDER THE FOLLOWING:
+Ascend platforms on leveldown
+
+
+
+
+====DONE====
+Fix the fking spinning
+Surround play area with death
+Reduce score on player death
+Reduce play area on level up
+Platform don't spin sometimes??
+Death on descended platforms

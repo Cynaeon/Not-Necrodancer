@@ -6,6 +6,7 @@ public class Platform : MonoBehaviour {
 
     public float speed;
     public float waveSpan;
+    public float timeTillFall;
     public float spinSpeed;
     public float spinSpeedFalloff;
     public float spinDuration;
@@ -13,7 +14,9 @@ public class Platform : MonoBehaviour {
     public Color activeColor1;
     public Color activeColor2;
     public Color dangerColor;
+    public int level;
     public int variant;
+    public GameObject deathSphere;
 
     enum State
     {
@@ -27,11 +30,15 @@ public class Platform : MonoBehaviour {
     private bool elevated;
     private bool descending;
     private bool danger;
+    private bool instantiatedDeath;
     private Color currentColor;
+    private Color descendedColor;
     private Vector3 elevatedPos;
     private Vector3 endPos;
+    private float currentTimeTillFall;
     private float descentTime;
     private float currentSpinSpeed;
+    private float currentSpinTime;
     private float spinFalloffMultiplier = 1;
     private Renderer _rend;
     private bool wave;
@@ -53,26 +60,32 @@ public class Platform : MonoBehaviour {
             _rend.material.color = activeColor2;
         }
         elevatedPos = transform.position;
-        endPos = new Vector3(transform.position.x, 0, transform.position.z);
-        if (transform.position.y > 0)
-            state = State.elevated;
-        else
-            state = State.descended;
+        endPos = new Vector3(transform.position.x, -50, transform.position.z);
+        descendedColor = Color.clear;
+        elevated = true;
 	}
 	
 	void Update () {
 
         if (danger)
         {
+            dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * 6, 1));
             _rend.material.color = dangerColor;
         }
-
-        dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * 6, 1));
         
         if (spinning)
         {
             transform.Rotate(Vector3.right * currentSpinSpeed * Time.deltaTime);
+            currentSpinTime += Time.deltaTime;
+            if (currentSpinTime > spinDuration)
+            {
+                transform.eulerAngles = Vector3.zero;
+                spinning = false;
+                currentSpinTime = 0;
+            }
 
+            #region OldSpin 
+            /*
             if (currentSpinSpeed > 50)
             {
                 currentSpinSpeed -= spinSpeedFalloff * Time.deltaTime * spinFalloffMultiplier;
@@ -88,9 +101,11 @@ public class Platform : MonoBehaviour {
                     spinFalloffMultiplier = 1;
                 }
             }
+            */
+            #endregion
         }
 
-        else if (wave && state == State.descended)
+        else if (wave)
         {
             waveTime = waveTime + Time.deltaTime;
             float y = startY + Mathf.Sin(waveTime * speed) * waveSpan / 2;
@@ -104,15 +119,31 @@ public class Platform : MonoBehaviour {
             }
         }
        
-        else if (state == State.descending)
+        else if (!elevated)
         {
-            descentTime = descentTime + Time.deltaTime;
-            transform.position = Vector3.Lerp(elevatedPos, endPos, descentTime);
             
-            if (transform.position.y <= 0.01f)
+            currentTimeTillFall += Time.deltaTime;
+            if (currentTimeTillFall > timeTillFall)
             {
-                transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-                state = State.descended;
+                if (!instantiatedDeath)
+                {
+                    Instantiate(deathSphere, transform.position, Quaternion.identity);
+                    instantiatedDeath = true;
+                }
+                danger = false;
+                descentTime = descentTime + Time.deltaTime / 2;
+                transform.position = Vector3.Lerp(elevatedPos, endPos, descentTime);
+                _rend.material.color = Color.Lerp(idleColor, descendedColor, descentTime);
+
+                if (transform.position.y <= endPos.y)
+                {
+                    transform.position = new Vector3(transform.position.x, endPos.y, transform.position.z);
+                    state = State.descended;
+                }
+            }
+            else
+            {
+                danger = true;
             }
         }
 	}
@@ -139,16 +170,19 @@ public class Platform : MonoBehaviour {
 
     public void SwitchColor()
     {
-        if (currentColor == activeColor1)
+        if (elevated)
         {
-            currentColor = activeColor2;
+            if (currentColor == activeColor1)
+            {
+                currentColor = activeColor2;
+            }
+            else
+            {
+                currentColor = activeColor1;
+            }
+            if (!danger)
+                _rend.material.color = currentColor;
         }
-        else
-        {
-            currentColor = activeColor1;
-        }
-        if (!danger)
-            _rend.material.color = currentColor;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -157,8 +191,8 @@ public class Platform : MonoBehaviour {
             Wave();
         if (other.tag == "DescentTrigger")
         {
-            if (state == State.elevated)
-                state = State.descending;
+            if (elevated && other.GetComponent<ExpandingTrigger>().level == level)
+                elevated = false;
         }
         if (other.tag == "Blade")
             Spin();

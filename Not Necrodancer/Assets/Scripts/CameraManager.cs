@@ -8,28 +8,28 @@ public class CameraManager : MonoBehaviour {
     public float levelFlashSpeed;
     public Color beatFlashColor;
     public Color levelFlashColor;
+    public Color deathColor;
     public float shakeSpeed;
     public float shakeSpan;
 
+    private Camera cam;
     private bool screenShake;
     private float currentSpan;
     private float startX;
     private Color startColor;
     private float step;
     private bool levelUpFlashing;
+    private bool deathFlashing;
 
 	void Start () {
-        startColor = GetComponent<Camera>().backgroundColor;
+        cam = GetComponent<Camera>();
+        startColor = cam.backgroundColor;
         startX = transform.position.x;
         currentSpan = shakeSpan;
 	}
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ScreenShake();
-        }
         if (screenShake)
         {
             float x = startX + Mathf.Sin(Time.time * shakeSpeed) * currentSpan / 2;
@@ -42,19 +42,28 @@ public class CameraManager : MonoBehaviour {
             } 
         }
 
-        if (levelUpFlashing)
+        if (deathFlashing)
+        {
+            if (step > 0)
+                step -= Time.deltaTime * levelFlashSpeed;
+            else
+                deathFlashing = false;
+            cam.backgroundColor = Color.Lerp(startColor, deathColor, step);
+        }
+
+        else if (levelUpFlashing)
         {
             if (step > 0)
                 step -= Time.deltaTime * levelFlashSpeed;
             else
                 levelUpFlashing = false;
-            GetComponent<Camera>().backgroundColor = Color.Lerp(startColor, levelFlashColor, step);
+            cam.backgroundColor = Color.Lerp(startColor, levelFlashColor, step);
         }
         else
         {
             if (step > 0)
                 step -= Time.deltaTime * beatFlashSpeed;
-            GetComponent<Camera>().backgroundColor = Color.Lerp(startColor, beatFlashColor, step);
+            cam.backgroundColor = Color.Lerp(startColor, beatFlashColor, step);
         }
     }
 
@@ -65,8 +74,14 @@ public class CameraManager : MonoBehaviour {
 
     public void BeatFlash()
     {
-        if (!levelUpFlashing)
+        if (!levelUpFlashing && !deathFlashing)
             step = 1;
+    }
+
+    public void DeathFlash()
+    {
+        step = 1;
+        deathFlashing = true;
     }
 
     public void LevelUpFlash()
