@@ -1,5 +1,12 @@
 V. 1.00
+BTW:
 318521 (few misses)
 306645 (few misses)
 305693 (few misses)
 119000 (3-4 deaths)
+
+CMM: 
+158900 (few misses)
+
+CG:
+286011 (~one miss)

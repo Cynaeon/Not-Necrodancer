@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour {
 
@@ -21,6 +22,8 @@ public class AudioManager : MonoBehaviour {
     public GameObject descentTrigger;
     public Transform tempoSphere;
     public ParticleSystem levelUpEffect;
+    public float secondsToBeat;
+    public float songEndTime;
     public float movementWindow;
     public float tempoOffset;
     public float shrinkSpeed;
@@ -34,7 +37,6 @@ public class AudioManager : MonoBehaviour {
     private Vector3 sphereStartScale;
     private Color sphereStartColor;
     private Color spherePositiveColor;
-    private float secondsToBeat = 0.4839f;
     private float current;
     private int beatNumber;
 
@@ -66,7 +68,7 @@ public class AudioManager : MonoBehaviour {
         if (Time.time > timeTillSongStart && songStopped && !songStarted)
             StartSong();
         
-        if (songLayer1[0].time > 224 && songStopped == false)
+        if (songLayer1[0].time > songEndTime && songStopped == false)
         {
             playAreaScript.StopSpawning();
             songStopped = true;

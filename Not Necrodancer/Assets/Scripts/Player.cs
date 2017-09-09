@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
     private Color startColor;
     private Color currentColor;
     [HideInInspector] public int beatStreak;
+    private bool alreadyMoved;
     private bool beatHit;
     private bool beatHitChecked;
     private bool dead;
@@ -50,40 +51,44 @@ public class Player : MonoBehaviour {
         {
             if (Input.GetButtonDown("Right"))
             {
-                if (canMove)
+                if (canMove && !alreadyMoved)
                 {
                     newPosition = transform.position + new Vector3(2, 0, 0);
                     beatHit = true;
+                    alreadyMoved = true;
                 }
                 else
                     beatStreak = 0;
             }
             if (Input.GetButtonDown("Left"))
             {
-                if (canMove)
+                if (canMove && !alreadyMoved)
                 {
                     newPosition = transform.position + new Vector3(-2, 0, 0);
                     beatHit = true;
+                    alreadyMoved = true;
                 }
                 else
                     beatStreak = 0;
             }
             if (Input.GetButtonDown("Up"))
             {
-                if (canMove)
+                if (canMove && !alreadyMoved)
                 {
                     newPosition = transform.position + new Vector3(0, 0, 2);
                     beatHit = true;
+                    alreadyMoved = true;
                 }
                 else
                     beatStreak = 0;
             }
             if (Input.GetButtonDown("Down"))
             {
-                if (canMove)
+                if (canMove && !alreadyMoved)
                 {
                     newPosition = transform.position + new Vector3(0, 0, -2);
                     beatHit = true;
+                    alreadyMoved = true;
                 }
                 else
                     beatStreak = 0;
@@ -92,6 +97,7 @@ public class Player : MonoBehaviour {
 
         if (!canMove && !beatHitChecked)
         {
+            alreadyMoved = false;
             if (beatHit)
                 beatStreak++;
             else

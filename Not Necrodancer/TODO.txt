@@ -1,12 +1,13 @@
 ====TODO====
 PRIORITY:
+Menu system and song select
 Improve enemy spawning
-New song pls
 Shadow on player (or something of sort)
 Stop spawning levelups at max level
 
 FANCY STUFF:
 Level gauge
+Read up on good coding and naming practices and CLEAN UP YOUR CODE WTF
 
 KINDLY CONSIDER THE FOLLOWING:
 Score system in a randomly generated level???
