@@ -185,7 +185,9 @@ public class AudioManager : MonoBehaviour {
 
     private void DescentPlatforms()
     {
-        GameObject trigger = Instantiate(descentTrigger, player.transform.position, Quaternion.identity);
+        Vector3 pos = player.transform.position;
+        pos.y = 0;
+        GameObject trigger = Instantiate(descentTrigger, pos, Quaternion.identity);
         trigger.GetComponent<ExpandingTrigger>().level = level;
     }
          

@@ -1,9 +1,8 @@
 ====TODO====
 PRIORITY:
 Sounds effects (levelup, death...)
-Platforms don't flash danger if an enemy triggers them right after another
+Platforms don't flash danger if an enemy triggers them right after another (ontriggerstay?)
 Improve enemy spawning
-Speed up enemy spawns on level up
 New song pls
 Shadow on player (or something of sort)
 Song ending
@@ -14,6 +13,7 @@ Song starts with a small delay
 Level gauge
 
 KINDLY CONSIDER THE FOLLOWING:
+Background ray color shift based on level
 Ascend platforms on leveldown
 
 
@@ -27,3 +27,4 @@ Reduce play area on level up
 Platform don't spin sometimes??
 Death on descended platforms
 Some visual indicator of the current level
+Speed up enemy spawns on level up

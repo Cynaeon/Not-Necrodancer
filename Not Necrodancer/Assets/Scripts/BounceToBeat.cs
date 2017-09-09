@@ -19,6 +19,9 @@ public class BounceToBeat : MonoBehaviour {
             float value = shrinkSpeed * Time.deltaTime;
             transform.localScale -= new Vector3(value, value, value);
         }
+
+        if (transform.localScale.x < startScale.x)
+            transform.localScale = startScale;
     }
 
     public void OnBeat()
