@@ -1,18 +1,15 @@
 ====TODO====
 PRIORITY:
-Sounds effects (levelup, death...)
-Platforms don't flash danger if an enemy triggers them right after another (ontriggerstay?)
 Improve enemy spawning
 New song pls
 Shadow on player (or something of sort)
-Song ending
+Stop spawning levelups at max level
 
 FANCY STUFF:
-Disco floor only on when playing well
-Song starts with a small delay
 Level gauge
 
 KINDLY CONSIDER THE FOLLOWING:
+Score system in a randomly generated level???
 Background ray color shift based on level
 Ascend platforms on leveldown
 
@@ -20,6 +17,13 @@ Ascend platforms on leveldown
 
 
 ====DONE====
+Platforms don't flash danger if an enemy triggers them right after another (ontriggerstay?)
+Song starts with a small delay
+Song end color on platforms
+Disco floor only on when playing well
+Score multiplier on unmissed beats
+Sounds effects (levelup, death...)
+
 Fix the fking spinning
 Surround play area with death
 Reduce score on player death

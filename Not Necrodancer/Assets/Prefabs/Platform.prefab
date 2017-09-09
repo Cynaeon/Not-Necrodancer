@@ -200,7 +200,7 @@ MonoBehaviour:
   spinSpeed: 1200
   spinSpeedFalloff: 200
   spinDuration: 1
-  idleColor: {r: 0.22794116, g: 0.22794116, b: 0.22794116, a: 1}
+  idleColor: {r: 0.46323532, g: 0.46664146, b: 0.46664146, a: 1}
   activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
   activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}

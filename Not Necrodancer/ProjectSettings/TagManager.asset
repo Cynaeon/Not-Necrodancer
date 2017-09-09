@@ -12,6 +12,7 @@ TagManager:
   - Platform
   - LevelUp
   - Death
+  - SongEndTrigger
   layers:
   - Default
   - TransparentFX

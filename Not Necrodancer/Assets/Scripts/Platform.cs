@@ -10,7 +10,6 @@ public class Platform : MonoBehaviour {
     public float spinSpeed;
     public float spinSpeedFalloff;
     public float spinDuration;
-    public Color idleColor;
     public Color activeColor1;
     public Color activeColor2;
     public Color dangerColor;
@@ -32,6 +31,7 @@ public class Platform : MonoBehaviour {
     private bool descending;
     private bool danger;
     private bool instantiatedDeath;
+    private Color idleColor;
     private Color currentColor;
     private Color descendedColor;
     private Vector3 elevatedPos;
@@ -53,13 +53,12 @@ public class Platform : MonoBehaviour {
         if (variant == 1)
         {
             currentColor = activeColor1;
-            _rend.material.color = activeColor1;
         }
         else
         {
             currentColor = activeColor2;
-            _rend.material.color = activeColor2;
         }
+        idleColor = _rend.material.color;
         elevatedPos = transform.position;
         endPos = new Vector3(transform.position.x, -50, transform.position.z);
         descendedColor = Color.clear;
@@ -187,6 +186,19 @@ public class Platform : MonoBehaviour {
         }
     }
 
+    public void SetToEndColor()
+    {
+        if (elevated)
+        {
+            _rend.material.color = activeColor1;
+        }
+    }
+
+    public void SetToIdleColor()
+    {
+        _rend.material.color = idleColor;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "WaveTrigger")
@@ -198,8 +210,19 @@ public class Platform : MonoBehaviour {
         }
         if (other.tag == "Blade")
             Spin();
+        //if (other.tag == "DangerTrigger")
+          //  danger = true;
+        if (other.tag == "SongEndTrigger")
+            SwitchColor();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
         if (other.tag == "DangerTrigger")
-            danger = true;
+        {
+            dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * 6, 1));
+            _rend.material.color = dangerColor;
+        }
     }
 
     private void OnTriggerExit(Collider other)

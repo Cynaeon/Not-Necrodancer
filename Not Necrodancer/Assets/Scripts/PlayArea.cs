@@ -8,37 +8,54 @@ public class PlayArea : MonoBehaviour {
     public GameObject collectable;
     public GameObject levelUp;
     public GameObject[] enemies;
+    public GameObject speedLines;
+    public GameObject songEndTrigger;
     public float collectableSpawnInterval;
     public float enemySpawnInterval;
     public float collectableSpawnHeight;
     public float enemySpawnHeight;
+    public int streakForDiscoFloor;
+    public int streakForSpeedLines;
     public int areaX;
     public int areaY;
 
-    public float enemyIntervalMultiplier = 1;
+    private bool spawning;
+    private Player playerScript;
+    [HideInInspector] public float enemyIntervalMultiplier = 1;
     private float currentCollectableInterval;
     private float currentEnemyInterval;
 
 	void Start () {
+        playerScript = GameObject.Find("Player").GetComponent<Player>();
         currentCollectableInterval = collectableSpawnInterval;
         currentEnemyInterval = enemySpawnInterval;
+        spawning = false;
 	}
 	
 	void Update () {
-        currentCollectableInterval -= Time.deltaTime;
-        currentEnemyInterval -= Time.deltaTime * enemyIntervalMultiplier;
-
-        if (currentCollectableInterval < 0)
+        if (spawning)
         {
-            SpawnCollectable();
-            currentCollectableInterval = collectableSpawnInterval;
+            currentCollectableInterval -= Time.deltaTime;
+            currentEnemyInterval -= Time.deltaTime * enemyIntervalMultiplier;
+
+            if (currentCollectableInterval < 0)
+            {
+                SpawnCollectable();
+                currentCollectableInterval = collectableSpawnInterval;
+            }
+
+            if (currentEnemyInterval < 0)
+            {
+                SpawnEnemy();
+                currentEnemyInterval = enemySpawnInterval;
+            }
         }
 
-        if (currentEnemyInterval < 0)
-        {
-            SpawnEnemy();
-            currentEnemyInterval = enemySpawnInterval;
-        }
+        if (playerScript.beatStreak > streakForSpeedLines)
+            speedLines.SetActive(true);
+        else
+            speedLines.SetActive(false);
+        
 	}
 
     private void SpawnEnemy()
@@ -84,12 +101,39 @@ public class PlayArea : MonoBehaviour {
         Instantiate(collectable, pos, Quaternion.identity);
     }
 
-    public void SwitchColors()
+    public void StopSpawning()
     {
-        foreach(Transform platform in transform)
+        spawning = false;
+        foreach (Transform platform in transform)
         {
             if (platform.GetComponent<Platform>())
-                platform.GetComponent<Platform>().SwitchColor();
+                platform.GetComponent<Platform>().SetToEndColor();
         }
+        Instantiate(songEndTrigger);
+    }
+
+    public void SwitchColors()
+    {
+        if (playerScript.beatStreak > streakForDiscoFloor)
+        {
+            foreach (Transform platform in transform)
+            {
+                if (platform.GetComponent<Platform>())
+                    platform.GetComponent<Platform>().SwitchColor();
+            }
+        }
+        else
+        {
+            foreach (Transform platform in transform)
+            {
+                if (platform.GetComponent<Platform>())
+                    platform.GetComponent<Platform>().SetToIdleColor();
+            }
+        }
+    }
+
+    internal void StartSpawning()
+    {
+        spawning = true;
     }
 }

@@ -222,7 +222,7 @@ RectTransform:
   m_Children:
   - {fileID: 523829549}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4076,7 +4076,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &136798819 stripped
 Transform:
@@ -4518,7 +4518,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &243251605 stripped
 Transform:
@@ -5110,6 +5110,7 @@ MonoBehaviour:
   - {fileID: 1562687159}
   soundEffects: {fileID: 0}
   sound_LevelUp: {fileID: 8300000, guid: 27eb4a6155d957a428cd88fa5a0d5245, type: 3}
+  timeTillSongStart: 3
   player: {fileID: 1237369124}
   cameraManager: {fileID: 809822609}
   waveTrigger: {fileID: 1352955598123014, guid: 9c5285008ce74e1478a51473554e0708,
@@ -5122,6 +5123,7 @@ MonoBehaviour:
   movementWindow: 0.3
   tempoOffset: 0.2
   shrinkSpeed: 10
+  songStopped: 0
   level: 1
 --- !u!4 &401803490
 Transform:
@@ -5143,7 +5145,7 @@ Transform:
   - {fileID: 1944406987}
   - {fileID: 337217775}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &401803491
 AudioSource:
@@ -7056,7 +7058,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &910030742
 Prefab:
@@ -11881,7 +11883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -114.06, y: 0, z: 0}
 --- !u!4 &1211976567 stripped
 Transform:
@@ -11900,6 +11902,7 @@ GameObject:
   - component: {fileID: 1237369127}
   - component: {fileID: 1237369126}
   - component: {fileID: 1237369125}
+  - component: {fileID: 1237369130}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -11926,6 +11929,8 @@ MonoBehaviour:
   invulColor: {r: 0.3647059, g: 0.33333334, b: 0.7411765, a: 0.297}
   canMove: 0
   score: 0
+  sound_death: {fileID: 8300000, guid: cdc649ee5357eb3408358ac07dd43b29, type: 3}
+  beatStreak: 0
 --- !u!23 &1237369126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11988,8 +11993,88 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1237369130
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1237369124}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!4 &1327723523 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4923974628965070, guid: 061ba36501b548a43a60c27ed8d2eec5,
@@ -13494,7 +13579,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1371991162
+  randomSeed: 734415918
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17666,10 +17751,15 @@ MonoBehaviour:
   enemies:
   - {fileID: 1711297882589288, guid: 5601495e0027eff41b193bde1bd8f6f4, type: 2}
   - {fileID: 1905764655186164, guid: 5880c76b7e417a24083400541dcc05f0, type: 2}
+  speedLines: {fileID: 1197181033}
+  songEndTrigger: {fileID: 1048065466098624, guid: 4e7a8519c0637624599364e1242f2587,
+    type: 2}
   collectableSpawnInterval: 3
   enemySpawnInterval: 5
   collectableSpawnHeight: 15
   enemySpawnHeight: 25
+  streakForDiscoFloor: 20
+  streakForSpeedLines: 40
   areaX: 7
   areaY: 7
   enemyIntervalMultiplier: 1
@@ -19018,7 +19108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2137563351
 Prefab:

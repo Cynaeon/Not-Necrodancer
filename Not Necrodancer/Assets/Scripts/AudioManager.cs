@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour {
     public AudioSource[] songLayer5;
     public AudioSource soundEffects;
     public AudioClip sound_LevelUp;
+    public float timeTillSongStart;
     public GameObject player;
     
     public CameraManager cameraManager;
@@ -24,6 +25,8 @@ public class AudioManager : MonoBehaviour {
     public float tempoOffset;
     public float shrinkSpeed;
 
+    [HideInInspector] public bool songStopped;
+    private bool songStarted;
     private Player playerScript;
     private PlayArea playAreaScript;
     [HideInInspector] public int level = 1;
@@ -37,7 +40,7 @@ public class AudioManager : MonoBehaviour {
 
 	void Start () {
         foreach (AudioSource track in songLayer1)
-            track.mute = false;
+            track.mute = true;
         foreach (AudioSource track in songLayer2)
             track.mute = true;
         foreach (AudioSource track in songLayer3)
@@ -52,6 +55,7 @@ public class AudioManager : MonoBehaviour {
         spherePositiveColor = Color.green;
         playerScript = player.GetComponent<Player>();
         playAreaScript = GameObject.Find("PlayArea").GetComponent<PlayArea>();
+        songStopped = true;
 	}
 	
 	void Update () {
@@ -59,8 +63,14 @@ public class AudioManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.T))
             IncreaseLevel();
 
-        if (Input.GetButtonDown("Wave"))
-            WaveBlast();
+        if (Time.time > timeTillSongStart && songStopped && !songStarted)
+            StartSong();
+        
+        if (songLayer1[0].time > 224 && songStopped == false)
+        {
+            playAreaScript.StopSpawning();
+            songStopped = true;
+        }
 
         if (Input.GetButtonDown("Descent"))
         {
@@ -88,26 +98,49 @@ public class AudioManager : MonoBehaviour {
             tempoSphere.localScale -= new Vector3(value, value, value);
         }
 
-        float beatTime = (songLayer1[0].time / secondsToBeat) - tempoOffset;
-
-        if (beatTime > beatNumber)
+        if (songStarted)
         {
-            beatNumber++;
-            OnBeat();
-        }
+            float beatTime = (songLayer1[0].time / secondsToBeat) - tempoOffset;
 
-        float closestBeat = Mathf.Round(beatTime);
+            if (beatTime > beatNumber)
+            {
+                beatNumber++;
+                OnBeat();
+            }
 
-        if (Math.Abs(closestBeat - beatTime) < movementWindow)
-        {
-            player.GetComponent<Player>().canMove = true;
-            tempoSphere.GetComponent<Renderer>().material.color = spherePositiveColor;
+            float closestBeat = Mathf.Round(beatTime);
+
+            if (Math.Abs(closestBeat - beatTime) < movementWindow)
+            {
+                player.GetComponent<Player>().canMove = true;
+                tempoSphere.GetComponent<Renderer>().material.color = spherePositiveColor;
+            }
+            else
+            {
+                tempoSphere.GetComponent<Renderer>().material.color = sphereStartColor;
+                player.GetComponent<Player>().canMove = false;
+            }
         }
-        else
+    }
+
+    private void StartSong()
+    {
+        foreach (AudioSource track in songLayer1)
         {
-            tempoSphere.GetComponent<Renderer>().material.color = sphereStartColor;
-            player.GetComponent<Player>().canMove = false;
+            track.mute = false;
+            track.time = 0;
         }
+        foreach (AudioSource track in songLayer2)
+            track.time = 0;
+        foreach (AudioSource track in songLayer3)
+            track.time = 0;
+        foreach (AudioSource track in songLayer4)
+            track.time = 0;
+        foreach (AudioSource track in songLayer5)
+            track.time = 0;
+        songStopped = false;
+        songStarted = true;
+        playAreaScript.StartSpawning();
     }
 
     public void IncreaseLevel()
@@ -190,17 +223,20 @@ public class AudioManager : MonoBehaviour {
         GameObject trigger = Instantiate(descentTrigger, pos, Quaternion.identity);
         trigger.GetComponent<ExpandingTrigger>().level = level;
     }
-         
+
     private void OnBeat()
     {
-        GameObject.Find("PlayArea").GetComponent<PlayArea>().SwitchColors();
-        GameObject go = GameObject.Find("LevelUp(Clone)");
-        GameObject go2 = GameObject.Find("BackgroundRays");
-        if (go)
-            go.GetComponent<BounceToBeat>().OnBeat();
-        if (go2)
-            go2.GetComponent<BounceToBeat>().OnBeat();
-        cameraManager.BeatFlash();
-        tempoSphere.localScale *= 1.5f;
+        if (!songStopped)
+        {
+            GameObject.Find("PlayArea").GetComponent<PlayArea>().SwitchColors();
+            GameObject go = GameObject.Find("LevelUp(Clone)");
+            GameObject go2 = GameObject.Find("BackgroundRays");
+            if (go)
+                go.GetComponent<BounceToBeat>().OnBeat();
+            if (go2)
+                go2.GetComponent<BounceToBeat>().OnBeat();
+            cameraManager.BeatFlash();
+            tempoSphere.localScale *= 1.5f;
+        }
     }
 }
