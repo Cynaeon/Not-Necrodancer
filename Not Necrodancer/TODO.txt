@@ -3,6 +3,7 @@ PRIORITY:
 Menu system and song select
 Improve enemy spawning
 Shadow on player (or something of sort)
+Song start so that the player can catch the first beat
 Stop spawning levelups at max level
 
 FANCY STUFF:

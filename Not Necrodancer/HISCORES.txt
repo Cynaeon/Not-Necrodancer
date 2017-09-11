@@ -3,10 +3,17 @@ BTW:
 318521 (few misses)
 306645 (few misses)
 305693 (few misses)
+252856 (combo ended once)
+171501 (antti 3ndrd try dxdd)
+147221 (3 deaths)
 119000 (3-4 deaths)
+110774 (antti 2nd try xdd)
+67342 (antti first try xd)
 
 CMM: 
 158900 (few misses)
+84719 (antti taas)
 
 CG:
 286011 (~one miss)
+72821 (andy)
