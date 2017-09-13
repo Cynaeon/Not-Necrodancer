@@ -1,24 +1,33 @@
 ====TODO====
 PRIORITY:
+platform colors is särki
+Make everything bound to beats (enemy movement etc)
 Menu system and song select
-Improve enemy spawning
-Shadow on player (or something of sort)
-Song start so that the player can catch the first beat
-Stop spawning levelups at max level
+More enemy types
+Pause with restart
 
 FANCY STUFF:
-Level gauge
+Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
+Rescale scoring system
+Improve enemy spawning
 Read up on good coding and naming practices and CLEAN UP YOUR CODE WTF
 
 KINDLY CONSIDER THE FOLLOWING:
+Level gauge
+Endless mode (end on first death)
+Shorter songs
+Enemy spawning is beat based 
 Score system in a randomly generated level???
 Background ray color shift based on level
-Ascend platforms on leveldown
-
-
-
 
 ====DONE====
+Stop spawning levelups at max level
+Pickups flash when about to expire
+Some effect on movement (particles by movement)
+Song start so that the player can catch the first beat
+Hiscore tables
+Danger flash on platforms when spinning
+Shadow on player (or something of sort)
 Platforms don't flash danger if an enemy triggers them right after another (ontriggerstay?)
 Song starts with a small delay
 Song end color on platforms
@@ -34,3 +43,6 @@ Platform don't spin sometimes??
 Death on descended platforms
 Some visual indicator of the current level
 Speed up enemy spawns on level up
+
+====CONSIDERED====
+Ascend platforms on leveldown

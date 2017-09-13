@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
 
@@ -14,8 +15,10 @@ public class AudioManager : MonoBehaviour {
     public AudioSource[] songLayer5;
     public AudioSource soundEffects;
     public AudioClip sound_LevelUp;
+    public AudioClip sound_beep;
     public float timeTillSongStart;
     public GameObject player;
+    public GameObject pauseUI;
     
     public CameraManager cameraManager;
     public GameObject waveTrigger;
@@ -29,10 +32,12 @@ public class AudioManager : MonoBehaviour {
     public float shrinkSpeed;
 
     [HideInInspector] public bool songStopped;
+    private bool gamePaused;
     private bool songStarted;
     private Player playerScript;
     private PlayArea playAreaScript;
     [HideInInspector] public int level = 1;
+    [HideInInspector] public int maxLevel = 5;
     private GameObject levelUpSphere;
     private Vector3 sphereStartScale;
     private Color sphereStartColor;
@@ -62,6 +67,22 @@ public class AudioManager : MonoBehaviour {
 	
 	void Update () {
 
+        if (Input.GetButtonDown("Pause"))
+        {
+            if (gamePaused)
+                UnpauseGame();
+            else 
+                PauseGame();
+        }
+
+        if (gamePaused)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // Restart
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.T))
             IncreaseLevel();
 
@@ -82,7 +103,7 @@ public class AudioManager : MonoBehaviour {
 
         if (playerScript.score >= 10)
         {
-            if (!GameObject.Find("LevelUp(Clone)"))
+            if (!GameObject.Find("LevelUp(Clone)") && level < maxLevel)
             {
                 playAreaScript.SpawnLevelUp();
             }
@@ -123,6 +144,42 @@ public class AudioManager : MonoBehaviour {
                 player.GetComponent<Player>().canMove = false;
             }
         }
+    }
+
+    private void PauseGame()
+    {
+        foreach (AudioSource track in songLayer1)
+            track.Pause();
+        foreach (AudioSource track in songLayer2)
+            track.Pause();
+        foreach (AudioSource track in songLayer3)
+            track.Pause();
+        foreach (AudioSource track in songLayer4)
+            track.Pause();
+        foreach (AudioSource track in songLayer5)
+            track.Pause();
+        Camera.main.GetComponent<CameraManager>().BlurScreen();
+        pauseUI.SetActive(true);
+        gamePaused = true;
+        Time.timeScale = 0;
+    }
+
+    private void UnpauseGame()
+    {
+        Time.timeScale = 1;
+        foreach (AudioSource track in songLayer1)
+            track.Play();
+        foreach (AudioSource track in songLayer2)
+            track.Play();
+        foreach (AudioSource track in songLayer3)
+            track.Play();
+        foreach (AudioSource track in songLayer4)
+            track.Play();
+        foreach (AudioSource track in songLayer5)
+            track.Play();
+        Camera.main.GetComponent<CameraManager>().UnblurScreen();
+        pauseUI.SetActive(false);
+        gamePaused = false;
     }
 
     private void StartSong()
@@ -216,6 +273,11 @@ public class AudioManager : MonoBehaviour {
     {
         Vector3 pos = player.transform.position;
         Instantiate(waveTrigger, pos, Quaternion.identity);
+    }
+
+    public void Beep()
+    {
+        soundEffects.PlayOneShot(sound_beep, 0.5f);
     }
 
     private void DescentPlatforms()

@@ -8,7 +8,9 @@ public class BackgroundRays : MonoBehaviour {
     public float spinningSpeed;
     public float colorShiftSpeed;
     public Color[] colorGradient = new Color[6];
+    public float beatIntensityLimiter;
 
+    private bool limiterSet;
     private int currentColor;
     private float currentShiftTime;
     private AudioManager audioManager;
@@ -33,9 +35,23 @@ public class BackgroundRays : MonoBehaviour {
         if (audioManager.level >= 3)
             transform.Rotate(Vector3.up * Time.deltaTime * spinningSpeed, Space.World);
         if (audioManager.level == 4)
+        {
+            if (limiterSet)
+            {
+                GetComponent<BounceToBeat>().beatIntensity += beatIntensityLimiter;
+                limiterSet = false;
+            }
             ps_shape.arcSpread = 0.2f;
+        }
         if (audioManager.level == 5)
+        {
+            if (!limiterSet)
+            {
+                GetComponent<BounceToBeat>().beatIntensity -= beatIntensityLimiter;
+                limiterSet = true;
+            }
             ps_shape.arcSpread = 0;
+        }
     }
 
     private void ShiftColor()

@@ -75,6 +75,8 @@ public class Platform : MonoBehaviour {
         
         if (spinning)
         {
+            dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * 6, 1));
+            _rend.material.color = dangerColor;
             transform.Rotate(Vector3.right * currentSpinSpeed * Time.deltaTime);
             currentSpinTime += Time.deltaTime;
             if (currentSpinTime > spinDuration)
@@ -82,6 +84,7 @@ public class Platform : MonoBehaviour {
                 transform.eulerAngles = Vector3.zero;
                 spinning = false;
                 currentSpinTime = 0;
+                _rend.material.color = currentColor;
             }
 
             #region OldSpin 
@@ -121,7 +124,6 @@ public class Platform : MonoBehaviour {
        
         else if (!elevated)
         {
-            
             currentTimeTillFall += Time.deltaTime;
             if (currentTimeTillFall > timeTillFall)
             {
@@ -173,13 +175,24 @@ public class Platform : MonoBehaviour {
     {
         if (elevated)
         {
-            if (currentColor == activeColor1)
+            if (variant == 1)
             {
-                currentColor = activeColor2;
+                if (currentColor == activeColor1)
+                {
+                    currentColor = activeColor2;
+                }
+                else
+                    currentColor = activeColor1;
             }
             else
             {
-                currentColor = activeColor1;
+                if (currentColor == activeColor1)
+                {
+                    currentColor = activeColor2;
+                }
+                else
+                    currentColor = activeColor1;
+            currentColor = activeColor1;
             }
             if (!danger)
                 _rend.material.color = currentColor;
@@ -196,7 +209,8 @@ public class Platform : MonoBehaviour {
 
     public void SetToIdleColor()
     {
-        _rend.material.color = idleColor;
+        currentColor = idleColor;
+        _rend.material.color = currentColor;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -210,8 +224,6 @@ public class Platform : MonoBehaviour {
         }
         if (other.tag == "Blade")
             Spin();
-        //if (other.tag == "DangerTrigger")
-          //  danger = true;
         if (other.tag == "SongEndTrigger")
             SwitchColor();
     }

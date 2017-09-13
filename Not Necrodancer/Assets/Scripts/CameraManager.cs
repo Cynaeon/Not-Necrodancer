@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public class CameraManager : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class CameraManager : MonoBehaviour {
     public float shakeSpeed;
     public float shakeSpan;
 
+
+    private PostProcessingBehaviour screenBlur;
     private Camera cam;
     private bool screenShake;
     private float currentSpan;
@@ -26,6 +29,7 @@ public class CameraManager : MonoBehaviour {
         startColor = cam.backgroundColor;
         startX = transform.position.x;
         currentSpan = shakeSpan;
+        screenBlur = GetComponent<PostProcessingBehaviour>();
 	}
 
     void Update()
@@ -70,6 +74,16 @@ public class CameraManager : MonoBehaviour {
     public void ScreenShake()
     {
         screenShake = true;
+    }
+
+    public void BlurScreen()
+    {
+        screenBlur.enabled = true;
+    }
+
+    public void UnblurScreen()
+    {
+        screenBlur.enabled = false;
     }
 
     public void BeatFlash()
