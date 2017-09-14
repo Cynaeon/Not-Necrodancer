@@ -1,12 +1,15 @@
 ====TODO====
 PRIORITY:
-platform colors is särki
+Base class for enemies
+Platforms return to idle color immeadiately on missed beat
 Make everything bound to beats (enemy movement etc)
 Menu system and song select
 More enemy types
 Pause with restart
 
 FANCY STUFF:
+Do something cool with the directional light
+Some clearer indicator of streak ending
 Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
 Rescale scoring system
 Improve enemy spawning
@@ -16,9 +19,9 @@ KINDLY CONSIDER THE FOLLOWING:
 Level gauge
 Endless mode (end on first death)
 Shorter songs
-Enemy spawning is beat based 
 Score system in a randomly generated level???
 Background ray color shift based on level
+
 
 ====DONE====
 Stop spawning levelups at max level

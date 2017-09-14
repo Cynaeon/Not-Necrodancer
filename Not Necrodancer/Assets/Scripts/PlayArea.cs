@@ -20,6 +20,7 @@ public class PlayArea : MonoBehaviour {
     public int areaY;
 
     private bool spawning;
+    private bool colorSet;
     private Player playerScript;
     [HideInInspector] public float enemyIntervalMultiplier = 1;
     private float currentCollectableInterval;
@@ -53,9 +54,16 @@ public class PlayArea : MonoBehaviour {
 
         if (playerScript.beatStreak > streakForSpeedLines)
             speedLines.SetActive(true);
-        else
+        else 
             speedLines.SetActive(false);
-        
+
+        if (playerScript.beatStreak == 0 && !colorSet)
+        {
+            SwitchColors();
+            colorSet = true;
+        }
+        else if (playerScript.beatStreak > 0)
+            colorSet = false;
 	}
 
     private void SpawnEnemy()

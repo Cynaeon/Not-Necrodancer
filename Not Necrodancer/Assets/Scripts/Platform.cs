@@ -32,7 +32,7 @@ public class Platform : MonoBehaviour {
     private bool danger;
     private bool instantiatedDeath;
     private Color idleColor;
-    private Color currentColor;
+    private Color currentActiveColor;
     private Color descendedColor;
     private Vector3 elevatedPos;
     private Vector3 endPos;
@@ -51,13 +51,9 @@ public class Platform : MonoBehaviour {
         currentSpinSpeed = spinSpeed;
         _rend = GetComponent<Renderer>();
         if (variant == 1)
-        {
-            currentColor = activeColor1;
-        }
+            currentActiveColor = activeColor1;
         else
-        {
-            currentColor = activeColor2;
-        }
+            currentActiveColor = activeColor2;
         idleColor = _rend.material.color;
         elevatedPos = transform.position;
         endPos = new Vector3(transform.position.x, -50, transform.position.z);
@@ -84,7 +80,7 @@ public class Platform : MonoBehaviour {
                 transform.eulerAngles = Vector3.zero;
                 spinning = false;
                 currentSpinTime = 0;
-                _rend.material.color = currentColor;
+                _rend.material.color = idleColor;
             }
 
             #region OldSpin 
@@ -121,7 +117,7 @@ public class Platform : MonoBehaviour {
                 wave = false;
             }
         }
-       
+        
         else if (!elevated)
         {
             currentTimeTillFall += Time.deltaTime;
@@ -141,6 +137,7 @@ public class Platform : MonoBehaviour {
                 if (transform.position.y <= endPos.y)
                 {
                     transform.position = new Vector3(transform.position.x, endPos.y, transform.position.z);
+                    gameObject.SetActive(false);
                     state = State.descended;
                 }
             }
@@ -175,27 +172,12 @@ public class Platform : MonoBehaviour {
     {
         if (elevated)
         {
-            if (variant == 1)
-            {
-                if (currentColor == activeColor1)
-                {
-                    currentColor = activeColor2;
-                }
-                else
-                    currentColor = activeColor1;
-            }
+            if (currentActiveColor == activeColor1)
+                currentActiveColor = activeColor2;
             else
-            {
-                if (currentColor == activeColor1)
-                {
-                    currentColor = activeColor2;
-                }
-                else
-                    currentColor = activeColor1;
-            currentColor = activeColor1;
-            }
+                currentActiveColor = activeColor1;
             if (!danger)
-                _rend.material.color = currentColor;
+                _rend.material.color = currentActiveColor;
         }
     }
 
@@ -209,8 +191,7 @@ public class Platform : MonoBehaviour {
 
     public void SetToIdleColor()
     {
-        currentColor = idleColor;
-        _rend.material.color = currentColor;
+        _rend.material.color = idleColor;
     }
 
     private void OnTriggerEnter(Collider other)

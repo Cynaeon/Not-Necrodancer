@@ -2,6 +2,8 @@
 
 public class IsAlive : MonoBehaviour {
 
+    public float lifetime;
+
     private ParticleSystem ps;
 
 	void Start () {
@@ -11,10 +13,14 @@ public class IsAlive : MonoBehaviour {
 	void Update () {
 		if (ps)
         {
-            if (!ps.IsAlive())
+            if (transform.parent == null)
             {
-                Destroy(gameObject);
+                lifetime -= Time.deltaTime;
+                if (lifetime < 0)
+                    Destroy(gameObject);
             }
+                if (!ps.IsAlive())
+                Destroy(gameObject);
         }
 	}
 }
