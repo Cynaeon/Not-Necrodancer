@@ -9448,6 +9448,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 1711297882589288, guid: 5601495e0027eff41b193bde1bd8f6f4, type: 2}
   - {fileID: 1905764655186164, guid: 5880c76b7e417a24083400541dcc05f0, type: 2}
+  - {fileID: 1223553933245018, guid: a56a27ffde6cb294fa56fcc145e0b6ec, type: 2}
   speedLines: {fileID: 0}
   songEndTrigger: {fileID: 1048065466098624, guid: 4e7a8519c0637624599364e1242f2587,
     type: 2}

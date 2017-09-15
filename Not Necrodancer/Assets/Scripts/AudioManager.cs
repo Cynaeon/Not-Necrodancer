@@ -19,21 +19,27 @@ public class AudioManager : MonoBehaviour {
     public float timeTillSongStart;
     public GameObject player;
     public GameObject pauseUI;
+    public Slider starPowerSlider;
     
     public CameraManager cameraManager;
     public GameObject waveTrigger;
     public GameObject descentTrigger;
     public Transform tempoSphere;
     public ParticleSystem levelUpEffect;
+    public GameObject starPower;
     public float secondsToBeat;
     public float songEndTime;
     public float movementWindow;
+    public float starPowerDrain;
+    public float tempoIncrease;
+    public float tempoIncreaseSpeed;
     public float tempoOffset;
     public float shrinkSpeed;
 
     [HideInInspector] public bool songStopped;
     private bool gamePaused;
     private bool songStarted;
+    private bool highTempo;
     private Player playerScript;
     private PlayArea playAreaScript;
     [HideInInspector] public int level = 1;
@@ -43,6 +49,7 @@ public class AudioManager : MonoBehaviour {
     private Color sphereStartColor;
     private Color spherePositiveColor;
     private float current;
+    private float currentTempoIncrease = 1;
     private int beatNumber;
 
 	void Start () {
@@ -74,6 +81,17 @@ public class AudioManager : MonoBehaviour {
             else 
                 PauseGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) && playerScript.starPower >= starPowerSlider.maxValue || Input.GetKeyDown(KeyCode.P))
+        {
+            playerScript.ToggleStarPower();
+            highTempo = true;
+        }
+
+
+
+        starPowerSlider.value = playerScript.starPower;
+        Tempo();
 
         if (gamePaused)
         {
@@ -267,6 +285,43 @@ public class AudioManager : MonoBehaviour {
             }
             level--;
         }
+    }
+
+    private void Tempo()
+    {
+        if (highTempo)
+        {
+            starPower.SetActive(true);
+            if (currentTempoIncrease < tempoIncrease)
+                currentTempoIncrease += Time.deltaTime * tempoIncreaseSpeed;
+            else
+                currentTempoIncrease = tempoIncrease;
+            playerScript.starPower -= Time.deltaTime * starPowerDrain;
+            if (playerScript.starPower <= 0)
+            {
+                highTempo = false;
+                playerScript.ToggleStarPower();
+            }
+        }
+        else
+        {
+            starPower.SetActive(false);
+            if (currentTempoIncrease > 1)
+                currentTempoIncrease -= Time.deltaTime * tempoIncreaseSpeed;
+            else
+                currentTempoIncrease = 1;
+        }
+
+        foreach (AudioSource track in songLayer1)
+            track.pitch = currentTempoIncrease;
+        foreach (AudioSource track in songLayer2)
+            track.pitch = currentTempoIncrease;
+        foreach (AudioSource track in songLayer3)
+            track.pitch = currentTempoIncrease;
+        foreach (AudioSource track in songLayer4)
+            track.pitch = currentTempoIncrease;
+        foreach (AudioSource track in songLayer5)
+            track.pitch = currentTempoIncrease;
     }
 
     private void WaveBlast()

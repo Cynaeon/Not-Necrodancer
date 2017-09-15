@@ -3676,6 +3676,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 803092643}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &242565425 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114964964229266618, guid: 1d5c6cbdeae27dd418438dd99ed0e8c8,
+    type: 2}
+  m_PrefabInternal: {fileID: 803092643}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &259521220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,6 +3946,7 @@ MonoBehaviour:
   timeTillSongStart: 3
   player: {fileID: 964488566}
   pauseUI: {fileID: 1086489988}
+  starPowerSlider: {fileID: 242565425}
   cameraManager: {fileID: 1275086730}
   waveTrigger: {fileID: 1352955598123014, guid: 9c5285008ce74e1478a51473554e0708,
     type: 2}
@@ -3948,9 +3955,13 @@ MonoBehaviour:
   tempoSphere: {fileID: 901572641}
   levelUpEffect: {fileID: 198316013778946222, guid: f763a33d31fe5ee48bde341ee118e6e6,
     type: 2}
+  starPower: {fileID: 0}
   secondsToBeat: 0.5
   songEndTime: 180
   movementWindow: 0.3
+  starPowerDrain: 0
+  tempoIncrease: 0
+  tempoIncreaseSpeed: 0
   tempoOffset: 0.2
   shrinkSpeed: 10
   songStopped: 0
@@ -4349,6 +4360,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224071117786786444, guid: 1d5c6cbdeae27dd418438dd99ed0e8c8,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d5c6cbdeae27dd418438dd99ed0e8c8, type: 2}

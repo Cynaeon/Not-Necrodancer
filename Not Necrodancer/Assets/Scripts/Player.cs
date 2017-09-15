@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
     public float respawnTime;
     public float invulTime;
     public Color invulColor;
+    public Color[] colorGradient = new Color[6];
+    public float colorShiftSpeed;
     public bool canMove;
     public int score;
     public AudioClip sound_death;
@@ -18,14 +20,18 @@ public class Player : MonoBehaviour {
     private CameraManager cameraManager;
     private Color startColor;
     private Color currentColor;
+    private int currentColorIndex;
+    private float currentShiftTime;
     [HideInInspector] public int beatStreak;
     private bool alreadyMoved;
     private bool beatHit;
     private bool beatHitChecked;
     private bool dead;
     private bool invulnerable;
+    private bool starPowerActive;
     private float timeDead;
     private float timeInvulnerable;
+    [HideInInspector] public float starPower;
     private Vector3 newPosition;
 
 	void Start () {
@@ -37,6 +43,13 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
+        if (starPowerActive)
+            ShiftColor();
+        else
+        {
+            _rend.material.color = startColor;
+        }
+
         if (dead)
         {
             timeDead += Time.deltaTime;
@@ -46,7 +59,6 @@ public class Player : MonoBehaviour {
                 timeDead = 0;
             }
         }
-
         else if (transform.position == newPosition)
         {
             if (Input.GetButtonDown("Right"))
@@ -151,11 +163,36 @@ public class Player : MonoBehaviour {
         }
     }
 
+    private void ShiftColor()
+    {
+        int nextColor = currentColorIndex + 1;
+        if (nextColor >= colorGradient.Length)
+            nextColor = 0;
+        currentShiftTime += Time.deltaTime * colorShiftSpeed;
+        _rend.material.color = Color.Lerp(colorGradient[currentColorIndex], colorGradient[nextColor], currentShiftTime);
+        if (currentShiftTime > 1)
+        {
+            currentColorIndex++;
+            if (currentColorIndex >= colorGradient.Length)
+                currentColorIndex = 0;
+            currentShiftTime = 0;
+        }
+    }
+
+    internal void ToggleStarPower()
+    {
+        if (starPowerActive)
+            starPowerActive = false;
+        else
+            starPowerActive = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Collectable")
         {
             score++;
+            starPower++;
             Destroy(other.gameObject);
         }
         if (other.tag == "Platform")
