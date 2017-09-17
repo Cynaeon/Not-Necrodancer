@@ -20,7 +20,8 @@ public class AudioManager : MonoBehaviour {
     public GameObject player;
     public GameObject pauseUI;
     public Slider starPowerSlider;
-    
+
+    public List<float> charts = new List<float>() { 22.2f, 0.8f, 0.6f, 0.8f, 0.6f, 0.8f, 0.6f, 0.8f };
     public CameraManager cameraManager;
     public GameObject waveTrigger;
     public GameObject descentTrigger;

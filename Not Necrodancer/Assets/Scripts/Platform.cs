@@ -40,7 +40,7 @@ public class Platform : MonoBehaviour {
     private float descentTime;
     private float currentSpinSpeed;
     private float currentSpinTime;
-    private float spinFalloffMultiplier = 1;
+    //private float spinFalloffMultiplier = 1;
     private Renderer _rend;
     private bool wave;
     [HideInInspector] public bool spinning;

@@ -11,7 +11,7 @@ public class ParticleDetacher : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (ps.transform.parent = null)
+        if (ps.transform.parent == null)
         {
             if (!ps.IsAlive())
                 Destroy(gameObject);

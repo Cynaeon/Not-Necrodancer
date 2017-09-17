@@ -29,7 +29,6 @@ public class ScoringSystem : MonoBehaviour {
         audioManagerScript = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hiscorePrefix = "";
         hiscorePrefix += SceneManager.GetActiveScene().name + "_hiscore_";
-        int hiscore = PlayerPrefs.GetInt(hiscorePrefix + "1");
         hiscoreText.text = "";
 	}
 	
