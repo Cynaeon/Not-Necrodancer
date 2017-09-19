@@ -13,25 +13,28 @@ public class Player : MonoBehaviour {
     public Color[] colorGradient = new Color[6];
     public float colorShiftSpeed;
     public bool canMove;
+    public int streakToStarPower;
     public int score;
     public AudioClip sound_death;
 
     private Renderer _rend;
     private CameraManager cameraManager;
+    private AudioManager _audioManager;
     private Color startColor;
     private Color currentColor;
+    private GameObject fastForwardInstance;
     private int currentColorIndex;
     private float currentShiftTime;
     [HideInInspector] public int beatStreak;
+    private int fastsSpawned;
     private bool alreadyMoved;
     private bool beatHit;
     private bool beatHitChecked;
     private bool dead;
     private bool invulnerable;
-    private bool starPowerActive;
+    internal bool starPowerActive;
     private float timeDead;
     private float timeInvulnerable;
-    [HideInInspector] public float starPower;
     private Vector3 newPosition;
 
 	void Start () {
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour {
         startColor = _rend.material.color;
         newPosition = transform.position;
         cameraManager = Camera.main.GetComponent<CameraManager>();
+        _audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 	}
 
     void Update()
@@ -59,6 +63,8 @@ public class Player : MonoBehaviour {
                 timeDead = 0;
             }
         }
+
+        // v FIX THIS AAAAAAA v
         else if (transform.position == newPosition)
         {
             if (Input.GetButtonDown("Right"))
@@ -70,7 +76,10 @@ public class Player : MonoBehaviour {
                     alreadyMoved = true;
                 }
                 else
+                {
                     beatStreak = 0;
+                    GameObject.Find("Missed").GetComponent<PopupText>().Activate();
+                }
             }
             if (Input.GetButtonDown("Left"))
             {
@@ -81,7 +90,10 @@ public class Player : MonoBehaviour {
                     alreadyMoved = true;
                 }
                 else
+                {
                     beatStreak = 0;
+                    GameObject.Find("Missed").GetComponent<PopupText>().Activate();
+                }
             }
             if (Input.GetButtonDown("Up"))
             {
@@ -92,7 +104,10 @@ public class Player : MonoBehaviour {
                     alreadyMoved = true;
                 }
                 else
+                {
                     beatStreak = 0;
+                    GameObject.Find("Missed").GetComponent<PopupText>().Activate();
+                }
             }
             if (Input.GetButtonDown("Down"))
             {
@@ -103,7 +118,10 @@ public class Player : MonoBehaviour {
                     alreadyMoved = true;
                 }
                 else
+                {
                     beatStreak = 0;
+                    GameObject.Find("Missed").GetComponent<PopupText>().Activate();
+                }
             }
         }
 
@@ -113,7 +131,11 @@ public class Player : MonoBehaviour {
             if (beatHit)
                 beatStreak++;
             else
+            {
+                if (beatStreak > 0)
+                    GameObject.Find("Missed").GetComponent<PopupText>().Activate();
                 beatStreak = 0;
+            }
             beatHit = false;
             beatHitChecked = true;
         }
@@ -136,6 +158,15 @@ public class Player : MonoBehaviour {
                 timeInvulnerable = 0;
             }
         }
+
+        if (beatStreak >= streakToStarPower * (fastsSpawned + 1))
+        {
+            if (!GameObject.Find("FastForward(Clone)"))
+            {
+                GameObject.Find("PlayArea").GetComponent<PlayArea>().SpawnFastForward();
+                fastsSpawned++;
+            }
+        }
     }
 
     private void Respawn()
@@ -149,7 +180,7 @@ public class Player : MonoBehaviour {
     {
         if (!invulnerable)
         {
-            score -= 5;
+            score -= _audioManager.scoreToLevelUp / 2;
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             GetComponent<AudioSource>().PlayOneShot(sound_death, 0.3f);
             cameraManager.ScreenShake();
@@ -192,7 +223,6 @@ public class Player : MonoBehaviour {
         if (other.tag == "Collectable")
         {
             score++;
-            starPower++;
             Destroy(other.gameObject);
         }
         if (other.tag == "Platform")
@@ -204,8 +234,13 @@ public class Player : MonoBehaviour {
             Die();
         if (other.tag == "LevelUp")
         {
-            GameObject.Find("AudioManager").GetComponent<AudioManager>().IncreaseLevel();
+            _audioManager.IncreaseLevel();
             score = 0;
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "FastForward")
+        {
+            _audioManager.ActivateStarPower();
             Destroy(other.gameObject);
         }
     }

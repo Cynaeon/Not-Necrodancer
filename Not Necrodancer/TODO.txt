@@ -1,29 +1,32 @@
 ====TODO====
 PRIORITY:
-Base class for enemies
-Platforms return to idle color immeadiately on missed beat
-Make everything bound to beats (enemy movement etc)
+Rescale/rethink scoring system 
+
 Menu system and song select
 More enemy types
 Pause with restart
 
 FANCY STUFF:
-Do something cool with the directional light
-Some clearer indicator of streak ending
+Fade-in on the star power effect
 Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
-Rescale scoring system
+Do something cool with the directional light
 Improve enemy spawning
 Read up on good coding and naming practices and CLEAN UP YOUR CODE WTF
 
 KINDLY CONSIDER THE FOLLOWING:
 Level gauge
 Endless mode (end on first death)
-Shorter songs
 Score system in a randomly generated level???
 Background ray color shift based on level
 
 
 ====DONE====
+Shorter songs
+Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
+Some clearer indicator of streak ending
+Make everything bound to beats (enemy movement etc)
+Platforms return to idle color immeadiately on missed beat
+Base class for enemies
 Stop spawning levelups at max level
 Pickups flash when about to expire
 Some effect on movement (particles by movement)

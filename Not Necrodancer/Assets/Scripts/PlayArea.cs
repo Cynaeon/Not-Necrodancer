@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayArea : MonoBehaviour {
 
     public GameObject collectable;
+    public GameObject fastForward;
     public GameObject levelUp;
     public GameObject[] enemies;
     public GameObject speedLines;
@@ -41,7 +42,7 @@ public class PlayArea : MonoBehaviour {
 
             if (currentCollectableInterval < 0)
             {
-                SpawnCollectable();
+                Spawn(collectable);
                 currentCollectableInterval = collectableSpawnInterval;
             }
 
@@ -80,7 +81,7 @@ public class PlayArea : MonoBehaviour {
             int enemyNumber = UnityEngine.Random.Range(0, enemies.Length);
             int x = (UnityEngine.Random.Range(-areaX / 2, (areaX / 2) + 1)) * 2;
             int z = (UnityEngine.Random.Range(-areaY / 2, (areaY / 2) + 1)) * 2;
-            if (enemies[enemyNumber].name == "Bomb")
+            if (enemies[enemyNumber].name == "Bomb2")
             {
                 x += 1;
                 z += 1;
@@ -93,20 +94,24 @@ public class PlayArea : MonoBehaviour {
         }
     }
 
-    public void SpawnLevelUp()
+    public void Spawn(GameObject item)
     {
         int x = (UnityEngine.Random.Range(-areaX / 2, (areaX / 2) + 1)) * 2;
         int z = (UnityEngine.Random.Range(-areaY / 2, (areaY / 2) + 1)) * 2;
         Vector3 pos = new Vector3(x, collectableSpawnHeight, z);
-        Instantiate(levelUp, pos, Quaternion.identity);
+        Instantiate(item, pos, Quaternion.identity);
     }
 
-    void SpawnCollectable()
+    public void SpawnLevelUp()
     {
-        int x = (UnityEngine.Random.Range(-areaX / 2, (areaX / 2) + 1)) * 2;
-        int z = (UnityEngine.Random.Range(-areaY / 2, (areaY / 2) + 1)) * 2;
-        Vector3 pos = new Vector3(x, collectableSpawnHeight, z);
-        Instantiate(collectable, pos, Quaternion.identity);
+        if (!GameObject.Find("LevelUp(Clone"))
+            Spawn(levelUp);
+    }
+
+    public void SpawnFastForward()
+    {
+        if (!GameObject.Find("FastForward(Clone"))
+            Spawn(fastForward);
     }
 
     public void StopSpawning()

@@ -9444,6 +9444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectable: {fileID: 1610556392531054, guid: 28d310bf2bf24a94ab7f4e6113e55a00,
     type: 2}
+  fastForward: {fileID: 1336110907334410, guid: 439173a6cacd58244953c61c4d20a72e,
+    type: 2}
   levelUp: {fileID: 1527833459195468, guid: 24afa308a314d584487a8510bac9f228, type: 2}
   enemies:
   - {fileID: 1711297882589288, guid: 5601495e0027eff41b193bde1bd8f6f4, type: 2}
@@ -9455,7 +9457,7 @@ MonoBehaviour:
   collectableSpawnInterval: 3
   enemySpawnInterval: 5
   collectableSpawnHeight: 15
-  enemySpawnHeight: 25
+  enemySpawnHeight: 15
   streakForDiscoFloor: 20
   streakForSpeedLines: 40
   areaX: 7

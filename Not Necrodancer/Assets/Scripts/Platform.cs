@@ -8,8 +8,6 @@ public class Platform : MonoBehaviour {
     public float waveSpan;
     public float timeTillFall;
     public float spinSpeed;
-    public float spinSpeedFalloff;
-    public float spinDuration;
     public Color activeColor1;
     public Color activeColor2;
     public Color dangerColor;
@@ -36,10 +34,12 @@ public class Platform : MonoBehaviour {
     private Color descendedColor;
     private Vector3 elevatedPos;
     private Vector3 endPos;
+    private float spinDuration;
     private float currentTimeTillFall;
     private float descentTime;
     private float currentSpinSpeed;
     private float currentSpinTime;
+    private int dangerLevel;
     //private float spinFalloffMultiplier = 1;
     private Renderer _rend;
     private bool wave;
@@ -59,6 +59,7 @@ public class Platform : MonoBehaviour {
         endPos = new Vector3(transform.position.x, -50, transform.position.z);
         descendedColor = Color.clear;
         elevated = true;
+        spinDuration = GameObject.Find("AudioManager").GetComponent<AudioManager>().secondsToBeat * 2;
 	}
 	
 	void Update () {
@@ -213,7 +214,18 @@ public class Platform : MonoBehaviour {
     {
         if (other.tag == "DangerTrigger")
         {
-            dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * 6, 1));
+            int beatsToDrop = other.transform.parent.GetComponent<Enemy>().beatsToDrop;
+            int newDangerLevel;
+            if (beatsToDrop <= 2)
+                newDangerLevel = 15;
+            else if (beatsToDrop < 4)
+                newDangerLevel = 7;
+            else
+                newDangerLevel = 1;
+
+            if (newDangerLevel != dangerLevel)
+                dangerLevel = newDangerLevel;
+            dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * dangerLevel, 1));
             _rend.material.color = dangerColor;
         }
     }

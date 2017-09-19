@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : MonoBehaviour {
+public class Bomb : Enemy {
 
     public float speed;
     public ParticleSystem explosion;
@@ -11,7 +11,9 @@ public class Bomb : MonoBehaviour {
     private bool toBeDestroyed;
     private float smallWaitTime = 0.2f;
 	
-	void Update () {
+	protected override void Update () {
+        base.Update();
+
         if (toBeDestroyed)
         {
             smallWaitTime -= Time.deltaTime;

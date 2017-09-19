@@ -21,7 +21,6 @@ public class AudioManager : MonoBehaviour {
     public GameObject pauseUI;
     public Slider starPowerSlider;
 
-    public List<float> charts = new List<float>() { 22.2f, 0.8f, 0.6f, 0.8f, 0.6f, 0.8f, 0.6f, 0.8f };
     public CameraManager cameraManager;
     public GameObject waveTrigger;
     public GameObject descentTrigger;
@@ -30,8 +29,9 @@ public class AudioManager : MonoBehaviour {
     public GameObject starPower;
     public float secondsToBeat;
     public float songEndTime;
+    public int scoreToLevelUp;
     public float movementWindow;
-    public float starPowerDrain;
+    public float starPowerDuration;
     public float tempoIncrease;
     public float tempoIncreaseSpeed;
     public float tempoOffset;
@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour {
     private bool gamePaused;
     private bool songStarted;
     private bool highTempo;
+    [HideInInspector] public bool onBeat;
     private Player playerScript;
     private PlayArea playAreaScript;
     [HideInInspector] public int level = 1;
@@ -49,6 +50,7 @@ public class AudioManager : MonoBehaviour {
     private Vector3 sphereStartScale;
     private Color sphereStartColor;
     private Color spherePositiveColor;
+    private float starPowerTime;
     private float current;
     private float currentTempoIncrease = 1;
     private int beatNumber;
@@ -82,16 +84,15 @@ public class AudioManager : MonoBehaviour {
             else 
                 PauseGame();
         }
-
+        /*
         if (Input.GetKeyDown(KeyCode.Space) && playerScript.starPower >= starPowerSlider.maxValue || Input.GetKeyDown(KeyCode.P))
         {
             playerScript.ToggleStarPower();
             highTempo = true;
         }
-
-
-
+        
         starPowerSlider.value = playerScript.starPower;
+        */
         Tempo();
 
         if (gamePaused)
@@ -120,7 +121,7 @@ public class AudioManager : MonoBehaviour {
             Instantiate(descentTrigger, pos, Quaternion.identity);
         }
 
-        if (playerScript.score >= 10)
+        if (playerScript.score >= scoreToLevelUp)
         {
             if (!GameObject.Find("LevelUp(Clone)") && level < maxLevel)
             {
@@ -148,7 +149,10 @@ public class AudioManager : MonoBehaviour {
             {
                 beatNumber++;
                 OnBeat();
+                onBeat = true;
             }
+            else
+                onBeat = false;
 
             float closestBeat = Mathf.Round(beatTime);
 
@@ -163,6 +167,12 @@ public class AudioManager : MonoBehaviour {
                 player.GetComponent<Player>().canMove = false;
             }
         }
+    }
+
+    public void ActivateStarPower()
+    {
+        highTempo = true;
+        playerScript.ToggleStarPower();
     }
 
     private void PauseGame()
@@ -297,11 +307,12 @@ public class AudioManager : MonoBehaviour {
                 currentTempoIncrease += Time.deltaTime * tempoIncreaseSpeed;
             else
                 currentTempoIncrease = tempoIncrease;
-            playerScript.starPower -= Time.deltaTime * starPowerDrain;
-            if (playerScript.starPower <= 0)
+            starPowerTime += Time.deltaTime;
+            if (starPowerTime >= starPowerDuration)
             {
                 highTempo = false;
                 playerScript.ToggleStarPower();
+                starPowerTime = 0;
             }
         }
         else

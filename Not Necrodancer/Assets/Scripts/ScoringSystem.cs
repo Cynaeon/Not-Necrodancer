@@ -39,7 +39,10 @@ public class ScoringSystem : MonoBehaviour {
             playerScore = playerScript.score;
             beatStreak = playerScript.beatStreak;
             beatStreak = Mathf.Clamp(beatStreak, 0, beatStreakMax);
-            timeScore += (Time.deltaTime * timeBonus * (level + 1)) * (beatStreak / 100 + 1);
+            int starPowerMultiplier = 1;
+            if (playerScript.starPowerActive)
+                starPowerMultiplier = 2;
+            timeScore += (Time.deltaTime * timeBonus * (level + 1)) * (beatStreak / 100 + 1) * starPowerMultiplier;
             totalScore = (level * 10 + playerScore + timeScore) * 100;
         }
         else if (!scoreSaved && totalScore > 0)
