@@ -1,10 +1,12 @@
 ====TODO====
 PRIORITY:
 Rescale/rethink scoring system 
-
 Menu system and song select
 More enemy types
 Pause with restart
+
+Try to model a player character xD
+Work on a song xDD
 
 FANCY STUFF:
 Fade-in on the star power effect

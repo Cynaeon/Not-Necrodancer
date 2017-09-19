@@ -1867,6 +1867,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1927040302455440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4318445832342830}
+  - component: {fileID: 108358436735969888}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1927284281173930
 GameObject:
   m_ObjectHideFlags: 1
@@ -2444,6 +2460,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4945553659284454}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4318445832342830
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927040302455440}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4997819164666000}
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4328618615021370
 Transform:
@@ -3399,6 +3428,7 @@ Transform:
   - {fileID: 4932558964348736}
   - {fileID: 4729926233828346}
   - {fileID: 4564554829500666}
+  - {fileID: 4318445832342830}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8781,6 +8811,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 14, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!108 &108358436735969888
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927040302455440}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0, g: 0.006896496, b: 1, a: 1}
+  m_Intensity: 10.08
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114004242777093654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8796,10 +8862,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 1
@@ -8822,10 +8886,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -8848,10 +8910,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 1
@@ -8874,10 +8934,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 0
@@ -8900,10 +8958,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -8926,10 +8982,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 0
@@ -8952,10 +9006,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 0
@@ -8978,10 +9030,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9004,10 +9054,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 0
@@ -9030,10 +9078,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 0
@@ -9056,10 +9102,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9082,10 +9126,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 0
@@ -9108,10 +9150,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 1
@@ -9134,10 +9174,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9160,10 +9198,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9186,10 +9222,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9212,10 +9246,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -9238,10 +9270,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -9264,10 +9294,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 0
@@ -9290,10 +9318,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 1
@@ -9316,10 +9342,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -9342,10 +9366,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 1
@@ -9368,10 +9390,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9394,10 +9414,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 0
@@ -9420,10 +9438,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 1
@@ -9448,9 +9464,8 @@ MonoBehaviour:
     type: 2}
   levelUp: {fileID: 1527833459195468, guid: 24afa308a314d584487a8510bac9f228, type: 2}
   enemies:
-  - {fileID: 1711297882589288, guid: 5601495e0027eff41b193bde1bd8f6f4, type: 2}
-  - {fileID: 1905764655186164, guid: 5880c76b7e417a24083400541dcc05f0, type: 2}
-  - {fileID: 1223553933245018, guid: a56a27ffde6cb294fa56fcc145e0b6ec, type: 2}
+  - {fileID: 1298623507165032, guid: 4500512c67414be46a140999f983d4ba, type: 2}
+  - {fileID: 1099186134992924, guid: bd5c0583a3ef63f498fbf028df6c415d, type: 2}
   speedLines: {fileID: 0}
   songEndTrigger: {fileID: 1048065466098624, guid: 4e7a8519c0637624599364e1242f2587,
     type: 2}
@@ -9478,10 +9493,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9504,10 +9517,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 0
@@ -9530,10 +9541,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 1
@@ -9556,10 +9565,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 1
@@ -9582,10 +9589,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -9608,10 +9613,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -9634,10 +9637,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9660,10 +9661,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9686,10 +9685,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 1
@@ -9712,10 +9709,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9738,10 +9733,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 0
@@ -9764,10 +9757,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 0
@@ -9790,10 +9781,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -9816,10 +9805,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 1
@@ -9842,10 +9829,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 3
   variant: 1
@@ -9868,10 +9853,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 0
@@ -9894,10 +9877,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -9920,10 +9901,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -9946,10 +9925,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.046697706, g: 0.02184258, b: 0.74264705, a: 1}
+  activeColor2: {r: 0.6544118, g: 0.009623712, b: 0.022964047, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -9972,10 +9949,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 5
   variant: 1
@@ -9998,10 +9973,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -10024,10 +9997,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 0
@@ -10050,10 +10021,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
@@ -10076,10 +10045,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  spinSpeedFalloff: 200
-  spinDuration: 1
-  activeColor1: {r: 1, g: 0.29411763, b: 0.29411763, a: 1}
-  activeColor2: {r: 0.1803633, g: 0.32168, b: 1, a: 1}
+  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
+  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
