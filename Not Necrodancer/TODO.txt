@@ -10,6 +10,7 @@ Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
+New font for song info
 Camera moves smoothly to the starting position
 Playarea light matches the background ray color
 Fade-in on the star power effect

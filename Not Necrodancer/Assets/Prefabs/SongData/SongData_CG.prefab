@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4653054354543710}
   - component: {fileID: 114763324545282828}
   m_Layer: 0
-  m_Name: SongData_CG (BPM WRONG)
+  m_Name: SongData_CG
   m_TagString: SongData
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,8 +1388,9 @@ MonoBehaviour:
   - {fileID: 82627451694091286}
   - {fileID: 82937722518568096}
   - {fileID: 82600511343377202}
+  bpm: 125
   timeTillSongStart: 3
-  secondsToBeat: 0.5
-  songEndTime: 185
+  secondsToBeat: 0.48
+  songEndTime: 221
   movementWindow: 0.3
   tempoOffset: 0.2

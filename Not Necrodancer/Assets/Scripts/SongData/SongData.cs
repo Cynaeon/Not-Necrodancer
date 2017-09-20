@@ -10,6 +10,7 @@ public class SongData : MonoBehaviour {
     public AudioSource[] songLayer4;
     public AudioSource[] songLayer5;
 
+    public float bpm;
     public float timeTillSongStart;
     public float secondsToBeat;
     public float songEndTime;

@@ -1055,6 +1055,7 @@ MonoBehaviour:
   songLayer5:
   - {fileID: 82431613445039300}
   - {fileID: 82648233433749012}
+  bpm: 124
   timeTillSongStart: 3
   secondsToBeat: 0.4839
   songEndTime: 147

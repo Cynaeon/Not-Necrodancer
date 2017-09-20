@@ -9453,7 +9453,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082690503785028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baa007895f09ec24eadc8a17dcc9f2bd, type: 3}
   m_Name: 
@@ -9477,7 +9477,6 @@ MonoBehaviour:
   streakForSpeedLines: 40
   areaX: 7
   areaY: 7
-  enemyIntervalMultiplier: 1
 --- !u!114 &114470565531354852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9796,7 +9795,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1321316796841326}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e756b9049a02d3643a1f7fb60bf9ec58, type: 3}
   m_Name: 
@@ -9925,8 +9924,8 @@ MonoBehaviour:
   waveSpan: 1
   timeTillFall: 3
   spinSpeed: 1200
-  activeColor1: {r: 0.2166805, g: 0.20761244, b: 0.4705882, a: 1}
-  activeColor2: {r: 0.28676468, g: 0.14759947, b: 0.15047874, a: 1}
+  activeColor1: {r: 0.09436502, g: 0.06779846, b: 0.83823526, a: 1}
+  activeColor2: {r: 0.9044118, g: 0.9044118, b: 0.9044118, a: 1}
   dangerColor: {r: 0, g: 0, b: 0, a: 1}
   level: 99
   variant: 1
