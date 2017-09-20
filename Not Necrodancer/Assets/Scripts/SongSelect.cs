@@ -27,7 +27,7 @@ public class SongSelect : MonoBehaviour {
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(0.1f);
-        Instantiate(song_BTW);
+        Instantiate(songToBePlayed);
         am.StartGame();
     }
 
@@ -43,15 +43,15 @@ public class SongSelect : MonoBehaviour {
     {
         songButtons.SetActive(false);
         loading.SetActive(true);
-        Instantiate(song_CMM);
-        am.StartGame();
+        songToBePlayed = song_CMM;
+        StartCoroutine(StartGame());
     }
 
     public void PlayCG()
     {
         songButtons.SetActive(false);
         loading.SetActive(true);
-        Instantiate(song_CG);
-        am.StartGame();
+        songToBePlayed = song_CG;
+        StartCoroutine(StartGame());
     }
 }

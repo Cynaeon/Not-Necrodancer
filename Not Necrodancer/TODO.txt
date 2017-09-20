@@ -1,14 +1,16 @@
 ====TODO====
 PRIORITY:
-Rescale/rethink scoring system 
-Menu system and song select
-More enemy types
+Song ending with buttons (retry, menu) and game reset
+Song info in the select menu (bpm, hiscore etc)
 Pause with restart
+Rescale/rethink scoring system 
+More enemy types
 
 Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
+Camera moves smoothly to the starting position
 Playarea light matches the background ray color
 Fade-in on the star power effect
 Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
@@ -24,6 +26,7 @@ Background ray color shift based on level
 
 
 ====DONE====
+Menu system and song select
 Shorter songs
 Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
 Some clearer indicator of streak ending

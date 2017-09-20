@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour {
     public GameObject hiscoretable;
     public GameObject backGroundRays;
     public CameraManager cameraManager;
+    public LightController lightController;
     public GameObject waveTrigger;
     public GameObject descentTrigger;
     public Transform tempoSphere;
@@ -58,7 +59,6 @@ public class AudioManager : MonoBehaviour {
     private int beatNumber;
 
 	void Start () {
-
         SetScripts(false);
         scoringSystem.SetActive(false);
         score.SetActive(false);
@@ -95,6 +95,7 @@ public class AudioManager : MonoBehaviour {
     public void StartGame()
     {
         inGame = true;
+        lightController.ToggleOn();
         score.SetActive(true);
         scoringSystem.SetActive(true);
         backGroundRays.SetActive(true);
