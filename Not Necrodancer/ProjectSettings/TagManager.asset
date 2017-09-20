@@ -14,6 +14,7 @@ TagManager:
   - Death
   - SongEndTrigger
   - FastForward
+  - SongData
   layers:
   - Default
   - TransparentFX

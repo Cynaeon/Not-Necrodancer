@@ -9,6 +9,7 @@ Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
+Playarea light matches the background ray color
 Fade-in on the star power effect
 Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
 Do something cool with the directional light

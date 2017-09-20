@@ -6,46 +6,48 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
-
-    public AudioSource song;
-    public AudioSource[] songLayer1;
-    public AudioSource[] songLayer2;
-    public AudioSource[] songLayer3;
-    public AudioSource[] songLayer4;
-    public AudioSource[] songLayer5;
-    public AudioSource soundEffects;
+    
     public AudioClip sound_LevelUp;
     public AudioClip sound_beep;
-    public float timeTillSongStart;
     public GameObject player;
+    public GameObject scoringSystem;
     public GameObject pauseUI;
-    public Slider starPowerSlider;
-
+    public GameObject score;
+    public GameObject hiscoretable;
+    public GameObject backGroundRays;
     public CameraManager cameraManager;
     public GameObject waveTrigger;
     public GameObject descentTrigger;
     public Transform tempoSphere;
     public ParticleSystem levelUpEffect;
     public GameObject starPower;
-    public float secondsToBeat;
-    public float songEndTime;
+
     public int scoreToLevelUp;
-    public float movementWindow;
     public float starPowerDuration;
     public float tempoIncrease;
     public float tempoIncreaseSpeed;
-    public float tempoOffset;
     public float shrinkSpeed;
 
-    [HideInInspector] public bool songStopped;
+    internal int level = 1;
+    internal int maxLevel = 5;
+    internal bool inGame;
+    internal bool songStopped;
+    internal bool onBeat;
+
+    internal float songTime;
+    internal float secondsToBeat;
+    internal float songEndTime;
+    internal float timeTillSongStart;
+    internal float movementWindow;
+    internal float tempoOffset;
+
+    private SongData _songData;
     private bool gamePaused;
     private bool songStarted;
     private bool highTempo;
-    [HideInInspector] public bool onBeat;
     private Player playerScript;
     private PlayArea playAreaScript;
-    [HideInInspector] public int level = 1;
-    [HideInInspector] public int maxLevel = 5;
+    private AudioSource soundEffects;
     private GameObject levelUpSphere;
     private Vector3 sphereStartScale;
     private Color sphereStartColor;
@@ -56,118 +58,171 @@ public class AudioManager : MonoBehaviour {
     private int beatNumber;
 
 	void Start () {
-        foreach (AudioSource track in songLayer1)
-            track.mute = true;
-        foreach (AudioSource track in songLayer2)
-            track.mute = true;
-        foreach (AudioSource track in songLayer3)
-            track.mute = true;
-        foreach (AudioSource track in songLayer4)
-            track.mute = true;
-        foreach (AudioSource track in songLayer5)
-            track.mute = true;
+
+        SetScripts(false);
+        scoringSystem.SetActive(false);
+        score.SetActive(false);
+        hiscoretable.SetActive(false);
+        backGroundRays.SetActive(false);
         soundEffects = GetComponent<AudioSource>();
+        /*
+        _songData = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>();
+        _songData.MuteTracks();
+        secondsToBeat = _songData.secondsToBeat;
+        songEndTime = _songData.songEndTime;
+        timeTillSongStart = _songData.timeTillSongStart;
+        movementWindow = _songData.movementWindow;
+        tempoOffset = _songData.tempoOffset;
         sphereStartScale = tempoSphere.localScale;
         sphereStartColor = tempoSphere.GetComponent<Renderer>().material.color;
         spherePositiveColor = Color.green;
-        playerScript = player.GetComponent<Player>();
-        playAreaScript = GameObject.Find("PlayArea").GetComponent<PlayArea>();
+
         songStopped = true;
-	}
-	
-	void Update () {
-
-        if (Input.GetButtonDown("Pause"))
-        {
-            if (gamePaused)
-                UnpauseGame();
-            else 
-                PauseGame();
-        }
-        /*
-        if (Input.GetKeyDown(KeyCode.Space) && playerScript.starPower >= starPowerSlider.maxValue || Input.GetKeyDown(KeyCode.P))
-        {
-            playerScript.ToggleStarPower();
-            highTempo = true;
-        }
-        
-        starPowerSlider.value = playerScript.starPower;
         */
-        Tempo();
+    }
 
-        if (gamePaused)
+    private void SetScripts(bool state)
+    {
+        Camera.main.GetComponent<CameraManager>().enabled = state;
+        playAreaScript = GameObject.Find("PlayArea").GetComponent<PlayArea>();
+        playAreaScript.SetPlatformScripts(state);
+        playAreaScript.enabled = state;
+        playerScript = player.GetComponent<Player>();
+        playerScript.enabled = state;
+
+    }
+
+    public void StartGame()
+    {
+        inGame = true;
+        score.SetActive(true);
+        scoringSystem.SetActive(true);
+        backGroundRays.SetActive(true);
+        SetScripts(true);
+        Camera.main.GetComponent<CameraManager>().SetToGamePosition();
+        Camera.main.GetComponent<RotateAround>().enabled = false;
+        songTime = 0;
+        _songData = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>();
+        _songData.MuteTracks();
+        secondsToBeat = _songData.secondsToBeat;
+        songEndTime = _songData.songEndTime;
+        timeTillSongStart = _songData.timeTillSongStart;
+        movementWindow = _songData.movementWindow;
+        tempoOffset = _songData.tempoOffset;
+        sphereStartScale = tempoSphere.localScale;
+        sphereStartColor = tempoSphere.GetComponent<Renderer>().material.color;
+        spherePositiveColor = Color.green;
+
+        songStopped = true;
+    }
+
+    void Update () {
+
+        if (!inGame)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // Restart
+                if (GameObject.FindGameObjectWithTag("SongData"))
+                    StartGame();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-            IncreaseLevel();
-
-        if (Time.time > timeTillSongStart && songStopped && !songStarted)
-            StartSong();
-        
-        if (songLayer1[0].time > songEndTime && songStopped == false)
+        else 
         {
-            playAreaScript.StopSpawning();
-            songStopped = true;
-        }
-
-        if (Input.GetButtonDown("Descent"))
-        {
-            Vector3 pos = new Vector3(player.transform.position.x, 14, player.transform.position.z);
-            Instantiate(descentTrigger, pos, Quaternion.identity);
-        }
-
-        if (playerScript.score >= scoreToLevelUp)
-        {
-            if (!GameObject.Find("LevelUp(Clone)") && level < maxLevel)
+            songTime += Time.deltaTime;
+            if (Input.GetButtonDown("Pause"))
             {
-                playAreaScript.SpawnLevelUp();
+                if (gamePaused)
+                    UnpauseGame();
+                else
+                    PauseGame();
             }
-        }
-
-        if (playerScript.score < 0)
-        {
-            DecreaseLevel();
-            playerScript.score += 10;
-        }
-
-        if (tempoSphere.localScale.x > sphereStartScale.x)
-        {
-            float value = shrinkSpeed * Time.deltaTime;
-            tempoSphere.localScale -= new Vector3(value, value, value);
-        }
-
-        if (songStarted)
-        {
-            float beatTime = (songLayer1[0].time / secondsToBeat) - tempoOffset;
-
-            if (beatTime > beatNumber)
+            /*
+            if (Input.GetKeyDown(KeyCode.Space) && playerScript.starPower >= starPowerSlider.maxValue || Input.GetKeyDown(KeyCode.P))
             {
-                beatNumber++;
-                OnBeat();
-                onBeat = true;
+                playerScript.ToggleStarPower();
+                highTempo = true;
             }
-            else
-                onBeat = false;
 
-            float closestBeat = Mathf.Round(beatTime);
+            starPowerSlider.value = playerScript.starPower;
+            */
+            Tempo();
 
-            if (Math.Abs(closestBeat - beatTime) < movementWindow)
+            if (gamePaused)
             {
-                player.GetComponent<Player>().canMove = true;
-                tempoSphere.GetComponent<Renderer>().material.color = spherePositiveColor;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    // Restart
+                }
             }
-            else
+
+            if (Input.GetKeyDown(KeyCode.T))
+                IncreaseLevel();
+
+            if (songTime > _songData.timeTillSongStart && songStopped && !songStarted)
+                StartSong();
+
+            if (_songData.songLayer1[0].time > songEndTime && songStopped == false)
             {
-                tempoSphere.GetComponent<Renderer>().material.color = sphereStartColor;
-                player.GetComponent<Player>().canMove = false;
+                playAreaScript.StopSpawning();
+                songStopped = true;
+            }
+
+            if (Input.GetButtonDown("Descent"))
+            {
+                Vector3 pos = new Vector3(player.transform.position.x, 14, player.transform.position.z);
+                Instantiate(descentTrigger, pos, Quaternion.identity);
+            }
+
+            if (playerScript.score >= scoreToLevelUp)
+            {
+                if (!GameObject.Find("LevelUp(Clone)") && level < maxLevel)
+                {
+                    playAreaScript.SpawnLevelUp();
+                }
+            }
+
+            if (playerScript.score < 0)
+            {
+                DecreaseLevel();
+                playerScript.score += 10;
+            }
+
+            if (tempoSphere.localScale.x > sphereStartScale.x)
+            {
+                float value = shrinkSpeed * Time.deltaTime;
+                tempoSphere.localScale -= new Vector3(value, value, value);
+            }
+
+
+            if (songStarted)
+            {
+                float beatTime = (_songData.songLayer1[0].time / secondsToBeat) - tempoOffset;
+                if (beatTime > beatNumber)
+                {
+                    beatNumber++;
+                    OnBeat();
+                    onBeat = true;
+                }
+                else
+                    onBeat = false;
+
+                float closestBeat = Mathf.Round(beatTime);
+
+                if (Math.Abs(closestBeat - beatTime) < movementWindow)
+                {
+                    player.GetComponent<Player>().canMove = true;
+                    tempoSphere.GetComponent<Renderer>().material.color = spherePositiveColor;
+                }
+                else
+                {
+                    tempoSphere.GetComponent<Renderer>().material.color = sphereStartColor;
+                    player.GetComponent<Player>().canMove = false;
+                }
             }
         }
     }
+
+
 
     public void ActivateStarPower()
     {
@@ -177,16 +232,7 @@ public class AudioManager : MonoBehaviour {
 
     private void PauseGame()
     {
-        foreach (AudioSource track in songLayer1)
-            track.Pause();
-        foreach (AudioSource track in songLayer2)
-            track.Pause();
-        foreach (AudioSource track in songLayer3)
-            track.Pause();
-        foreach (AudioSource track in songLayer4)
-            track.Pause();
-        foreach (AudioSource track in songLayer5)
-            track.Pause();
+        _songData.PauseTracks();
         Camera.main.GetComponent<CameraManager>().BlurScreen();
         pauseUI.SetActive(true);
         gamePaused = true;
@@ -196,16 +242,7 @@ public class AudioManager : MonoBehaviour {
     private void UnpauseGame()
     {
         Time.timeScale = 1;
-        foreach (AudioSource track in songLayer1)
-            track.Play();
-        foreach (AudioSource track in songLayer2)
-            track.Play();
-        foreach (AudioSource track in songLayer3)
-            track.Play();
-        foreach (AudioSource track in songLayer4)
-            track.Play();
-        foreach (AudioSource track in songLayer5)
-            track.Play();
+        _songData.UnpauseTracks();
         Camera.main.GetComponent<CameraManager>().UnblurScreen();
         pauseUI.SetActive(false);
         gamePaused = false;
@@ -213,19 +250,7 @@ public class AudioManager : MonoBehaviour {
 
     private void StartSong()
     {
-        foreach (AudioSource track in songLayer1)
-        {
-            track.mute = false;
-            track.time = 0;
-        }
-        foreach (AudioSource track in songLayer2)
-            track.time = 0;
-        foreach (AudioSource track in songLayer3)
-            track.time = 0;
-        foreach (AudioSource track in songLayer4)
-            track.time = 0;
-        foreach (AudioSource track in songLayer5)
-            track.time = 0;
+        _songData.StartSong();
         songStopped = false;
         songStarted = true;
         playAreaScript.StartSpawning();
@@ -247,26 +272,7 @@ public class AudioManager : MonoBehaviour {
 
         cameraManager.GetComponent<CameraManager>().LevelUpFlash();
         Instantiate(levelUpEffect, player.transform.position, Quaternion.identity);
-        if (level == 2)
-        {
-            foreach (AudioSource track in songLayer2)
-                track.mute = false;
-        }
-        else if (level == 3)
-        {
-            foreach (AudioSource track in songLayer3)
-                track.mute = false;
-        }
-        else if (level == 4)
-        {
-            foreach (AudioSource track in songLayer4)
-                track.mute = false;
-        }
-        else if (level == 5)
-        {
-            foreach (AudioSource track in songLayer5)
-                track.mute = false;
-        }
+        _songData.IncreaseLevel(level);
     }
 
     public void DecreaseLevel()
@@ -274,26 +280,7 @@ public class AudioManager : MonoBehaviour {
         if (level > 1)
         {
             playAreaScript.enemyIntervalMultiplier -= 0.5f;
-            if (level == 2)
-            {
-                foreach (AudioSource track in songLayer2)
-                    track.mute = true;
-            }
-            else if (level == 3)
-            {
-                foreach (AudioSource track in songLayer3)
-                    track.mute = true;
-            }
-            else if (level == 4)
-            {
-                foreach (AudioSource track in songLayer4)
-                    track.mute = true;
-            }
-            else if (level == 5)
-            {
-                foreach (AudioSource track in songLayer5)
-                    track.mute = true;
-            }
+            _songData.DecreaseLevel(level);
             level--;
         }
     }
@@ -323,17 +310,7 @@ public class AudioManager : MonoBehaviour {
             else
                 currentTempoIncrease = 1;
         }
-
-        foreach (AudioSource track in songLayer1)
-            track.pitch = currentTempoIncrease;
-        foreach (AudioSource track in songLayer2)
-            track.pitch = currentTempoIncrease;
-        foreach (AudioSource track in songLayer3)
-            track.pitch = currentTempoIncrease;
-        foreach (AudioSource track in songLayer4)
-            track.pitch = currentTempoIncrease;
-        foreach (AudioSource track in songLayer5)
-            track.pitch = currentTempoIncrease;
+        _songData.SetTempo(currentTempoIncrease);
     }
 
     private void WaveBlast()
@@ -367,7 +344,7 @@ public class AudioManager : MonoBehaviour {
             if (go2)
                 go2.GetComponent<BounceToBeat>().OnBeat();
             cameraManager.BeatFlash();
-            tempoSphere.localScale *= 1.5f;
+            //tempoSphere.localScale *= 1.5f;
         }
     }
 }

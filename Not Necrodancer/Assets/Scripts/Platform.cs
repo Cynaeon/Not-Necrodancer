@@ -59,7 +59,7 @@ public class Platform : MonoBehaviour {
         endPos = new Vector3(transform.position.x, -50, transform.position.z);
         descendedColor = Color.clear;
         elevated = true;
-        spinDuration = GameObject.Find("AudioManager").GetComponent<AudioManager>().secondsToBeat * 2;
+        spinDuration = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>().secondsToBeat * 2;
 	}
 	
 	void Update () {

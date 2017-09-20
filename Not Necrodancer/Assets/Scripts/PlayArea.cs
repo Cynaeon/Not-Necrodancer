@@ -20,10 +20,11 @@ public class PlayArea : MonoBehaviour {
     public int areaX;
     public int areaY;
 
+    internal float enemyIntervalMultiplier = 1;
+
     private bool spawning;
     private bool colorSet;
     private Player playerScript;
-    [HideInInspector] public float enemyIntervalMultiplier = 1;
     private float currentCollectableInterval;
     private float currentEnemyInterval;
 
@@ -123,6 +124,15 @@ public class PlayArea : MonoBehaviour {
                 platform.GetComponent<Platform>().SetToEndColor();
         }
         Instantiate(songEndTrigger);
+    }
+
+    public void SetPlatformScripts(bool state)
+    {
+        foreach (Transform platform in transform)
+        {
+            if (platform.GetComponent<Platform>())
+                platform.GetComponent<Platform>().enabled = state;
+        }
     }
 
     public void SwitchColors()

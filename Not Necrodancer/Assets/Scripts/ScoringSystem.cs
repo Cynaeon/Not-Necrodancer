@@ -7,8 +7,8 @@ using System;
 
 public class ScoringSystem : MonoBehaviour {
     
-    // Scoring system version: 1.01
-    // Latest change: Limited beatstreak bonus to 40
+    // Scoring system version: 1.02
+    // Latest change: Star power earns double points
     public float timeBonus;
     public int beatStreakMax;
     public Text scoreText;
