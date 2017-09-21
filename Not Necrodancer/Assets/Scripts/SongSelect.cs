@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class SongSelect : MonoBehaviour {
 
     public GameObject audioManager;
@@ -14,10 +13,15 @@ public class SongSelect : MonoBehaviour {
     public GameObject songInfo;
     public GameObject songButtons;
     public GameObject loading;
+    public GameObject smoke;
+    public GameObject waveTrigger;
+    public float waveIntervalMin;
+    public float waveIntervalMax;
     public GameObject song_BTW;
     public GameObject song_CMM;
     public GameObject song_CG;
 
+    private Vector3 songListStartPos;
     private bool entered;
     private float step;
     private float targetRot;
@@ -26,6 +30,8 @@ public class SongSelect : MonoBehaviour {
     private Canvas canvas;
 
 	void Start () {
+        songListStartPos = songList.position;
+        smoke.SetActive(true);
         eventSystem.SetActive(false);
         am = audioManager.GetComponent<AudioManager>();
 	}
@@ -71,8 +77,10 @@ public class SongSelect : MonoBehaviour {
                 songButtons.SetActive(false);
                 songInfo.SetActive(false);
                 loading.SetActive(true);
+                smoke.SetActive(false);
                 StartCoroutine(StartGame());
             }
+            
 
             if (am.inGame)
                 loading.SetActive(false);
@@ -86,6 +94,21 @@ public class SongSelect : MonoBehaviour {
             Instantiate(songToBePlayed);
         songToBePlayed = null;
         am.StartGame();
+    }
+
+    public void PlayAgain()
+    {
+
+    }
+
+    public void ToMenu()
+    {
+        am.ResetGame();
+        entered = false;
+        songList.position = songListStartPos;
+        songButtons.SetActive(true);
+        songInfo.SetActive(true);
+        smoke.SetActive(true);
     }
 
     public void PlayBTW()

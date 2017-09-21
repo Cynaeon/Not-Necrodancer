@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour {
     public GameObject player;
     public GameObject scoringSystem;
     public GameObject pauseUI;
+    public GameObject songEndMenu;
     public GameObject score;
     public GameObject hiscoretable;
     public GameObject backGroundRays;
@@ -63,6 +64,7 @@ public class AudioManager : MonoBehaviour {
         scoringSystem.SetActive(false);
         score.SetActive(false);
         hiscoretable.SetActive(false);
+        songEndMenu.SetActive(false);
         backGroundRays.SetActive(false);
         soundEffects = GetComponent<AudioSource>();
         /*
@@ -100,6 +102,7 @@ public class AudioManager : MonoBehaviour {
         scoringSystem.SetActive(true);
         backGroundRays.SetActive(true);
         SetScripts(true);
+        
         Camera.main.GetComponent<CameraManager>().SetToGamePosition();
         Camera.main.GetComponent<RotateAround>().enabled = false;
         songTime = 0;
@@ -164,8 +167,7 @@ public class AudioManager : MonoBehaviour {
 
             if (_songData.songLayer1[0].time > songEndTime && songStopped == false)
             {
-                playAreaScript.StopSpawning();
-                songStopped = true;
+                SongEnd();
             }
 
             if (Input.GetButtonDown("Descent"))
@@ -223,7 +225,25 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    private void SongEnd()
+    {
+        playAreaScript.StopSpawning();
+        hiscoretable.SetActive(true);
+        songEndMenu.SetActive(true);
+        Camera.main.GetComponent<CameraManager>().BlurScreen();
+        songStopped = true;
+    }
 
+    public void ResetGame()
+    {
+        Camera.main.GetComponent<CameraManager>().UnblurScreen();
+        hiscoretable.SetActive(false);
+        songEndMenu.SetActive(false);
+        level = 1;
+        scoringSystem.GetComponent<ScoringSystem>().ResetScore();
+        playAreaScript.ResetPlatforms();
+        SetScripts(false);
+    }
 
     public void ActivateStarPower()
     {

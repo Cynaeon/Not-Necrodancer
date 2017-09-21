@@ -61,6 +61,7 @@ public class Platform : MonoBehaviour {
         elevated = true;
         spinDuration = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>().secondsToBeat * 2;
 	}
+
 	
 	void Update () {
 
@@ -193,6 +194,11 @@ public class Platform : MonoBehaviour {
     public void SetToIdleColor()
     {
         _rend.material.color = idleColor;
+    }
+
+    public void ResetPlatform()
+    {
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
     }
 
     private void OnTriggerEnter(Collider other)

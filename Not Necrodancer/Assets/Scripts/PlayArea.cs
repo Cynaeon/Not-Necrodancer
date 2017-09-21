@@ -155,6 +155,15 @@ public class PlayArea : MonoBehaviour {
         }
     }
 
+    public void ResetPlatforms()
+    {
+        foreach (Transform platform in transform)
+        {
+            if (platform.GetComponent<Platform>())
+                platform.GetComponent<Platform>().ResetPlatform();
+        }
+    }
+
     internal void StartSpawning()
     {
         spawning = true;

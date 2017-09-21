@@ -72,6 +72,15 @@ public class ScoringSystem : MonoBehaviour {
         scoreSaved = true;
     }
 
+    public void ResetScore()
+    {
+        totalScore = 0;
+        timeScore = 0;
+        level = 0;
+        playerScore = 0;
+        beatStreak = 0;
+    }
+
     private void DisplayHiscores()
     {
         for (int i = 1; i < 10; i++)

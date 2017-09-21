@@ -10,6 +10,9 @@ Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
+Floor bounces randomly at menu idle
+Danger flashing doesn't reset on every beat
+Platform material switches shader mode to get particles and shadows working
 New font for song info
 Hiscores visible in font (maybe toggle)
 Platforms bounce when in menu

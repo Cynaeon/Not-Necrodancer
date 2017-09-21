@@ -12,7 +12,7 @@ public class SongButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (songData)
-            songInfo.text = "BPM: " + songData.bpm + "\nLenght: " + songData.songEndTime;
+            songInfo.text = "BPM: " + songData.bpm + "\nLength: " + songData.songEndTime;
         else
             songInfo.text = "BPM: ???\nLength: ???";
     }
@@ -20,7 +20,7 @@ public class SongButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler
     public void OnSelect(BaseEventData eventData)
     {
         if (songData)
-            songInfo.text = "BPM: " + songData.bpm + "\nLenght: " + songData.songEndTime;
+            songInfo.text = "BPM: " + songData.bpm + "\nLength: " + songData.songEndTime;
         else
             songInfo.text = "BPM: ???\nLength: ???";
     }

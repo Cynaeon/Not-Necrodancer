@@ -35,9 +35,11 @@ public class Player : MonoBehaviour {
     internal bool starPowerActive;
     private float timeDead;
     private float timeInvulnerable;
+    private Vector3 startPos;
     private Vector3 newPosition;
 
 	void Start () {
+        startPos = transform.position;
         _rend = GetComponent<Renderer>();
         startColor = _rend.material.color;
         newPosition = transform.position;
@@ -192,6 +194,16 @@ public class Player : MonoBehaviour {
                 Destroy(go);
             dead = true;
         }
+    }
+
+    public void Reset()
+    {
+        score = 0;
+        currentColorIndex = 0;
+        currentShiftTime = 0;
+        beatStreak = 0;
+        fastsSpawned = 0;
+        transform.position = startPos;
     }
 
     private void ShiftColor()

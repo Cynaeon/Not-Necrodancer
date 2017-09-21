@@ -153,6 +153,20 @@ public class SongData : MonoBehaviour {
         }
     }
 
+    public void SetTime(float time)
+    {
+        foreach (AudioSource track in songLayer1)
+            track.time = time;
+        foreach (AudioSource track in songLayer2)
+            track.time = time;
+        foreach (AudioSource track in songLayer3)
+            track.time = time;
+        foreach (AudioSource track in songLayer4)
+            track.time = time;
+        foreach (AudioSource track in songLayer5)
+            track.time = time;
+    }
+
     public void SetTempo(float tempo)
     {
         foreach (AudioSource track in songLayer1)
