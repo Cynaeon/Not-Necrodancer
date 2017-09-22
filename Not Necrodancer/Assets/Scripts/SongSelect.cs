@@ -80,7 +80,6 @@ public class SongSelect : MonoBehaviour {
                 smoke.SetActive(false);
                 StartCoroutine(StartGame());
             }
-            
 
             if (am.inGame)
                 loading.SetActive(false);

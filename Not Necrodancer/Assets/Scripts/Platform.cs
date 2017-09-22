@@ -34,6 +34,7 @@ public class Platform : MonoBehaviour {
     private Color descendedColor;
     private Vector3 elevatedPos;
     private Vector3 endPos;
+    private SongData _songData;
     private float spinDuration;
     private float currentTimeTillFall;
     private float descentTime;
@@ -59,11 +60,21 @@ public class Platform : MonoBehaviour {
         endPos = new Vector3(transform.position.x, -50, transform.position.z);
         descendedColor = Color.clear;
         elevated = true;
-        spinDuration = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>().secondsToBeat * 2;
+        
+        //spinDuration = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>().secondsToBeat * 2;
 	}
 
 	
 	void Update () {
+
+        if (!_songData)
+        {
+            if (GameObject.FindGameObjectWithTag("SongData"))
+                _songData = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>();
+        }
+            
+        else
+            spinDuration = _songData.secondsToBeat * 2;
 
         if (danger)
         {

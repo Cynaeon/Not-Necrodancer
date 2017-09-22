@@ -87,7 +87,7 @@ public class AudioManager : MonoBehaviour {
     {
         Camera.main.GetComponent<CameraManager>().enabled = state;
         playAreaScript = GameObject.Find("PlayArea").GetComponent<PlayArea>();
-        playAreaScript.SetPlatformScripts(state);
+        //playAreaScript.SetPlatformScripts(state);
         playAreaScript.enabled = state;
         playerScript = player.GetComponent<Player>();
         playerScript.enabled = state;

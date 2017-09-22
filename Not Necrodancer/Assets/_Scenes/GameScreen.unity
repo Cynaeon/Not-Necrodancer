@@ -236,7 +236,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -349831313
+  randomSeed: 446175856
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3446,7 +3446,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 126335042}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.5, y: 5, z: -2.51}
+  m_LocalPosition: {x: -1.5, y: 6, z: -2.51}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10378,6 +10378,7 @@ GameObject:
   - component: {fileID: 1446598043}
   - component: {fileID: 1446598042}
   - component: {fileID: 1446598046}
+  - component: {fileID: 1446598047}
   m_Layer: 5
   m_Name: MenuUI
   m_TagString: Untagged
@@ -10491,6 +10492,20 @@ MonoBehaviour:
   song_BTW: {fileID: 1743746481784628, guid: 122982d6ff4118f4388a50857fc19742, type: 2}
   song_CMM: {fileID: 1938990523351094, guid: 4459bcdf671bcfa46859957e95fe8b22, type: 2}
   song_CG: {fileID: 1018522119268766, guid: 98b132f130e855f499452e0e8ebc44f1, type: 2}
+--- !u!114 &1446598047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446598041}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c7eb92926409b42b36c62e68947f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 1352955598123014, guid: 9c5285008ce74e1478a51473554e0708, type: 2}
+  minInterval: 5
+  maxInterval: 10
 --- !u!1 &1463081440
 GameObject:
   m_ObjectHideFlags: 0

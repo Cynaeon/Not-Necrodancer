@@ -725,6 +725,6 @@ MonoBehaviour:
   bpm: 120
   timeTillSongStart: 3
   secondsToBeat: 0.5
-  songEndTime: 181
+  songEndTime: 179
   movementWindow: 0.3
   tempoOffset: 0.2

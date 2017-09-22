@@ -1,10 +1,12 @@
 ====TODO====
 PRIORITY:
+UI scale is FUCKED
 Song ending with buttons (retry, menu) and game reset
 Song info in the select menu (bpm, hiscore etc)
 Pause with restart
 Rescale/rethink scoring system 
 More enemy types
+Bug: Player can exit the stage while invulnerable
 
 Try to model a player character xD
 Work on a song xDD
