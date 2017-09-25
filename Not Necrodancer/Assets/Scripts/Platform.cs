@@ -8,9 +8,11 @@ public class Platform : MonoBehaviour {
     public float waveSpan;
     public float timeTillFall;
     public float spinSpeed;
-    public Color activeColor1;
-    public Color activeColor2;
-    public Color dangerColor;
+    public Material idleMaterial;
+    public Material activeMaterial1;
+    public Material activeMaterial2;
+    public Material dangerMaterial;
+    public Material descendedMaterial;
     public int level;
     public int variant;
     public GameObject deathSphere;
@@ -30,9 +32,9 @@ public class Platform : MonoBehaviour {
     private bool descending;
     private bool danger;
     private bool instantiatedDeath;
-    private Color idleColor;
-    private Color currentActiveColor;
-    private Color descendedColor;
+
+    private Material currentActiveMaterial;
+
     private Vector3 elevatedPos;
     private Vector3 endPos;
     private SongData _songData;
@@ -53,13 +55,11 @@ public class Platform : MonoBehaviour {
         currentSpinSpeed = spinSpeed;
         _rend = GetComponent<Renderer>();
         if (variant == 1)
-            currentActiveColor = activeColor1;
+            currentActiveMaterial = activeMaterial1;
         else
-            currentActiveColor = activeColor2;
-        idleColor = _rend.material.color;
+            currentActiveMaterial = activeMaterial2;
         elevatedPos = transform.position;
         endPos = new Vector3(transform.position.x, -50, transform.position.z);
-        descendedColor = Color.clear;
         elevated = true;
         
         //spinDuration = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>().secondsToBeat * 2;
@@ -79,14 +79,15 @@ public class Platform : MonoBehaviour {
 
         if (danger)
         {
-            dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * 6, 1));
-            _rend.material.color = dangerColor;
+
+            float lerp = Mathf.PingPong(Time.time * dangerLevel, 1);
+            _rend.material.Lerp(idleMaterial, dangerMaterial, lerp);
         }
         
         if (spinning)
         {
-            dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * 6, 1));
-            _rend.material.color = dangerColor;
+            float lerp = Mathf.PingPong(Time.time * dangerLevel, 1);
+            _rend.material.Lerp(idleMaterial, dangerMaterial, lerp);
             transform.Rotate(Vector3.right * currentSpinSpeed * Time.deltaTime);
             currentSpinTime += Time.deltaTime;
             if (currentSpinTime > spinDuration)
@@ -94,7 +95,7 @@ public class Platform : MonoBehaviour {
                 transform.eulerAngles = Vector3.zero;
                 spinning = false;
                 currentSpinTime = 0;
-                _rend.material.color = idleColor;
+                _rend.material = idleMaterial;
             }
 
             #region OldSpin 
@@ -146,7 +147,8 @@ public class Platform : MonoBehaviour {
                 descentTime = descentTime + Time.deltaTime / 2;
                 transform.position = Vector3.Lerp(elevatedPos, endPos, descentTime);
                 platformBase.SetActive(false);
-                _rend.material.color = Color.Lerp(idleColor, descendedColor, descentTime);
+                
+                _rend.material.Lerp(idleMaterial, descendedMaterial, descentTime);
 
                 if (transform.position.y <= endPos.y)
                 {
@@ -186,12 +188,12 @@ public class Platform : MonoBehaviour {
     {
         if (elevated)
         {
-            if (currentActiveColor == activeColor1)
-                currentActiveColor = activeColor2;
+            if (currentActiveMaterial == activeMaterial1)
+                currentActiveMaterial = activeMaterial2;
             else
-                currentActiveColor = activeColor1;
+                currentActiveMaterial = activeMaterial1;
             if (!danger)
-                _rend.material.color = currentActiveColor;
+                _rend.material = currentActiveMaterial;
         }
     }
 
@@ -199,13 +201,13 @@ public class Platform : MonoBehaviour {
     {
         if (elevated)
         {
-            _rend.material.color = activeColor1;
+            _rend.material = activeMaterial1;
         }
     }
 
     public void SetToIdleColor()
     {
-        _rend.material.color = idleColor;
+        _rend.material = idleMaterial;
     }
 
     public void ResetPlatform()
@@ -216,7 +218,7 @@ public class Platform : MonoBehaviour {
         elevated = true;
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         _rend.enabled = true;
-        _rend.material.color = idleColor;
+        _rend.material = idleMaterial;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -249,8 +251,12 @@ public class Platform : MonoBehaviour {
 
             if (newDangerLevel != dangerLevel)
                 dangerLevel = newDangerLevel;
-            dangerColor = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * dangerLevel, 1));
-            _rend.material.color = dangerColor;
+            float lerp = Mathf.PingPong(Time.time * dangerLevel, 1);
+            _rend.material.Lerp(idleMaterial, dangerMaterial, lerp);
+            /*
+            dangerMaterial = Color.Lerp(Color.red, Color.black, Mathf.PingPong(Time.time * dangerLevel, 1));
+            _rend.material.color = dangerMaterial;
+            */
         }
     }
 

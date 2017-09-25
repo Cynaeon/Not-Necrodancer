@@ -37,7 +37,6 @@ public class SongSelect : MonoBehaviour {
 	void Start () {
         songListStartPos = songList.position;
         songListStartRot = songList.rotation;
-        smoke.SetActive(true);
         eventSystem.enabled = false;
         am = audioManager.GetComponent<AudioManager>();
 	}
@@ -84,7 +83,6 @@ public class SongSelect : MonoBehaviour {
                 songButtons.SetActive(false);
                 songInfo.SetActive(false);
                 loading.SetActive(true);
-                smoke.SetActive(false);
                 StartCoroutine(StartGame());
             }
 
@@ -128,7 +126,6 @@ public class SongSelect : MonoBehaviour {
         
         songButtons.SetActive(true);
         songInfo.SetActive(true);
-        smoke.SetActive(true);
     }
 
     public void PlayBTW()

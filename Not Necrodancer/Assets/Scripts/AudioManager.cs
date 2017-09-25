@@ -84,7 +84,6 @@ public class AudioManager : MonoBehaviour {
     public void StartGame()
     {
         inGame = true;
-        lightController.ToggleOn();
         score.SetActive(true);
         scoringSystem.SetActive(true);
         backGroundRays.SetActive(true);
