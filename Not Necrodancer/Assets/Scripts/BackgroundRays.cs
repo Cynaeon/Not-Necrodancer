@@ -27,7 +27,7 @@ public class BackgroundRays : MonoBehaviour {
 	}
 	
 	void Update () {
-        ShiftColor();
+        //ShiftColor();
         if (audioManager.level == 1)
             ps_shape.arcSpread = 0.5f;
         if (audioManager.level == 2)

@@ -44,7 +44,6 @@ public class Platform : MonoBehaviour {
     private float currentSpinSpeed;
     private float currentSpinTime;
     private int dangerLevel;
-    //private float spinFalloffMultiplier = 1;
     private Renderer _rend;
     private bool wave;
     [HideInInspector] public bool spinning;
@@ -80,13 +79,13 @@ public class Platform : MonoBehaviour {
         if (danger)
         {
 
-            float lerp = Mathf.PingPong(Time.time * dangerLevel, 1);
+            float lerp = Mathf.PingPong(Time.time * 15, 1);
             _rend.material.Lerp(idleMaterial, dangerMaterial, lerp);
         }
         
         if (spinning)
         {
-            float lerp = Mathf.PingPong(Time.time * dangerLevel, 1);
+            float lerp = Mathf.PingPong(Time.time * 15, 1);
             _rend.material.Lerp(idleMaterial, dangerMaterial, lerp);
             transform.Rotate(Vector3.right * currentSpinSpeed * Time.deltaTime);
             currentSpinTime += Time.deltaTime;

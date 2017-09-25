@@ -139,7 +139,7 @@ public class AudioManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.U))
                 IncreaseLevel();
 
-            if (songTime > _songData.timeTillSongStart && songStopped)
+            if (songTime > _songData.timeTillSongStart && songStopped && songTime < songEndTime)
                 StartSong();
 
             if (_songData.songLayer1[0].time > songEndTime && songStopped == false)
