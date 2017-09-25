@@ -157,10 +157,15 @@ public class PlayArea : MonoBehaviour {
 
     public void ResetPlatforms()
     {
+        currentCollectableInterval = 0;
+        currentEnemyInterval = 0;
+        speedLines.SetActive(false);
         foreach (Transform platform in transform)
         {
             if (platform.GetComponent<Platform>())
+            {
                 platform.GetComponent<Platform>().ResetPlatform();
+            }
         }
     }
 

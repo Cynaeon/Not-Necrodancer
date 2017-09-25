@@ -26,14 +26,13 @@ public class LightController : MonoBehaviour {
         }
         else
         {
-            if (step < 0)
+            if (step > 0)
                 step -= Time.deltaTime * transitionSpeed;
             else
                 step = 0;
         }
 
-        if (lightsOn)
-            _light.color = Color.Lerp(offColor, onColor, step);
+        _light.color = Color.Lerp(offColor, onColor, step);
 	}
 
     public void ToggleLights()

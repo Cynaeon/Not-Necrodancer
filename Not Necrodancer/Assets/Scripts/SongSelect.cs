@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SongSelect : MonoBehaviour {
 
@@ -9,7 +10,9 @@ public class SongSelect : MonoBehaviour {
     public float rollSpeed;
     public float maxRotation;
     public float minRotation;
-    public GameObject eventSystem;
+    public EventSystem eventSystem;
+    public GameObject firstSelectedMenu;
+
     public GameObject songInfo;
     public GameObject songButtons;
     public GameObject loading;
@@ -21,18 +24,21 @@ public class SongSelect : MonoBehaviour {
     public GameObject song_CMM;
     public GameObject song_CG;
 
+    private Quaternion songListStartRot;
     private Vector3 songListStartPos;
     private bool entered;
     private float step;
     private float targetRot;
+    private GameObject songObject;
     private GameObject songToBePlayed;
     private AudioManager am;
     private Canvas canvas;
 
 	void Start () {
         songListStartPos = songList.position;
+        songListStartRot = songList.rotation;
         smoke.SetActive(true);
-        eventSystem.SetActive(false);
+        eventSystem.enabled = false;
         am = audioManager.GetComponent<AudioManager>();
 	}
 	
@@ -45,7 +51,8 @@ public class SongSelect : MonoBehaviour {
             songList.eulerAngles = Vector3.Lerp(songList.rotation.eulerAngles, target, step);
             if (Vector3.Distance(songList.eulerAngles, target) < 0.2f)
             {
-                eventSystem.SetActive(true);
+                eventSystem.enabled = true;
+                eventSystem.SetSelectedGameObject(firstSelectedMenu);
                 entered = true;
             }
         }
@@ -84,27 +91,41 @@ public class SongSelect : MonoBehaviour {
             if (am.inGame)
                 loading.SetActive(false);
         }
+
+        if (eventSystem.currentSelectedGameObject == null)
+        {
+            targetRot = 0;
+            eventSystem.SetSelectedGameObject(firstSelectedMenu);
+        }
 	}
 
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(0.1f);
         if (songToBePlayed)
-            Instantiate(songToBePlayed);
+        {
+            songObject = Instantiate(songToBePlayed);
+        }
         songToBePlayed = null;
         am.StartGame();
     }
 
     public void PlayAgain()
     {
-
+        am.ResetGame();
+        songToBePlayed = songObject;
+        Destroy(songObject);
     }
 
     public void ToMenu()
     {
         am.ResetGame();
+        Destroy(songObject);
+        targetRot = 0;
         entered = false;
         songList.position = songListStartPos;
+        songList.rotation = songListStartRot;
+        
         songButtons.SetActive(true);
         songInfo.SetActive(true);
         smoke.SetActive(true);

@@ -112,4 +112,11 @@ public class CameraManager : MonoBehaviour {
         step = 1;
         levelUpFlashing = true;
     }
+
+    public void Reset()
+    {
+        cam.backgroundColor = startColor;
+        step = 0;
+        currentSpan = 0;
+    }
 }

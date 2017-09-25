@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class AudioManager : MonoBehaviour {
     
-    public AudioClip sound_LevelUp;
-    public AudioClip sound_beep;
     public GameObject player;
     public GameObject scoringSystem;
     public GameObject pauseUI;
+    public GameObject pauseButtons;
     public GameObject songEndMenu;
+    public EventSystem eventSystem;
+    public GameObject firstSelectedPause;
     public GameObject score;
     public GameObject hiscoretable;
     public GameObject backGroundRays;
@@ -43,13 +45,12 @@ public class AudioManager : MonoBehaviour {
     internal float movementWindow;
     internal float tempoOffset;
 
+    private SoundEffects soundEffects;
     private SongData _songData;
     private bool gamePaused;
-    private bool songStarted;
     private bool highTempo;
     private Player playerScript;
     private PlayArea playAreaScript;
-    private AudioSource soundEffects;
     private GameObject levelUpSphere;
     private Vector3 sphereStartScale;
     private Color sphereStartColor;
@@ -60,27 +61,14 @@ public class AudioManager : MonoBehaviour {
     private int beatNumber;
 
 	void Start () {
+        soundEffects = GetComponent<SoundEffects>();
+        playerScript = player.GetComponent<Player>();
         SetScripts(false);
         scoringSystem.SetActive(false);
         score.SetActive(false);
         hiscoretable.SetActive(false);
         songEndMenu.SetActive(false);
         backGroundRays.SetActive(false);
-        soundEffects = GetComponent<AudioSource>();
-        /*
-        _songData = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>();
-        _songData.MuteTracks();
-        secondsToBeat = _songData.secondsToBeat;
-        songEndTime = _songData.songEndTime;
-        timeTillSongStart = _songData.timeTillSongStart;
-        movementWindow = _songData.movementWindow;
-        tempoOffset = _songData.tempoOffset;
-        sphereStartScale = tempoSphere.localScale;
-        sphereStartColor = tempoSphere.GetComponent<Renderer>().material.color;
-        spherePositiveColor = Color.green;
-
-        songStopped = true;
-        */
     }
 
     private void SetScripts(bool state)
@@ -89,7 +77,6 @@ public class AudioManager : MonoBehaviour {
         playAreaScript = GameObject.Find("PlayArea").GetComponent<PlayArea>();
         //playAreaScript.SetPlatformScripts(state);
         playAreaScript.enabled = state;
-        playerScript = player.GetComponent<Player>();
         playerScript.enabled = state;
 
     }
@@ -102,7 +89,6 @@ public class AudioManager : MonoBehaviour {
         scoringSystem.SetActive(true);
         backGroundRays.SetActive(true);
         SetScripts(true);
-        
         Camera.main.GetComponent<CameraManager>().SetToGamePosition();
         Camera.main.GetComponent<RotateAround>().enabled = false;
         songTime = 0;
@@ -116,7 +102,6 @@ public class AudioManager : MonoBehaviour {
         sphereStartScale = tempoSphere.localScale;
         sphereStartColor = tempoSphere.GetComponent<Renderer>().material.color;
         spherePositiveColor = Color.green;
-
         songStopped = true;
     }
 
@@ -149,20 +134,13 @@ public class AudioManager : MonoBehaviour {
 
             starPowerSlider.value = playerScript.starPower;
             */
+
             Tempo();
 
-            if (gamePaused)
-            {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    // Restart
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.U))
                 IncreaseLevel();
 
-            if (songTime > _songData.timeTillSongStart && songStopped && !songStarted)
+            if (songTime > _songData.timeTillSongStart && songStopped)
                 StartSong();
 
             if (_songData.songLayer1[0].time > songEndTime && songStopped == false)
@@ -186,8 +164,11 @@ public class AudioManager : MonoBehaviour {
 
             if (playerScript.score < 0)
             {
-                DecreaseLevel();
-                playerScript.score += 10;
+                if (level > 1)
+                {
+                    DecreaseLevel();
+                    playerScript.score += 10;
+                }
             }
 
             if (tempoSphere.localScale.x > sphereStartScale.x)
@@ -196,8 +177,7 @@ public class AudioManager : MonoBehaviour {
                 tempoSphere.localScale -= new Vector3(value, value, value);
             }
 
-
-            if (songStarted)
+            if (!songStopped)
             {
                 float beatTime = (_songData.songLayer1[0].time / secondsToBeat) - tempoOffset;
                 if (beatTime > beatNumber)
@@ -236,13 +216,41 @@ public class AudioManager : MonoBehaviour {
 
     public void ResetGame()
     {
-        Camera.main.GetComponent<CameraManager>().UnblurScreen();
+        UnpauseGame();
+        DeleteGameObjects();
+        playAreaScript.ResetPlatforms();
+        inGame = false;
         hiscoretable.SetActive(false);
         songEndMenu.SetActive(false);
+        starPower.SetActive(false);
+        beatNumber = 0;
         level = 1;
+        songStopped = true;
+        lightController.ToggleOff();
+        Camera.main.GetComponent<RotateAround>().enabled = true;
+        cameraManager.Reset();
+        backGroundRays.transform.eulerAngles = new Vector3(-90, 0, 0);
+        backGroundRays.SetActive(false);
         scoringSystem.GetComponent<ScoringSystem>().ResetScore();
-        playAreaScript.ResetPlatforms();
+        playerScript.Reset();
+        _songData = null;
         SetScripts(false);
+    }
+
+    private void DeleteGameObjects()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Blade");
+        foreach (GameObject enemy in enemies)
+            Destroy(enemy);
+        GameObject[] pickups = GameObject.FindGameObjectsWithTag("Collectable");
+        foreach (GameObject pickup in pickups)
+            Destroy(pickup);
+        GameObject[] levelups = GameObject.FindGameObjectsWithTag("LevelUp");
+        foreach (GameObject levelup in levelups)
+            Destroy(levelup);
+        GameObject[] fastforwards = GameObject.FindGameObjectsWithTag("FastForward");
+        foreach (GameObject fastforward in fastforwards)
+            Destroy(fastforward);
     }
 
     public void ActivateStarPower()
@@ -253,9 +261,12 @@ public class AudioManager : MonoBehaviour {
 
     private void PauseGame()
     {
+        playerScript.enabled = false;
         _songData.PauseTracks();
         Camera.main.GetComponent<CameraManager>().BlurScreen();
         pauseUI.SetActive(true);
+        pauseButtons.SetActive(true);
+        eventSystem.SetSelectedGameObject(firstSelectedPause);
         gamePaused = true;
         Time.timeScale = 0;
     }
@@ -263,8 +274,10 @@ public class AudioManager : MonoBehaviour {
     private void UnpauseGame()
     {
         Time.timeScale = 1;
+        playerScript.enabled = true;
         _songData.UnpauseTracks();
         Camera.main.GetComponent<CameraManager>().UnblurScreen();
+        pauseButtons.SetActive(false);
         pauseUI.SetActive(false);
         gamePaused = false;
     }
@@ -273,14 +286,13 @@ public class AudioManager : MonoBehaviour {
     {
         _songData.StartSong();
         songStopped = false;
-        songStarted = true;
         playAreaScript.StartSpawning();
     }
 
     public void IncreaseLevel()
     {
         level++;
-        soundEffects.PlayOneShot(sound_LevelUp);
+        soundEffects.LevelUp();
         WaveBlast();
         DescentPlatforms();
         playAreaScript.enemyIntervalMultiplier += 0.5f;
@@ -338,11 +350,6 @@ public class AudioManager : MonoBehaviour {
     {
         Vector3 pos = player.transform.position;
         Instantiate(waveTrigger, pos, Quaternion.identity);
-    }
-
-    public void Beep()
-    {
-        soundEffects.PlayOneShot(sound_beep, 0.5f);
     }
 
     private void DescentPlatforms()

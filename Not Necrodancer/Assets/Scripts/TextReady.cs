@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TextReady : MonoBehaviour {
 
     public float shrinkSpeed;
+    public SoundEffects soundEffects;
 
     private float currentSecondsToBeat;
     private int cycle = 3;
@@ -23,6 +24,7 @@ public class TextReady : MonoBehaviour {
 	}
 	
 	void Update () {
+       
         if (cycle >= 0)
         {
             if (audioManager.timeTillSongStart - audioManager.songTime < audioManager.secondsToBeat * cycle && !beeped)
@@ -32,7 +34,7 @@ public class TextReady : MonoBehaviour {
                     transform.localScale = Vector3.one;
                     y = 1;
                     readyText.text = cycle.ToString();
-                    audioManager.Beep();
+                    soundEffects.Beep();
                 }
                 else
                     readyText.text = "";

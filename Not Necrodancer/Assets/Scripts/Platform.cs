@@ -25,6 +25,7 @@ public class Platform : MonoBehaviour {
 
     private State state;
 
+    private GameObject deathSphereInst;
     private bool elevated;
     private bool descending;
     private bool danger;
@@ -138,7 +139,7 @@ public class Platform : MonoBehaviour {
             {
                 if (!instantiatedDeath)
                 {
-                    Instantiate(deathSphere, transform.position, Quaternion.identity);
+                    deathSphereInst = Instantiate(deathSphere, transform.position, Quaternion.identity);
                     instantiatedDeath = true;
                 }
                 danger = false;
@@ -150,7 +151,7 @@ public class Platform : MonoBehaviour {
                 if (transform.position.y <= endPos.y)
                 {
                     transform.position = new Vector3(transform.position.x, endPos.y, transform.position.z);
-                    gameObject.SetActive(false);
+                    _rend.enabled = false;
                     state = State.descended;
                 }
             }
@@ -209,7 +210,13 @@ public class Platform : MonoBehaviour {
 
     public void ResetPlatform()
     {
+        platformBase.SetActive(true);
+        instantiatedDeath = false;
+        Destroy(deathSphereInst);
+        elevated = true;
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        _rend.enabled = true;
+        _rend.material.color = idleColor;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
     public bool canMove;
     public int streakToStarPower;
     public int score;
-    public AudioClip sound_death;
+    public SoundEffects soundEffects;
 
     private Renderer _rend;
     private CameraManager cameraManager;
@@ -184,7 +184,7 @@ public class Player : MonoBehaviour {
         {
             score -= _audioManager.scoreToLevelUp / 2;
             Instantiate(deathEffect, transform.position, Quaternion.identity);
-            GetComponent<AudioSource>().PlayOneShot(sound_death, 0.3f);
+            soundEffects.PlayerDeath();
             cameraManager.ScreenShake();
             cameraManager.DeathFlash();
             transform.position = new Vector3(100, 100, 100);
@@ -198,12 +198,15 @@ public class Player : MonoBehaviour {
 
     public void Reset()
     {
+        dead = false;
+        invulnerable = false;
         score = 0;
         currentColorIndex = 0;
         currentShiftTime = 0;
         beatStreak = 0;
         fastsSpawned = 0;
         transform.position = startPos;
+        newPosition = startPos;
     }
 
     private void ShiftColor()
