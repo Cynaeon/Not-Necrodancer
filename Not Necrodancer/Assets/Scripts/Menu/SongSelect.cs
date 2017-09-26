@@ -71,6 +71,7 @@ public class SongSelect : MenuScreen {
             songObject = Instantiate(songToBePlayed);
         }
         songToBePlayed = null;
+        gameObject.SetActive(false);
         am.StartGame();
     }
 

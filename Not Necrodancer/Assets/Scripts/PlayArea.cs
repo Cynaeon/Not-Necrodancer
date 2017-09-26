@@ -137,12 +137,12 @@ public class PlayArea : MonoBehaviour {
 
     public void SwitchColors()
     {
-        if (playerScript.beatStreak > streakForDiscoFloor)
+        if (playerScript.beatStreak > 0)
         {
             foreach (Transform platform in transform)
             {
                 if (platform.GetComponent<Platform>())
-                    platform.GetComponent<Platform>().SwitchColor();
+                    platform.GetComponent<Platform>().SwitchColor(streakForDiscoFloor, playerScript.beatStreak);
             }
         }
         else
@@ -157,8 +157,8 @@ public class PlayArea : MonoBehaviour {
 
     public void ResetPlatforms()
     {
-        currentCollectableInterval = 0;
-        currentEnemyInterval = 0;
+        currentCollectableInterval = collectableSpawnInterval;
+        currentEnemyInterval = enemySpawnInterval;
         speedLines.SetActive(false);
         foreach (Transform platform in transform)
         {

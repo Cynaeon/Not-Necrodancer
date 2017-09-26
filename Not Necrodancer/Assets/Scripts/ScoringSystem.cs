@@ -27,12 +27,17 @@ public class ScoringSystem : MonoBehaviour {
 	void Start () {
         playerScript = GameObject.Find("Player").GetComponent<Player>();
         audioManagerScript = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-        hiscorePrefix = "";
-        hiscorePrefix += SceneManager.GetActiveScene().name + "_hiscore_";
-        hiscoreText.text = "";
 	}
-	
-	void Update () {
+
+    private void OnEnable()
+    {
+        GameObject songData = GameObject.FindGameObjectWithTag("SongData");
+        hiscorePrefix = "";
+        hiscorePrefix += songData.name + "_hiscore_";
+        hiscoreText.text = "";
+    }
+
+    void Update () {
         if (!audioManagerScript.songStopped)
         {
             level = audioManagerScript.level - 1;

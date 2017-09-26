@@ -8,8 +8,8 @@ public class TextReady : MonoBehaviour {
     public float shrinkSpeed;
     public SoundEffects soundEffects;
 
+    internal int cycle = 3;
     private float currentSecondsToBeat;
-    private int cycle = 3;
     private bool beeped;
     private float y;
     private Text readyText;

@@ -1,5 +1,7 @@
 ====TODO====
 PRIORITY:
+Save the customizations
+Hiscores for each song
 UI scale is FUCKED
 Song ending with buttons (retry, menu) and game reset
 Song info in the select menu (bpm, hiscore etc)
@@ -12,6 +14,7 @@ Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
+Disco floor color intensity based on beatstreak
 Floor bounces randomly at menu idle
 Danger flashing doesn't reset on every beat
 Platform material switches shader mode to get particles and shadows working

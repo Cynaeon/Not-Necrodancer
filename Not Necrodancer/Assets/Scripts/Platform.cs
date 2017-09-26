@@ -183,7 +183,7 @@ public class Platform : MonoBehaviour {
         spinning = true;
     }
 
-    public void SwitchColor()
+    public void SwitchColor(int max, int current)
     {
         if (elevated)
         {
@@ -192,7 +192,10 @@ public class Platform : MonoBehaviour {
             else
                 currentActiveMaterial = activeMaterial1;
             if (!danger)
+            {
                 _rend.material = currentActiveMaterial;
+                _rend.material.SetColor("_EmissionColor", (_rend.material.GetColor("_EmissionColor") / (max * 0.75f)) * current / 2);
+            }
         }
     }
 
@@ -232,7 +235,7 @@ public class Platform : MonoBehaviour {
         if (other.tag == "Blade")
             Spin();
         if (other.tag == "SongEndTrigger")
-            SwitchColor();
+            SwitchColor(40, 40);
     }
 
     private void OnTriggerStay(Collider other)

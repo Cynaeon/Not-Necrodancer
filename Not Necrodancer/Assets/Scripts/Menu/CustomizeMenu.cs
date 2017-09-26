@@ -29,8 +29,8 @@ public class CustomizeMenu : MenuScreen {
     private void SetButtonColor(Button button, int colorIndex)
     {
         ColorBlock cb = button.colors;
-        cb.normalColor = colors[colorIndex] / 4;
-        cb.highlightedColor = colors[colorIndex] / 2;
+        cb.normalColor = colors[colorIndex] / 1.5f;
+        cb.highlightedColor = colors[colorIndex];
         cb.pressedColor = colors[colorIndex];
         button.colors = cb;
     }
@@ -49,13 +49,15 @@ public class CustomizeMenu : MenuScreen {
         gameObject.SetActive(false);
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         backgroundRays.SetActive(true);
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
+        base.OnDisable();
         backgroundRays.SetActive(false);
     }
 
