@@ -1,10 +1,8 @@
 ====TODO====
 PRIORITY:
 Save the customizations
-Hiscores for each song
 UI scale is FUCKED
 Song ending with buttons (retry, menu) and game reset
-Song info in the select menu (bpm, hiscore etc)
 Pause with restart
 Rescale/rethink scoring system 
 More enemy types
@@ -14,18 +12,12 @@ Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
-Disco floor color intensity based on beatstreak
 Floor bounces randomly at menu idle
 Danger flashing doesn't reset on every beat
-Platform material switches shader mode to get particles and shadows working
-New font for song info
-Hiscores visible in font (maybe toggle)
-Platforms bounce when in menu
+Hiscores visible in menu (maybe toggle)
 Camera moves smoothly to the starting position
-Playarea light matches the background ray color
 Fade-in on the star power effect
 Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
-Do something cool with the directional light
 Improve enemy spawning
 Read up on good coding and naming practices and CLEAN UP YOUR CODE WTF
 
@@ -37,6 +29,13 @@ Background ray color shift based on level
 
 
 ====DONE====
+Song info in the select menu (bpm, hiscore etc)
+Do something cool with the directional light
+Playarea light matches the background ray color
+New font for song info
+Platform material switches shader mode to get particles and shadows working
+Disco floor color intensity based on beatstreak
+Hiscores for each song
 Menu system and song select
 Shorter songs
 Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))

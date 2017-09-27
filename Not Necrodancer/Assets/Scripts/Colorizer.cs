@@ -29,7 +29,7 @@ public class Colorizer : MonoBehaviour {
         platformBaseMaterial.SetColor("_EmissionColor", new Color(stageColor.r / 8, stageColor.g / 8, stageColor.b / 8));
         stageLight.color = stageColor;
         main = smoke.main;
-        main.startColor = new Color(stageColor.r, stageColor.g, stageColor.b, 0.02f);
+        main.startColor = new Color(stageColor.r, stageColor.g, stageColor.b, 0.04f);
         main = ambient.main;
         main.startColor = stageColor;
 
