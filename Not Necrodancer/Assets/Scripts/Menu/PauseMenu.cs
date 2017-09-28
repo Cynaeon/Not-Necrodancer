@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MenuScreen
 {
     public AudioManager audioManager;
+    public MenuScreen songSelect;
 
     protected override void Update()
     {
@@ -23,6 +24,15 @@ public class PauseMenu : MenuScreen
     public void Restart()
     {
         audioManager.ResetGame();
+        audioManager.StartGame();
+        gameObject.SetActive(false);
+    }
+
+    public void ToMenu()
+    {
+        audioManager.ResetGame();
+        songSelect.gameObject.SetActive(true);
+        songSelect.enabled = true;
         gameObject.SetActive(false);
     }
 }

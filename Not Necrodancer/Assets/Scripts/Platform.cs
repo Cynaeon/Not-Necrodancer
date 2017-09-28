@@ -32,9 +32,7 @@ public class Platform : MonoBehaviour {
     private bool descending;
     private bool danger;
     private bool instantiatedDeath;
-
     private Material currentActiveMaterial;
-
     private Vector3 elevatedPos;
     private Vector3 endPos;
     private SongData _songData;
@@ -57,28 +55,23 @@ public class Platform : MonoBehaviour {
             currentActiveMaterial = activeMaterial1;
         else
             currentActiveMaterial = activeMaterial2;
+        _rend.material = currentActiveMaterial;
         elevatedPos = transform.position;
         endPos = new Vector3(transform.position.x, -50, transform.position.z);
         elevated = true;
-        
-        //spinDuration = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>().secondsToBeat * 2;
 	}
 
-	
 	void Update () {
-
         if (!_songData)
         {
             if (GameObject.FindGameObjectWithTag("SongData"))
                 _songData = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>();
         }
-            
         else
             spinDuration = _songData.secondsToBeat * 2;
 
         if (danger)
         {
-
             float lerp = Mathf.PingPong(Time.time * 15, 1);
             _rend.material.Lerp(idleMaterial, dangerMaterial, lerp);
         }
@@ -96,33 +89,12 @@ public class Platform : MonoBehaviour {
                 currentSpinTime = 0;
                 _rend.material = idleMaterial;
             }
-
-            #region OldSpin 
-            /*
-            if (currentSpinSpeed > 50)
-            {
-                currentSpinSpeed -= spinSpeedFalloff * Time.deltaTime * spinFalloffMultiplier;
-                spinFalloffMultiplier += 0.4f;    
-            }
-            else
-            {
-                if ((transform.eulerAngles.x > -2 && transform.eulerAngles.x < 2))
-                {
-                    transform.eulerAngles = Vector3.zero;
-                    spinning = false;
-                    currentSpinSpeed = spinSpeed;
-                    spinFalloffMultiplier = 1;
-                }
-            }
-            */
-            #endregion
         }
 
         else if (wave)
         {
             waveTime = waveTime + Time.deltaTime;
             float y = startY + Mathf.Sin(waveTime * speed) * waveSpan / 2;
-            
             transform.position = new Vector3(transform.position.x, y, transform.position.z);
             
             if (transform.position.y < startY)
@@ -146,7 +118,6 @@ public class Platform : MonoBehaviour {
                 descentTime = descentTime + Time.deltaTime / 2;
                 transform.position = Vector3.Lerp(elevatedPos, endPos, descentTime);
                 platformBase.SetActive(false);
-                
                 _rend.material.Lerp(idleMaterial, descendedMaterial, descentTime);
 
                 if (transform.position.y <= endPos.y)
@@ -194,7 +165,9 @@ public class Platform : MonoBehaviour {
             if (!danger)
             {
                 _rend.material = currentActiveMaterial;
-                _rend.material.SetColor("_EmissionColor", (_rend.material.GetColor("_EmissionColor") / (max * 0.75f)) * current / 2);
+                if (current > max)
+                    current = max;
+                _rend.material.SetColor("_EmissionColor", (_rend.material.GetColor("_EmissionColor") * (1 + 0.1f * current)));
             }
         }
     }
@@ -209,7 +182,7 @@ public class Platform : MonoBehaviour {
 
     public void SetToIdleColor()
     {
-        _rend.material = idleMaterial;
+        _rend.material = currentActiveMaterial;
     }
 
     public void ResetPlatform()

@@ -12,8 +12,7 @@ public class AudioManager : MonoBehaviour {
     public ScoringSystem scoringSystem;
     public MenuScreen pauseMenu;
     public GameObject pauseUI;
-    public GameObject pauseButtons;
-    public GameObject songEndMenu;
+    public MenuScreen songEndMenu;
     public EventSystem eventSystem;
     public GameObject firstSelectedPause;
     public GameObject score;
@@ -67,7 +66,7 @@ public class AudioManager : MonoBehaviour {
         scoringSystem.enabled = false;
         score.SetActive(false);
         hiscoretable.SetActive(false);
-        songEndMenu.SetActive(false);
+        songEndMenu.gameObject.SetActive(false);
         backGroundRays.SetActive(false);
     }
 
@@ -106,14 +105,18 @@ public class AudioManager : MonoBehaviour {
 
     void Update () {
 
+        
         if (!inGame)
         {
+            /*
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (GameObject.FindGameObjectWithTag("SongData"))
                     StartGame();
             }
+            */
         }
+        
         else 
         {
             songTime += Time.deltaTime;
@@ -143,12 +146,6 @@ public class AudioManager : MonoBehaviour {
             if (_songData.songLayer1[0].time > songEndTime && songStopped == false)
             {
                 SongEnd();
-            }
-
-            if (Input.GetButtonDown("Descent"))
-            {
-                Vector3 pos = new Vector3(player.transform.position.x, 14, player.transform.position.z);
-                Instantiate(descentTrigger, pos, Quaternion.identity);
             }
 
             if (playerScript.score >= scoreToLevelUp)
@@ -206,21 +203,22 @@ public class AudioManager : MonoBehaviour {
     {
         playAreaScript.StopSpawning();
         hiscoretable.SetActive(true);
-        pauseMenu.gameObject.SetActive(true);
-        pauseMenu.enabled = true;
-        Camera.main.GetComponent<CameraManager>().BlurScreen();
+        songEndMenu.gameObject.SetActive(true);
+        songEndMenu.enabled = true;
+        //camera.main.GetComponent<CameraManager>().BlurScreen();
         songStopped = true;
-        PauseGame();
+        inGame = false;
     }
 
     public void ResetGame()
     {
         UnpauseGame();
         DeleteGameObjects();
-        playAreaScript.ResetPlatforms();
+        playAreaScript.ResetPlatforms(); 
         inGame = false;
         hiscoretable.SetActive(false);
         starPower.SetActive(false);
+        songTime = 0;
         beatNumber = 0;
         level = 1;
         songStopped = true;
@@ -369,10 +367,13 @@ public class AudioManager : MonoBehaviour {
             GameObject.Find("PlayArea").GetComponent<PlayArea>().SwitchColors();
             GameObject go = GameObject.Find("LevelUp(Clone)");
             GameObject go2 = GameObject.Find("BackgroundRays");
+            GameObject go3 = GameObject.Find("Collectable(Clone)");
             if (go)
                 go.GetComponent<BounceToBeat>().OnBeat();
             if (go2)
                 go2.GetComponent<BounceToBeat>().OnBeat();
+            if (go3)
+                go3.GetComponent<BounceToBeat>().OnBeat();
             cameraManager.BeatFlash();
             //tempoSphere.localScale *= 1.5f;
         }

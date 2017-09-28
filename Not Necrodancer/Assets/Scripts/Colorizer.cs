@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Colorizer : MonoBehaviour {
-
     public ParticleSystem playerGlow;
     public ParticleSystem playerMoveTrail;
     public Light playerLight;
-    public Light stageLight;
+    public Light[] stageLight;
     public Material platformMaterial;
     public Material platformBaseMaterial;
     public ParticleSystem smoke;
@@ -27,9 +26,10 @@ public class Colorizer : MonoBehaviour {
 
         platformMaterial.SetColor("_EmissionColor", new Color(stageColor.r / 4, stageColor.g / 4, stageColor.b / 4));
         platformBaseMaterial.SetColor("_EmissionColor", new Color(stageColor.r / 8, stageColor.g / 8, stageColor.b / 8));
-        stageLight.color = stageColor;
+        foreach (Light light in stageLight) 
+            light.color = stageColor;
         main = smoke.main;
-        main.startColor = new Color(stageColor.r, stageColor.g, stageColor.b, 0.04f);
+        main.startColor = new Color(stageColor.r, stageColor.g, stageColor.b, 0.08f);
         main = ambient.main;
         main.startColor = stageColor;
 

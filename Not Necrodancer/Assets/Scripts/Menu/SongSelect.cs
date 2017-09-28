@@ -51,6 +51,15 @@ public class SongSelect : MenuScreen {
             loading.SetActive(true);
             StartCoroutine(StartGame());
         }
+        else
+        {
+            if (songObject)
+                Destroy(songObject);
+            songButtons.SetActive(true);
+            songInfo.SetActive(true);
+            menuBackground.SetActive(true);
+            loading.SetActive(false);
+        }
 
         if (am.inGame)
             loading.SetActive(false);
