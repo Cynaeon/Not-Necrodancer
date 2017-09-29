@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4214940518809476}
   - component: {fileID: 114981999190170882}
   - component: {fileID: 114052451702580692}
+  - component: {fileID: 114925227374519288}
   - component: {fileID: 82132328429414100}
   m_Layer: 0
   m_Name: AudioManager 1
@@ -133,8 +134,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5c023c76f685c4daab0e45b69d3a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUp: {fileID: 0}
-  beep: {fileID: 0}
+  levelUp: {fileID: 8300000, guid: 27eb4a6155d957a428cd88fa5a0d5245, type: 3}
+  beep: {fileID: 8300000, guid: d9362ae3025fec446863c44f632ff1dc, type: 3}
+  playerDeath: {fileID: 8300000, guid: cdc649ee5357eb3408358ac07dd43b29, type: 3}
+--- !u!114 &114925227374519288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098669921176808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8403ae92568c5f44fa69b50dad5b3d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114981999190170882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,18 +159,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07b0096fbb7a194da52f37c433789d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound_LevelUp: {fileID: 8300000, guid: 27eb4a6155d957a428cd88fa5a0d5245, type: 3}
-  sound_beep: {fileID: 8300000, guid: d9362ae3025fec446863c44f632ff1dc, type: 3}
   player: {fileID: 0}
   scoringSystem: {fileID: 0}
+  pauseMenu: {fileID: 0}
   pauseUI: {fileID: 0}
-  pauseButtons: {fileID: 0}
   songEndMenu: {fileID: 0}
+  eventSystem: {fileID: 0}
+  firstSelectedPause: {fileID: 0}
   score: {fileID: 0}
   hiscoretable: {fileID: 0}
   backGroundRays: {fileID: 0}
   cameraManager: {fileID: 0}
-  lightController: {fileID: 0}
   waveTrigger: {fileID: 1352955598123014, guid: 9c5285008ce74e1478a51473554e0708,
     type: 2}
   descentTrigger: {fileID: 1583665618627806, guid: 265b9d0d198045549b0f953076424f72,

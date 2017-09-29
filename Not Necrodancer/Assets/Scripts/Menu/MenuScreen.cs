@@ -41,6 +41,23 @@ abstract public class MenuScreen : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (Input.GetButtonDown("Up"))
+        {
+            if (targetRot > minRotation)
+            {
+                targetRot -= 15;
+                step = 0;
+            }
+        }
+        if (Input.GetButtonDown("Down"))
+        {
+            if (targetRot < maxRotation)
+            {
+                targetRot += 15;
+                step = 0;
+            }
+        }
+
         if (!entered)
         {
             Vector3 target = new Vector3(0, 0, 0);
@@ -51,28 +68,11 @@ abstract public class MenuScreen : MonoBehaviour
             menuList.eulerAngles = Vector3.Lerp(menuList.rotation.eulerAngles, target, step);
             if (Vector3.Distance(menuList.eulerAngles, target) < 0.2f)
             {
-                eventSystem.SetSelectedGameObject(firstSelected);
                 entered = true;
             }
         }
         else
         {
-            if (Input.GetButtonDown("Up"))
-            {
-                if (targetRot > minRotation)
-                {
-                    targetRot -= 15;
-                    step = 0;
-                }
-            }
-            if (Input.GetButtonDown("Down"))
-            {
-                if (targetRot < maxRotation)
-                {
-                    targetRot += 15;
-                    step = 0;
-                }
-            }
             Vector3 target = new Vector3(0, 0, targetRot);
             step += Time.unscaledDeltaTime * rollSpeed * 20;
             menuList.eulerAngles = Vector3.Lerp(menuList.rotation.eulerAngles, target, step);

@@ -10,7 +10,6 @@ public class PlayArea : MonoBehaviour {
     public GameObject levelUp;
     public GameObject[] enemies;
     public GameObject speedLines;
-    public GameObject songEndTrigger;
     public float collectableSpawnInterval;
     public float enemySpawnInterval;
     public float collectableSpawnHeight;
@@ -24,6 +23,7 @@ public class PlayArea : MonoBehaviour {
 
     private bool spawning;
     private bool colorSet;
+    private GameObject songEndTriggerInstance;
     private Player playerScript;
     private float currentCollectableInterval;
     private float currentEnemyInterval;
@@ -123,7 +123,6 @@ public class PlayArea : MonoBehaviour {
             if (platform.GetComponent<Platform>())
                 platform.GetComponent<Platform>().SetToEndColor();
         }
-        Instantiate(songEndTrigger);
     }
 
     public void SetPlatformScripts(bool state)

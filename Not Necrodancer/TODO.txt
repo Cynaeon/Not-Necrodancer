@@ -1,5 +1,7 @@
 ====TODO====
 PRIORITY:
+CUSTOM MUSIC
+Collectables required for level ups scale with song length
 Save the customizations
 UI scale is FUCKED
 Song ending with buttons (retry, menu) and game reset

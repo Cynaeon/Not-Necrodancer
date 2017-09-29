@@ -105,19 +105,7 @@ public class AudioManager : MonoBehaviour {
 
     void Update () {
 
-        
-        if (!inGame)
-        {
-            /*
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (GameObject.FindGameObjectWithTag("SongData"))
-                    StartGame();
-            }
-            */
-        }
-        
-        else 
+        if (inGame)
         {
             songTime += Time.deltaTime;
             if (Input.GetButtonDown("Pause"))
@@ -214,7 +202,7 @@ public class AudioManager : MonoBehaviour {
     {
         UnpauseGame();
         DeleteGameObjects();
-        playAreaScript.ResetPlatforms(); 
+        playAreaScript.ResetPlatforms();
         inGame = false;
         hiscoretable.SetActive(false);
         starPower.SetActive(false);
@@ -365,16 +353,7 @@ public class AudioManager : MonoBehaviour {
         if (!songStopped)
         {
             GameObject.Find("PlayArea").GetComponent<PlayArea>().SwitchColors();
-            GameObject go = GameObject.Find("LevelUp(Clone)");
-            GameObject go2 = GameObject.Find("BackgroundRays");
-            GameObject go3 = GameObject.Find("Collectable(Clone)");
-            if (go)
-                go.GetComponent<BounceToBeat>().OnBeat();
-            if (go2)
-                go2.GetComponent<BounceToBeat>().OnBeat();
-            if (go3)
-                go3.GetComponent<BounceToBeat>().OnBeat();
-            cameraManager.BeatFlash();
+            EventManager.TriggerEvent("Bounce");
             //tempoSphere.localScale *= 1.5f;
         }
     }
