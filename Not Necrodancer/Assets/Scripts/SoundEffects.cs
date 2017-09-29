@@ -7,6 +7,9 @@ public class SoundEffects : MonoBehaviour {
     public AudioClip levelUp;
     public AudioClip beep;
     public AudioClip playerDeath;
+    public AudioClip menuSelect;
+    public AudioClip menuBack;
+    public AudioClip menuValidate;
 
     private AudioSource _as;
 
@@ -27,5 +30,20 @@ public class SoundEffects : MonoBehaviour {
     internal void PlayerDeath()
     {
         _as.PlayOneShot(playerDeath);
+    }
+
+    internal void MenuSelect()
+    {
+        _as.PlayOneShot(menuSelect);
+    }
+
+    internal void MenuBack()
+    {
+        _as.PlayOneShot(menuBack);
+    }
+
+    internal void MenuValidate()
+    {
+        _as.PlayOneShot(menuValidate);
     }
 }

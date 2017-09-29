@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 abstract public class MenuScreen : MonoBehaviour
 {
+    
     public float rollSpeed = 0.5f;
     public Transform menuList;
     public EventSystem eventSystem;
@@ -17,16 +18,19 @@ abstract public class MenuScreen : MonoBehaviour
     protected float targetRot;
     protected float step;
     protected bool entered;
+    protected SoundEffects soundEffects;
 
     protected virtual void Start()
     {
         startPos = menuList.position;
         startRot = menuList.rotation;
         eventSystem.SetSelectedGameObject(firstSelected);
+        soundEffects = (SoundEffects) FindObjectOfType(typeof(SoundEffects));
     }
 
     protected virtual void OnDisable()
     {
+        soundEffects.MenuValidate();
         menuList.position = startPos;
         menuList.rotation = startRot;
         targetRot = 0;
@@ -47,6 +51,7 @@ abstract public class MenuScreen : MonoBehaviour
             {
                 targetRot -= 15;
                 step = 0;
+                soundEffects.MenuSelect();
             }
         }
         if (Input.GetButtonDown("Down"))
@@ -55,6 +60,7 @@ abstract public class MenuScreen : MonoBehaviour
             {
                 targetRot += 15;
                 step = 0;
+                soundEffects.MenuSelect();
             }
         }
 

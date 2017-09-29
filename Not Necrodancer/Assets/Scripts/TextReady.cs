@@ -17,7 +17,7 @@ public class TextReady : MonoBehaviour {
 
 	void Start () {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-        currentSecondsToBeat = audioManager.secondsToBeat;
+        currentSecondsToBeat = 0;
         readyText = GetComponent<Text>();
         transform.localScale = new Vector3(1, 0, 1);
         y = 1;
@@ -44,10 +44,10 @@ public class TextReady : MonoBehaviour {
             }
             else if (beeped)
             {
-                currentSecondsToBeat -= Time.deltaTime;
-                if (currentSecondsToBeat < 0)
+                currentSecondsToBeat += Time.deltaTime;
+                if (currentSecondsToBeat > audioManager.secondsToBeat)
                 {
-                    currentSecondsToBeat = audioManager.secondsToBeat;
+                    currentSecondsToBeat = 0;
                     beeped = false;
                 }
             }
@@ -62,5 +62,11 @@ public class TextReady : MonoBehaviour {
         {
             transform.localScale = new Vector3(1, y * 2, 1);
         }
+    }
+
+    internal void Reset()
+    {
+        cycle = 3;
+        currentSecondsToBeat = 0;
     }
 }

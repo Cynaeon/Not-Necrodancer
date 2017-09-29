@@ -1,11 +1,12 @@
 ====TODO====
 PRIORITY:
-CUSTOM MUSIC
+Better colors in customization
+Level not resetting
+Platform grid color messes up after song finish
+Star power and high tempo carry on to the next song
+Custom music
 Collectables required for level ups scale with song length
 Save the customizations
-UI scale is FUCKED
-Song ending with buttons (retry, menu) and game reset
-Pause with restart
 Rescale/rethink scoring system 
 More enemy types
 Bug: Player can exit the stage while invulnerable
@@ -31,6 +32,9 @@ Background ray color shift based on level
 
 
 ====DONE====
+UI scale is FUCKED
+Pause with restart
+Song ending with buttons (retry, menu) and game reset
 Song info in the select menu (bpm, hiscore etc)
 Do something cool with the directional light
 Playarea light matches the background ray color

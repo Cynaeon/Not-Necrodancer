@@ -210,7 +210,7 @@ public class AudioManager : MonoBehaviour {
         beatNumber = 0;
         level = 1;
         songStopped = true;
-        GameObject.Find("Ready").GetComponent<TextReady>().cycle = 3;
+        GameObject.Find("Ready").GetComponent<TextReady>().Reset();
         //Camera.main.GetComponent<RotateAround>().enabled = true;
         cameraManager.Reset();
         backGroundRays.transform.eulerAngles = new Vector3(-90, 0, 0);
