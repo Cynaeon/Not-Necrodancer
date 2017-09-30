@@ -25,6 +25,7 @@ public class SongSelect : MenuScreen {
     public GameObject song_CG;
     public GameObject song_Shelter;
     public GameObject song_TMA;
+    public GameObject song_Lights;
 
     private Quaternion songListStartRot;
     private Vector3 songListStartPos;
@@ -128,5 +129,10 @@ public class SongSelect : MenuScreen {
     public void PlayTMA()
     {
         songToBePlayed = song_TMA;
+    }
+
+    public void PlayLights()
+    {
+        songToBePlayed = song_Lights;
     }
 }

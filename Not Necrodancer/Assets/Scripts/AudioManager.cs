@@ -54,6 +54,7 @@ public class AudioManager : MonoBehaviour {
     private Vector3 sphereStartScale;
     private Color sphereStartColor;
     private Color spherePositiveColor;
+    private float waveInterval = 10;
     private float starPowerTime;
     private float current;
     private float currentTempoIncrease = 1;
@@ -87,6 +88,7 @@ public class AudioManager : MonoBehaviour {
         scoringSystem.enabled = true;
         backGroundRays.SetActive(true);
         SetScripts(true);
+        playerScript.enabled = false;
         Camera.main.GetComponent<CameraManager>().SetToGamePosition();
         Camera.main.GetComponent<RotateAround>().enabled = false;
         songTime = 0;
@@ -105,6 +107,8 @@ public class AudioManager : MonoBehaviour {
 
     void Update () {
 
+        Tempo();
+
         if (inGame)
         {
             songTime += Time.deltaTime;
@@ -122,9 +126,6 @@ public class AudioManager : MonoBehaviour {
 
             starPowerSlider.value = playerScript.starPower;
             */
-
-            Tempo();
-
             if (Input.GetKeyDown(KeyCode.U))
                 IncreaseLevel();
 
@@ -151,6 +152,8 @@ public class AudioManager : MonoBehaviour {
                     DecreaseLevel();
                     playerScript.score += 10;
                 }
+                else
+                    playerScript.score = 0;
             }
 
             if (tempoSphere.localScale.x > sphereStartScale.x)
@@ -185,15 +188,43 @@ public class AudioManager : MonoBehaviour {
                 }
             }
         }
+        else
+            SpawnWaves();
+    }
+
+    private void SpawnWaves()
+    {
+        waveInterval -= Time.deltaTime;
+        if (waveInterval < 0)
+        {
+            Vector3 pos;
+            int rnd = UnityEngine.Random.Range(1, 6);
+            if (rnd == 1)
+                pos = new Vector3(7, 0, 7);
+            else if (rnd == 2)
+                pos = new Vector3(-7, 0, 7);
+            else if (rnd == 3)
+                pos = new Vector3(7, 0, -7);
+            else if (rnd == 4)
+                pos = new Vector3(-7, 0, -7);
+            else
+                pos = Vector3.zero;
+            WaveBlast(pos);
+            waveInterval = 10;
+        }
     }
 
     private void SongEnd()
     {
+        DeleteGameObjects();
         playAreaScript.StopSpawning();
+        playerScript.enabled = false;
         hiscoretable.SetActive(true);
+        starPower.SetActive(false);
+        highTempo = false;
+        currentTempoIncrease = 0;
         songEndMenu.gameObject.SetActive(true);
         songEndMenu.enabled = true;
-        //camera.main.GetComponent<CameraManager>().BlurScreen();
         songStopped = true;
         inGame = false;
     }
@@ -205,7 +236,11 @@ public class AudioManager : MonoBehaviour {
         playAreaScript.ResetPlatforms();
         inGame = false;
         hiscoretable.SetActive(false);
+        highTempo = false;
+        currentTempoIncrease = 0;
         starPower.SetActive(false);
+        starPowerTime = 0;
+        
         songTime = 0;
         beatNumber = 0;
         level = 1;
@@ -213,10 +248,13 @@ public class AudioManager : MonoBehaviour {
         GameObject.Find("Ready").GetComponent<TextReady>().Reset();
         //Camera.main.GetComponent<RotateAround>().enabled = true;
         cameraManager.Reset();
+        Camera.main.GetComponent<RotateAround>().enabled = true;
         backGroundRays.transform.eulerAngles = new Vector3(-90, 0, 0);
         backGroundRays.SetActive(false);
         scoringSystem.GetComponent<ScoringSystem>().ResetScore();
         playerScript.Reset();
+        playerScript.StarPowerOff();
+       
         _songData = null;
         SetScripts(false);
     }
@@ -274,6 +312,7 @@ public class AudioManager : MonoBehaviour {
     {
         _songData.StartSong();
         songStopped = false;
+        playerScript.enabled = true;
         playAreaScript.StartSpawning();
     }
 
@@ -281,7 +320,8 @@ public class AudioManager : MonoBehaviour {
     {
         level++;
         soundEffects.LevelUp();
-        WaveBlast();
+        Vector3 pos = player.transform.position;
+        WaveBlast(pos);
         DescentPlatforms();
         playAreaScript.enemyIntervalMultiplier += 0.5f;
 
@@ -331,12 +371,12 @@ public class AudioManager : MonoBehaviour {
             else
                 currentTempoIncrease = 1;
         }
-        _songData.SetTempo(currentTempoIncrease);
+        if (_songData) 
+            _songData.SetTempo(currentTempoIncrease);
     }
 
-    private void WaveBlast()
+    private void WaveBlast(Vector3 pos)
     {
-        Vector3 pos = player.transform.position;
         Instantiate(waveTrigger, pos, Quaternion.identity);
     }
 

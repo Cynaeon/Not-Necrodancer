@@ -44,6 +44,7 @@ public class SoundEffects : MonoBehaviour {
 
     internal void MenuValidate()
     {
-        _as.PlayOneShot(menuValidate);
+        if (_as)
+            _as.PlayOneShot(menuValidate);
     }
 }

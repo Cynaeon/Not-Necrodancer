@@ -29,4 +29,9 @@ public class MainMenu : MenuScreen {
         customizeButtons.enabled = true;
         gameObject.SetActive(false);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

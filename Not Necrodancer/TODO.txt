@@ -1,26 +1,21 @@
 ====TODO====
 PRIORITY:
-Better colors in customization
-Level not resetting
-Platform grid color messes up after song finish
-Star power and high tempo carry on to the next song
+Come up with something to have the songs load when they are selected, not all at once at launch
 Custom music
 Collectables required for level ups scale with song length
 Save the customizations
 Rescale/rethink scoring system 
 More enemy types
-Bug: Player can exit the stage while invulnerable
 
 Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
-Floor bounces randomly at menu idle
+Tweak the light rays to look better when the playarea is small
 Danger flashing doesn't reset on every beat
 Hiscores visible in menu (maybe toggle)
 Camera moves smoothly to the starting position
 Fade-in on the star power effect
-Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
 Improve enemy spawning
 Read up on good coding and naming practices and CLEAN UP YOUR CODE WTF
 
@@ -32,6 +27,15 @@ Background ray color shift based on level
 
 
 ====DONE====
+Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
+Floor bounces randomly at menu idle
+Better colors in customization
+Platform grid color messes up after song finish
+Star power and high tempo carry on to the next song
+Bug: Player can exit the stage while invulnerable
+Level not resetting
+Quit button
+Menu ambience louder
 UI scale is FUCKED
 Pause with restart
 Song ending with buttons (retry, menu) and game reset

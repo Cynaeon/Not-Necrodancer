@@ -158,6 +158,7 @@ public class PlayArea : MonoBehaviour {
     {
         currentCollectableInterval = collectableSpawnInterval;
         currentEnemyInterval = enemySpawnInterval;
+        enemyIntervalMultiplier = 1;
         speedLines.SetActive(false);
         foreach (Transform platform in transform)
         {

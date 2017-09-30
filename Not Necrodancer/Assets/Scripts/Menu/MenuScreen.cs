@@ -54,7 +54,7 @@ abstract public class MenuScreen : MonoBehaviour
                 soundEffects.MenuSelect();
             }
         }
-        if (Input.GetButtonDown("Down"))
+        else if (Input.GetButtonDown("Down"))
         {
             if (targetRot < maxRotation)
             {
@@ -64,9 +64,10 @@ abstract public class MenuScreen : MonoBehaviour
             }
         }
 
+        /*
         if (!entered)
         {
-            Vector3 target = new Vector3(0, 0, 0);
+            Vector3 target = new Vector3(0, 0, targetRot);
             if (step < 1)
                 step += Time.unscaledDeltaTime * rollSpeed;
             else
@@ -83,6 +84,18 @@ abstract public class MenuScreen : MonoBehaviour
             step += Time.unscaledDeltaTime * rollSpeed * 20;
             menuList.eulerAngles = Vector3.Lerp(menuList.rotation.eulerAngles, target, step);
         }
+
+        if (eventSystem.currentSelectedGameObject == null)
+        {
+            targetRot = 0;
+            eventSystem.SetSelectedGameObject(firstSelected);
+        }
+        */
+
+        Vector3 target = new Vector3(0, 0, targetRot);
+        step += Time.unscaledDeltaTime * rollSpeed;
+        menuList.eulerAngles = Vector3.Lerp(menuList.rotation.eulerAngles, target, step);
+        
 
         if (eventSystem.currentSelectedGameObject == null)
         {

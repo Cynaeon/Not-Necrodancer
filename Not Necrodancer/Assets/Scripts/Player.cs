@@ -180,20 +180,17 @@ public class Player : MonoBehaviour {
 
     private void Die()
     {
-        if (!invulnerable)
-        {
-            score -= _audioManager.scoreToLevelUp / 2;
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            soundEffects.PlayerDeath();
-            cameraManager.ScreenShake();
-            cameraManager.DeathFlash();
-            transform.position = new Vector3(100, 100, 100);
-            newPosition = new Vector3(0, 1, 0);
-            GameObject go = GameObject.Find("LevelUp(Clone)");
-            if (go)
-                Destroy(go);
-            dead = true;
-        }
+        score -= _audioManager.scoreToLevelUp / 2;
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        soundEffects.PlayerDeath();
+        cameraManager.ScreenShake();
+        cameraManager.DeathFlash();
+        transform.position = new Vector3(100, 100, 100);
+        newPosition = new Vector3(0, 1, 0);
+        GameObject go = GameObject.Find("LevelUp(Clone)");
+        if (go)
+            Destroy(go);
+        dead = true;
     }
 
     public void Reset()
@@ -233,6 +230,11 @@ public class Player : MonoBehaviour {
             starPowerActive = true;
     }
 
+    internal void StarPowerOff()
+    {
+        starPowerActive = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Collectable")
@@ -242,10 +244,12 @@ public class Player : MonoBehaviour {
         }
         if (other.tag == "Platform")
         {
-            if (other.GetComponent<Platform>().spinning)
+            if (!invulnerable && other.GetComponent<Platform>().spinning )
                 Die();
         }
-        if (other.tag == "Blade" || other.tag == "Death")
+        if (other.tag == "Blade" && !invulnerable)
+            Die();
+        if (other.tag == "Death")
             Die();
         if (other.tag == "LevelUp")
         {

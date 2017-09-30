@@ -191,9 +191,15 @@ public class Platform : MonoBehaviour {
         instantiatedDeath = false;
         Destroy(deathSphereInst);
         elevated = true;
+        descentTime = 0;
+        currentTimeTillFall = 0;
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         _rend.enabled = true;
-        _rend.material = idleMaterial;
+        if (variant == 1)
+            currentActiveMaterial = activeMaterial1;
+        else
+            currentActiveMaterial = activeMaterial2;
+        _rend.material = currentActiveMaterial;
     }
 
     private void OnTriggerEnter(Collider other)

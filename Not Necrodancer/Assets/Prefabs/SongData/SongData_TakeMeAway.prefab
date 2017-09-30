@@ -172,4 +172,4 @@ MonoBehaviour:
   secondsToBeat: 0.3529
   songEndTime: 77
   movementWindow: 0.3
-  tempoOffset: 0.2
+  tempoOffset: 0.4
