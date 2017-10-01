@@ -84,14 +84,16 @@ public class ScoringSystem : MonoBehaviour {
         level = 0;
         playerScore = 0;
         beatStreak = 0;
+        scoreSaved = false;
+        hiscoreText.text = "";
     }
 
     private void DisplayHiscores()
     {
         for (int i = 1; i < 10; i++)
         {
-            int score = PlayerPrefs.GetInt(hiscorePrefix + i);
-            hiscoreText.text += score.ToString("000000") + "\n";
+            int score = PlayerPrefs.GetInt(hiscorePrefix + i.ToString());
+            hiscoreText.text += i + ". " + score.ToString("000000") + "\n";
         }
     }
 }

@@ -4,6 +4,7 @@ Come up with something to have the songs load when they are selected, not all at
 Custom music
 Collectables required for level ups scale with song length
 Save the customizations
+Bug: sometimes (always actually) score is not being entered into hiscores 
 Rescale/rethink scoring system 
 More enemy types
 
@@ -11,7 +12,7 @@ Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
-Tweak the light rays to look better when the playarea is small
+Remake level up sphere, also fix it spawning in random sizes
 Danger flashing doesn't reset on every beat
 Hiscores visible in menu (maybe toggle)
 Camera moves smoothly to the starting position
@@ -20,13 +21,23 @@ Improve enemy spawning
 Read up on good coding and naming practices and CLEAN UP YOUR CODE WTF
 
 KINDLY CONSIDER THE FOLLOWING:
+Song completion grade
 Level gauge
 Endless mode (end on first death)
 Score system in a randomly generated level???
 Background ray color shift based on level
 
+FEATURE CREEP!!!: 
+Spherical playarea
+
 
 ====DONE====
+Player to be placed at 0,100,0 so the light trail on respawning is centered
+Tweak the light rays to look better when the playarea is small
+Play area size not being reset (probably)
+Menu background on song end menu
+Hide mouse cursor
+Slow down cam rotation
 Platforms immediately return to normal color after spinning (rather than on the next beat (might get fixed when everything is bound to beat))
 Floor bounces randomly at menu idle
 Better colors in customization

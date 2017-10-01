@@ -15,6 +15,7 @@ public class PlayArea : MonoBehaviour {
     public float collectableSpawnHeight;
     public float enemySpawnHeight;
     public int streakForDiscoFloor;
+    public int streakForBounceFloor;
     public int streakForSpeedLines;
     public int areaX;
     public int areaY;
@@ -24,11 +25,14 @@ public class PlayArea : MonoBehaviour {
     private bool spawning;
     private bool colorSet;
     private GameObject songEndTriggerInstance;
+    private BounceToBeat bounceScript;
     private Player playerScript;
     private float currentCollectableInterval;
     private float currentEnemyInterval;
 
 	void Start () {
+        bounceScript = GetComponent<BounceToBeat>();
+        bounceScript.enabled = false;
         playerScript = GameObject.Find("Player").GetComponent<Player>();
         currentCollectableInterval = collectableSpawnInterval;
         currentEnemyInterval = enemySpawnInterval;
@@ -53,6 +57,11 @@ public class PlayArea : MonoBehaviour {
                 currentEnemyInterval = enemySpawnInterval;
             }
         }
+
+        if (playerScript.beatStreak > streakForBounceFloor)
+            bounceScript.enabled = true;
+        else
+            bounceScript.enabled = false;
 
         if (playerScript.beatStreak > streakForSpeedLines)
             speedLines.SetActive(true);
@@ -156,6 +165,8 @@ public class PlayArea : MonoBehaviour {
 
     public void ResetPlatforms()
     {
+        areaX = 7;
+        areaY = 7;
         currentCollectableInterval = collectableSpawnInterval;
         currentEnemyInterval = enemySpawnInterval;
         enemyIntervalMultiplier = 1;

@@ -61,6 +61,7 @@ public class AudioManager : MonoBehaviour {
     private int beatNumber;
 
 	void Start () {
+        Cursor.visible = false;
         soundEffects = GetComponent<SoundEffects>();
         playerScript = player.GetComponent<Player>();
         SetScripts(false);
@@ -126,9 +127,11 @@ public class AudioManager : MonoBehaviour {
 
             starPowerSlider.value = playerScript.starPower;
             */
+            /*
             if (Input.GetKeyDown(KeyCode.U))
                 IncreaseLevel();
 
+            */
             if (songTime > _songData.timeTillSongStart && songStopped && songTime < songEndTime)
                 StartSong();
 

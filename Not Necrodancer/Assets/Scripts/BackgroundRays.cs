@@ -36,11 +36,6 @@ public class BackgroundRays : MonoBehaviour {
             transform.Rotate(Vector3.up * Time.deltaTime * spinningSpeed, Space.World);
         if (audioManager.level == 4)
         {
-            if (limiterSet)
-            {
-                GetComponent<BounceToBeat>().beatIntensity += beatIntensityLimiter;
-                limiterSet = false;
-            }
             ps_shape.arcSpread = 0.2f;
         }
         if (audioManager.level == 5)
@@ -52,6 +47,13 @@ public class BackgroundRays : MonoBehaviour {
             }
             ps_shape.arcSpread = 0;
         }
+
+        if (audioManager.level <= 4)
+            if (limiterSet)
+            {
+                GetComponent<BounceToBeat>().beatIntensity += beatIntensityLimiter;
+                limiterSet = false;
+            }
     }
 
     private void ShiftColor()

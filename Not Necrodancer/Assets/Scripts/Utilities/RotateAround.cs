@@ -8,7 +8,7 @@ public class RotateAround : MonoBehaviour {
     public float speed;
 
 	void Update () {
-        transform.RotateAround(target.position, Vector3.up, 20 * Time.deltaTime);
+        transform.RotateAround(target.position, Vector3.up, speed * Time.deltaTime);
         transform.LookAt(target);
     }
 }

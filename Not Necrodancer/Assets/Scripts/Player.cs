@@ -185,7 +185,7 @@ public class Player : MonoBehaviour {
         soundEffects.PlayerDeath();
         cameraManager.ScreenShake();
         cameraManager.DeathFlash();
-        transform.position = new Vector3(100, 100, 100);
+        transform.position = new Vector3(0, 100, 0);
         newPosition = new Vector3(0, 1, 0);
         GameObject go = GameObject.Find("LevelUp(Clone)");
         if (go)

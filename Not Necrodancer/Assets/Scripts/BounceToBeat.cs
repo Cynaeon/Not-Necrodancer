@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class BounceToBeat : MonoBehaviour {
 
-    public float shrinkSpeed;
-    public float beatIntensity;
+    public float shrinkSpeed = 10;
+    public float beatIntensity = 1.5f;
 
     private Vector3 startScale;
     private UnityAction bounceToBeat;

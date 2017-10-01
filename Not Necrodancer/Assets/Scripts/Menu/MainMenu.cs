@@ -7,13 +7,11 @@ public class MainMenu : MenuScreen {
     public GameObject menuButtons;
     public MenuScreen customizeButtons;
     public MenuScreen songSelectButtons;
-    public GameObject menuBackground;
 
     protected override void Start()
     {
         base.Start();
         menuButtons.SetActive(true);
-        menuBackground.SetActive(true);
     }
 
     public void Play()

@@ -11,7 +11,6 @@ public class SongSelect : MenuScreen {
     public Transform songList;
     public GameObject firstSelectedMenu;
 
-    public GameObject menuBackground;
     public MenuScreen mainMenu;
     public GameObject songInfo;
     public GameObject songButtons;
@@ -49,7 +48,6 @@ public class SongSelect : MenuScreen {
         {
             songButtons.SetActive(false);
             songInfo.SetActive(false);
-            menuBackground.SetActive(false);
             loading.SetActive(true);
             StartCoroutine(StartGame());
         }
@@ -59,7 +57,6 @@ public class SongSelect : MenuScreen {
                 Destroy(songObject);
             songButtons.SetActive(true);
             songInfo.SetActive(true);
-            menuBackground.SetActive(true);
             loading.SetActive(false);
         }
 

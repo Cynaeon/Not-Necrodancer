@@ -14,6 +14,7 @@ public class Intro : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Cursor.visible = false;
         DontDestroyOnLoad(transform.gameObject);
         _as = GetComponent<AudioSource>();
         //_as.PlayOneShot(ambient);
