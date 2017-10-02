@@ -21733,7 +21733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkSpeed: 0.5
-  beatIntensity: 1.03
+  beatIntensity: 1.01
 --- !u!1 &1679706254
 GameObject:
   m_ObjectHideFlags: 0
