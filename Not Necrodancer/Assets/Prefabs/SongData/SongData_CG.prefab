@@ -1392,5 +1392,6 @@ MonoBehaviour:
   timeTillSongStart: 3
   secondsToBeat: 0.48
   songEndTime: 221
+  scoreToFiveStars: 133000
   movementWindow: 0.3
   tempoOffset: 0.2

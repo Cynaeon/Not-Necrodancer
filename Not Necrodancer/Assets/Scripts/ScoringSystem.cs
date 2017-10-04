@@ -13,20 +13,23 @@ public class ScoringSystem : MonoBehaviour {
     public int beatStreakMax;
     public Text scoreText;
     public Text hiscoreText;
+    public float grade;
+    public Image[] stars;
 
     public float totalScore;
     private float timeScore;
     private int level;
     private int playerScore;
     private int beatStreak;
+    private float pointsForStar;
     public string hiscorePrefix;
     private bool scoreSaved;
     private Player playerScript;
-    private AudioManager audioManagerScript;
+    private AudioManager _am;
 
 	void Start () {
         playerScript = GameObject.Find("Player").GetComponent<Player>();
-        audioManagerScript = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        _am = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 	}
 
     private void OnEnable()
@@ -38,22 +41,34 @@ public class ScoringSystem : MonoBehaviour {
     }
 
     void Update () {
-        if (!audioManagerScript.songStopped)
+        if (!_am.songStopped)
         {
-            level = audioManagerScript.level - 1;
+            level = _am.level;
             playerScore = playerScript.score;
             beatStreak = playerScript.beatStreak;
             beatStreak = Mathf.Clamp(beatStreak, 0, beatStreakMax);
             int starPowerMultiplier = 1;
+            pointsForStar = _am.scoreToFiveStars / 5;
             if (playerScript.starPowerActive)
                 starPowerMultiplier = 2;
-            timeScore += (Time.deltaTime * timeBonus * (level + 1)) * (beatStreak / 100 + 1) * starPowerMultiplier;
+            timeScore += (Time.deltaTime * timeBonus * (level * 1.4f)) * (beatStreak / 100 + 1) * starPowerMultiplier;
             totalScore = (level * 10 + playerScore + timeScore) * 100;
         }
         else if (!scoreSaved && totalScore > 0)
         {
             CheckHiscores();
-            DisplayHiscores();
+            //DisplayHiscores();
+        }
+        grade = totalScore / pointsForStar;
+        
+        for (int i = 1; i < grade; i++)
+        {
+            if (i > 4)
+                break;
+            if (grade >= i)
+                stars[i - 1].enabled = true;
+            else
+                stars[i - 1].enabled = false;
         }
         scoreText.text = totalScore.ToString("000000");
 	}

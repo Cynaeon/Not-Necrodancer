@@ -274,13 +274,14 @@ MonoBehaviour:
   songLayer1:
   - {fileID: 82662640537743664}
   songLayer2: []
-  songLayer3:
+  songLayer3: []
+  songLayer4:
   - {fileID: 82089626665398700}
-  songLayer4: []
   songLayer5: []
   bpm: 100
   timeTillSongStart: 3
   secondsToBeat: 0.6
   songEndTime: 115
+  scoreToFiveStars: 46800
   movementWindow: 0.3
   tempoOffset: 0.2

@@ -14,6 +14,7 @@ public class SongData : MonoBehaviour {
     public float timeTillSongStart;
     public float secondsToBeat;
     public float songEndTime;
+    public float scoreToFiveStars;
     public float movementWindow;
     public float tempoOffset;
 

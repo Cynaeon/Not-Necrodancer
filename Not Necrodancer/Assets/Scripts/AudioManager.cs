@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour {
     internal float secondsToBeat;
     internal float songEndTime;
     internal float timeTillSongStart;
+    internal float scoreToFiveStars;
     internal float movementWindow;
     internal float tempoOffset;
 
@@ -98,8 +99,10 @@ public class AudioManager : MonoBehaviour {
         secondsToBeat = _songData.secondsToBeat;
         songEndTime = _songData.songEndTime;
         timeTillSongStart = _songData.timeTillSongStart;
+        scoreToFiveStars = _songData.scoreToFiveStars;
         movementWindow = _songData.movementWindow;
         tempoOffset = _songData.tempoOffset;
+        scoreToLevelUp = (int) _songData.songEndTime / 7 / 3;
         sphereStartScale = tempoSphere.localScale;
         sphereStartColor = tempoSphere.GetComponent<Renderer>().material.color;
         spherePositiveColor = Color.green;
