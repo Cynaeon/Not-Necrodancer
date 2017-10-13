@@ -5117,7 +5117,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0b14ddd79ad78f844993d5373cff39fa, type: 3}
-    m_FontSize: 25
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -20972,7 +20972,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v. 0.1.4
+  m_Text: v. 0.2.0
 --- !u!222 &1432525030
 CanvasRenderer:
   m_ObjectHideFlags: 0

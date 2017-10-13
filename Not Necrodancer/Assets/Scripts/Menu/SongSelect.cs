@@ -85,20 +85,19 @@ public class SongSelect : MenuScreen {
 
     public void PlayAgain()
     {
-        am.ResetGame();
+        am.ResetGame(false);
         songToBePlayed = songObject;
         Destroy(songObject);
     }
 
     public void ToMenu()
     {
-        am.ResetGame();
+        am.ResetGame(true);
         Destroy(songObject);
         targetRot = 0;
         entered = false;
         songList.position = songListStartPos;
         songList.rotation = songListStartRot;
-        
         songButtons.SetActive(true);
         songInfo.SetActive(true);
     }

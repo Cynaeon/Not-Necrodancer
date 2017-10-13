@@ -9,7 +9,7 @@ public class SongEndMenu : MenuScreen {
 
     public void Continue()
     {
-        audioManager.ResetGame();
+        audioManager.ResetGame(true);
         songSelect.gameObject.SetActive(true);
         songSelect.enabled = true;
         gameObject.SetActive(false);
@@ -17,7 +17,7 @@ public class SongEndMenu : MenuScreen {
 
     public void Restart()
     { 
-        audioManager.ResetGame();
+        audioManager.ResetGame(false);
         audioManager.StartGame();
         gameObject.SetActive(false);
     }

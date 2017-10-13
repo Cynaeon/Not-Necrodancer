@@ -12,16 +12,16 @@ public class SongButton : MonoBehaviour, IPointerEnterHandler, ISelectHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (songData)
-            songInfo.text = "BPM: " + songData.bpm + "\nLength: " + songData.songEndTime;
+            songInfo.text = "Tempo: " + songData.songSpeed.ToString() + "\nLength: " + songData.songLenght.ToString();
         else
-            songInfo.text = "BPM: ???\nLength: ???";
+            songInfo.text = "Tempo: ???\nLength: ???";
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         if (songData)
-            songInfo.text = "BPM: " + songData.bpm + "\nLength: " + songData.songEndTime;
+            songInfo.text = "Tempo: " + songData.songSpeed.ToString() + "\nLength: " + songData.songLenght.ToString();
         else
-            songInfo.text = "BPM: ???\nLength: ???";
+            songInfo.text = "Tempo: ???\nLength: ???";
     }
 }

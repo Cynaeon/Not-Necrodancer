@@ -280,6 +280,8 @@ MonoBehaviour:
   speed: 20
   endY: 0.5
   lifeTime: 14
+  collectedEffect: {fileID: 1092630391040428, guid: e519a0e3b82a972429b6aa80f4c37263,
+    type: 2}
 --- !u!135 &135220267142930020
 SphereCollider:
   m_ObjectHideFlags: 1

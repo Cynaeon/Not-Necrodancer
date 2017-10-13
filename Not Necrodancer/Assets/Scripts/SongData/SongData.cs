@@ -18,8 +18,27 @@ public class SongData : MonoBehaviour {
     public float movementWindow;
     public float tempoOffset;
 
+    public enum Speed
+    {
+        Slow,
+        Medium,
+        Fast
+    }
+
+    public Speed songSpeed;
+
+    public enum Length
+    {
+        Short,
+        Medium,
+        Long
+    }
+
+    public Length songLenght;
+
     private void Start()
     {
+
         /*
         foreach (AudioSource track in songLayer1)
             track.gameObject.SetActive(false);
@@ -74,6 +93,34 @@ public class SongData : MonoBehaviour {
             track.Play();
         foreach (AudioSource track in songLayer5)
             track.Play();
+    }
+
+    public void LoadTracks()
+    {
+        foreach (AudioSource track in songLayer1)
+            track.clip.LoadAudioData();
+        foreach (AudioSource track in songLayer2)
+            track.clip.LoadAudioData();
+        foreach (AudioSource track in songLayer3)
+            track.clip.LoadAudioData();
+        foreach (AudioSource track in songLayer4)
+            track.clip.LoadAudioData();
+        foreach (AudioSource track in songLayer5)
+            track.clip.LoadAudioData();
+    }
+
+    public void UnloadTracks()
+    {
+        foreach (AudioSource track in songLayer1)
+            track.clip.UnloadAudioData();
+        foreach (AudioSource track in songLayer2)
+            track.clip.UnloadAudioData();
+        foreach (AudioSource track in songLayer3)
+            track.clip.UnloadAudioData();
+        foreach (AudioSource track in songLayer4)
+            track.clip.UnloadAudioData();
+        foreach (AudioSource track in songLayer5)
+            track.clip.UnloadAudioData();
     }
 
     public void StartSong()

@@ -235,7 +235,7 @@ public class AudioManager : MonoBehaviour {
         inGame = false;
     }
 
-    public void ResetGame()
+    public void ResetGame(bool unloadSong)
     {
         UnpauseGame();
         DeleteGameObjects();
@@ -246,13 +246,11 @@ public class AudioManager : MonoBehaviour {
         currentTempoIncrease = 0;
         starPower.SetActive(false);
         starPowerTime = 0;
-        
         songTime = 0;
         beatNumber = 0;
         level = 1;
         songStopped = true;
         GameObject.Find("Ready").GetComponent<TextReady>().Reset();
-        //Camera.main.GetComponent<RotateAround>().enabled = true;
         cameraManager.Reset();
         Camera.main.GetComponent<RotateAround>().enabled = true;
         backGroundRays.transform.eulerAngles = new Vector3(-90, 0, 0);
@@ -260,7 +258,8 @@ public class AudioManager : MonoBehaviour {
         scoringSystem.GetComponent<ScoringSystem>().ResetScore();
         playerScript.Reset();
         playerScript.StarPowerOff();
-       
+        if (unloadSong)
+            _songData.UnloadTracks();
         _songData = null;
         SetScripts(false);
     }

@@ -23,14 +23,14 @@ public class PauseMenu : MenuScreen
 
     public void Restart()
     {
-        audioManager.ResetGame();
+        audioManager.ResetGame(false);
         audioManager.StartGame();
         gameObject.SetActive(false);
     }
 
     public void ToMenu()
     {
-        audioManager.ResetGame();
+        audioManager.ResetGame(true);
         songSelect.gameObject.SetActive(true);
         songSelect.enabled = true;
         gameObject.SetActive(false);

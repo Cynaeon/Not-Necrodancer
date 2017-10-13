@@ -697,7 +697,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1062,3 +1062,5 @@ MonoBehaviour:
   scoreToFiveStars: 90000
   movementWindow: 0.3
   tempoOffset: 0.2
+  songSpeed: 1
+  songLenght: 1

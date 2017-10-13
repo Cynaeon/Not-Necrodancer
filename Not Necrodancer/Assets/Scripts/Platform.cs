@@ -195,6 +195,7 @@ public class Platform : MonoBehaviour {
         currentTimeTillFall = 0;
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         _rend.enabled = true;
+        danger = false;
         if (variant == 1)
             currentActiveMaterial = activeMaterial1;
         else

@@ -1,10 +1,9 @@
 ====TODO====
 PRIORITY:
-Come up with something to have the songs load when they are selected, not all at once at launch
-Custom music
-Collectables required for level ups scale with song length
+Fix grading system (2hard to get 5 stars maybe)
 Save the customizations
 Bug: sometimes (always actually) score is not being entered into hiscores 
+Bug: Star power lasts doesn't last full time
 Rescale/rethink scoring system 
 More enemy types
 
@@ -12,7 +11,7 @@ Try to model a player character xD
 Work on a song xDD
 
 FANCY STUFF:
-Remake level up sphere, also fix it spawning in random sizes
+Level up sphere still sometimes spawns huge
 Danger flashing doesn't reset on every beat
 Hiscores visible in menu (maybe toggle)
 Camera moves smoothly to the starting position
@@ -29,9 +28,13 @@ Background ray color shift based on level
 
 FEATURE CREEP!!!: 
 Spherical playarea
+Custom music
 
 
 ====DONE====
+Remake level up sphere, also fix it spawning in random sizes
+Collectables required for level ups scale with song length
+Come up with something to have the songs load when they are selected, not all at once at launch
 Player to be placed at 0,100,0 so the light trail on respawning is centered
 Tweak the light rays to look better when the playarea is small
 Play area size not being reset (probably)

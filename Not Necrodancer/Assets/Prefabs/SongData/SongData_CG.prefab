@@ -1395,3 +1395,5 @@ MonoBehaviour:
   scoreToFiveStars: 133000
   movementWindow: 0.3
   tempoOffset: 0.2
+  songSpeed: 1
+  songLenght: 2

@@ -12,16 +12,13 @@ public class GradeSystem : MonoBehaviour {
 
     private float maxScore;
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (!audioManager.songStopped)
         {
-            
             pointsForStar = audioManager.scoreToFiveStars / 5;
             score += Time.deltaTime / 4;
             grade = Mathf.Floor(score / pointsForStar);

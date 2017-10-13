@@ -60,11 +60,8 @@ public class ScoringSystem : MonoBehaviour {
             //DisplayHiscores();
         }
         grade = totalScore / pointsForStar;
-        
-        for (int i = 1; i < grade; i++)
+        for (int i = 1; i < 5; i++)
         {
-            if (i > 4)
-                break;
             if (grade >= i)
                 stars[i - 1].enabled = true;
             else
