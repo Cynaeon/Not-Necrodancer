@@ -1041,6 +1041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83ad1beca3a23244bf0a5d0b3c22509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songName: Born This Way
+  levelNumber: 1
   songLayer1:
   - {fileID: 82992901470021178}
   - {fileID: 82610327751006304}
@@ -1059,7 +1061,7 @@ MonoBehaviour:
   timeTillSongStart: 3
   secondsToBeat: 0.4839
   songEndTime: 147
-  scoreToFiveStars: 90000
+  scoreToFiveStars: 79000
   movementWindow: 0.3
   tempoOffset: 0.2
   songSpeed: 1

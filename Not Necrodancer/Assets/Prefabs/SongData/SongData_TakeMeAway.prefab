@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83ad1beca3a23244bf0a5d0b3c22509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songName: Take Me Away
+  levelNumber: 6
   songLayer1:
   - {fileID: 82894592412322718}
   songLayer2: []

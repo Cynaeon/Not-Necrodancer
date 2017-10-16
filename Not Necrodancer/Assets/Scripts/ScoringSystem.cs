@@ -52,15 +52,16 @@ public class ScoringSystem : MonoBehaviour {
             if (playerScript.starPowerActive)
                 starPowerMultiplier = 2;
             timeScore += (Time.deltaTime * timeBonus * (level * 1.4f)) * (beatStreak / 100 + 1) * starPowerMultiplier;
-            totalScore = (level * 10 + playerScore + timeScore) * 100;
+            totalScore = (playerScore + timeScore) * 100;
         }
         else if (!scoreSaved && totalScore > 0)
         {
             CheckHiscores();
+            CheckProgression();
             //DisplayHiscores();
         }
         grade = totalScore / pointsForStar;
-        for (int i = 1; i < 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             if (grade >= i)
                 stars[i - 1].enabled = true;
@@ -69,6 +70,18 @@ public class ScoringSystem : MonoBehaviour {
         }
         scoreText.text = totalScore.ToString("000000");
 	}
+
+    private void CheckProgression()
+    {
+        GameProgress gp = FindObjectOfType<GameProgress>();
+        gp.LevelFinished(_am.levelNumber);
+        print("Level finished: " + _am.levelNumber + " Grade: " + grade);
+        if (grade >= 3)
+        {
+            gp.LevelUnlocked(_am.levelNumber + 1);
+            print("Level unlocked: " + (_am.levelNumber + 1));
+        }
+    }
 
     private void CheckHiscores()
     {

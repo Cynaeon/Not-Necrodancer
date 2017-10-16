@@ -711,6 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83ad1beca3a23244bf0a5d0b3c22509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songName: Call Me Maybe
+  levelNumber: 2
   songLayer1:
   - {fileID: 82279604505809588}
   songLayer2:
@@ -726,7 +728,7 @@ MonoBehaviour:
   timeTillSongStart: 3
   secondsToBeat: 0.5
   songEndTime: 179
-  scoreToFiveStars: 105000
+  scoreToFiveStars: 100000
   movementWindow: 0.3
   tempoOffset: 0.2
   songSpeed: 1

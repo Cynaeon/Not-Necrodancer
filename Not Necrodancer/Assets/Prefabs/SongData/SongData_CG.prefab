@@ -1371,6 +1371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83ad1beca3a23244bf0a5d0b3c22509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songName: California Gurls
+  levelNumber: 3
   songLayer1:
   - {fileID: 82111343861562404}
   - {fileID: 82656287098749094}

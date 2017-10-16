@@ -1041,6 +1041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83ad1beca3a23244bf0a5d0b3c22509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songName: Lights
+  levelNumber: 5
   songLayer1:
   - {fileID: 82243179082463940}
   songLayer2:
@@ -1062,5 +1064,5 @@ MonoBehaviour:
   scoreToFiveStars: 95000
   movementWindow: 0.3
   tempoOffset: 0.2
-  songSpeed: 0
+  songSpeed: 1
   songLenght: 1

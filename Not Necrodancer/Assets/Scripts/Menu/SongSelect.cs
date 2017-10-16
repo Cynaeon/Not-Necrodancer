@@ -32,10 +32,12 @@ public class SongSelect : MenuScreen {
     private GameObject songToBePlayed;
     private AudioManager am;
     private Canvas canvas;
+    private GameProgress _gp;
 
 	protected override void Start () {
         base.Start();
         am = audioManager.GetComponent<AudioManager>();
+        _gp = FindObjectOfType<GameProgress>();
 	}
 	
 	protected override void Update () {
@@ -104,31 +106,37 @@ public class SongSelect : MenuScreen {
 
     public void PlayBTW()
     { 
-        songToBePlayed = song_BTW;
+        if (_gp.levelUnlocked[1])
+            songToBePlayed = song_BTW;
     }
 
     public void PlayCMM()
     {
-        songToBePlayed = song_CMM;
+        if (_gp.levelUnlocked[2])
+            songToBePlayed = song_CMM;
     }
 
     public void PlayCG()
     {
-        songToBePlayed = song_CG;
+        if (_gp.levelUnlocked[3])
+            songToBePlayed = song_CG;
     }
 
     public void PlayShelter()
     {
-        songToBePlayed = song_Shelter;
+        if (_gp.levelUnlocked[4]) 
+            songToBePlayed = song_Shelter;
     }
 
     public void PlayTMA()
     {
-        songToBePlayed = song_TMA;
+        if (_gp.levelUnlocked[6])
+            songToBePlayed = song_TMA;
     }
 
     public void PlayLights()
     {
-        songToBePlayed = song_Lights;
+        if (_gp.levelUnlocked[5])
+            songToBePlayed = song_Lights;
     }
 }

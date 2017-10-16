@@ -17,7 +17,8 @@ public class Collectable : MonoBehaviour {
     void Start()
     {
         bounceScript = GetComponent<BounceToBeat>();
-        bounceScript.enabled = false;
+        if (bounceScript)
+            bounceScript.enabled = false;
         _rend = GetComponent<Renderer>();
         startColor = _rend.material.color;
         invisible = Color.clear;
@@ -29,7 +30,8 @@ public class Collectable : MonoBehaviour {
         else
         {
             transform.position = new Vector3(transform.position.x, endY, transform.position.z);
-            bounceScript.enabled = true;
+            if (bounceScript)
+                bounceScript.enabled = true;
         }
 
         lifeTime -= Time.deltaTime;

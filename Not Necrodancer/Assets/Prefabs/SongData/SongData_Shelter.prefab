@@ -271,6 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83ad1beca3a23244bf0a5d0b3c22509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songName: Shelter
+  levelNumber: 4
   songLayer1:
   - {fileID: 82662640537743664}
   songLayer2: []
@@ -282,6 +284,8 @@ MonoBehaviour:
   timeTillSongStart: 3
   secondsToBeat: 0.6
   songEndTime: 115
-  scoreToFiveStars: 46800
+  scoreToFiveStars: 54000
   movementWindow: 0.3
   tempoOffset: 0.2
+  songSpeed: 0
+  songLenght: 0

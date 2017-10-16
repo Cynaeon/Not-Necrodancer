@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour {
     internal bool songStopped;
     internal bool onBeat;
 
+    internal int levelNumber;
     internal float songTime;
     internal float secondsToBeat;
     internal float songEndTime;
@@ -80,7 +81,6 @@ public class AudioManager : MonoBehaviour {
         //playAreaScript.SetPlatformScripts(state);
         playAreaScript.enabled = state;
         playerScript.enabled = state;
-
     }
 
     public void StartGame()
@@ -96,6 +96,7 @@ public class AudioManager : MonoBehaviour {
         songTime = 0;
         _songData = GameObject.FindGameObjectWithTag("SongData").GetComponent<SongData>();
         _songData.MuteTracks();
+        levelNumber = _songData.levelNumber;
         secondsToBeat = _songData.secondsToBeat;
         songEndTime = _songData.songEndTime;
         timeTillSongStart = _songData.timeTillSongStart;

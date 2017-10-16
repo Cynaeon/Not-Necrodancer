@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 abstract public class MenuScreen : MonoBehaviour
 {
     
-    public float rollSpeed = 0.5f;
+    public float rollSpeed = 1;
     public Transform menuList;
     public EventSystem eventSystem;
     public GameObject firstSelected;

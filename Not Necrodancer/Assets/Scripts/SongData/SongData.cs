@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SongData : MonoBehaviour {
 
+    public string songName;
+    public int levelNumber;
     public AudioSource[] songLayer1;
     public AudioSource[] songLayer2;
     public AudioSource[] songLayer3;

@@ -7,6 +7,7 @@ public class MainMenu : MenuScreen {
     public GameObject menuButtons;
     public MenuScreen customizeButtons;
     public MenuScreen songSelectButtons;
+    public MenuScreen optionsButtons;
 
     protected override void Start()
     {
@@ -25,6 +26,13 @@ public class MainMenu : MenuScreen {
     {
         customizeButtons.gameObject.SetActive(true);
         customizeButtons.enabled = true;
+        gameObject.SetActive(false);
+    }
+
+    public void Options()
+    {
+        optionsButtons.gameObject.SetActive(true);
+        optionsButtons.enabled = true;
         gameObject.SetActive(false);
     }
 

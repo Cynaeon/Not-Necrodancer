@@ -1,7 +1,9 @@
 ====TODO====
 PRIORITY:
-Fix grading system (2hard to get 5 stars maybe)
+Different songs have different levels
+Show top grade in song select (or a records screen idk)
 Save the customizations
+Hard mode
 Bug: sometimes (always actually) score is not being entered into hiscores 
 Bug: Star power lasts doesn't last full time
 Rescale/rethink scoring system 
@@ -13,7 +15,6 @@ Work on a song xDD
 FANCY STUFF:
 Level up sphere still sometimes spawns huge
 Danger flashing doesn't reset on every beat
-Hiscores visible in menu (maybe toggle)
 Camera moves smoothly to the starting position
 Fade-in on the star power effect
 Improve enemy spawning
@@ -32,6 +33,7 @@ Custom music
 
 
 ====DONE====
+Fix grading system (2hard to get 5 stars maybe) ITS BROKEN THATS WHY
 Remake level up sphere, also fix it spawning in random sizes
 Collectables required for level ups scale with song length
 Come up with something to have the songs load when they are selected, not all at once at launch
